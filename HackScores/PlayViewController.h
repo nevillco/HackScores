@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSHackSet.h"
 
-@interface SecondViewController : UIViewController
+@interface PlayViewController : UIViewController
 
+@property HSHackSet* hackSet;
 
 @end
 

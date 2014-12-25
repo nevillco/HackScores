@@ -10,11 +10,14 @@
 		2DACD0881A4B5D0E00313F41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0871A4B5D0E00313F41 /* main.m */; };
 		2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */; };
 		2DACD08E1A4B5D0E00313F41 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08D1A4B5D0E00313F41 /* FirstViewController.m */; };
-		2DACD0911A4B5D0E00313F41 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0901A4B5D0E00313F41 /* SecondViewController.m */; };
+		2DACD0911A4B5D0E00313F41 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0901A4B5D0E00313F41 /* PlayViewController.m */; };
 		2DACD0941A4B5D0E00313F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DACD0921A4B5D0E00313F41 /* Main.storyboard */; };
 		2DACD0961A4B5D0E00313F41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DACD0951A4B5D0E00313F41 /* Images.xcassets */; };
 		2DACD0991A4B5D0E00313F41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DACD0971A4B5D0E00313F41 /* LaunchScreen.xib */; };
 		2DACD0A51A4B5D0E00313F41 /* HackScoresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0A41A4B5D0E00313F41 /* HackScoresTests.m */; };
+		2DACD0B01A4B600700313F41 /* HSLeaderBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0AF1A4B600700313F41 /* HSLeaderBoardView.m */; };
+		2DACD0B21A4B98E400313F41 /* HSHackSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0B11A4B98E400313F41 /* HSHackSet.m */; };
+		2DACD0BB1A4C817900313F41 /* CNLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0BA1A4C817900313F41 /* CNLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +38,20 @@
 		2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2DACD08C1A4B5D0E00313F41 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		2DACD08D1A4B5D0E00313F41 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		2DACD08F1A4B5D0E00313F41 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2DACD0901A4B5D0E00313F41 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2DACD08F1A4B5D0E00313F41 /* PlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		2DACD0901A4B5D0E00313F41 /* PlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		2DACD0931A4B5D0E00313F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DACD0951A4B5D0E00313F41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2DACD0981A4B5D0E00313F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2DACD09E1A4B5D0E00313F41 /* HackScoresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackScoresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DACD0A31A4B5D0E00313F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACD0A41A4B5D0E00313F41 /* HackScoresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackScoresTests.m; sourceTree = "<group>"; };
+		2DACD0AE1A4B600700313F41 /* HSLeaderBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLeaderBoardView.h; sourceTree = "<group>"; };
+		2DACD0AF1A4B600700313F41 /* HSLeaderBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLeaderBoardView.m; sourceTree = "<group>"; };
+		2DACD0B11A4B98E400313F41 /* HSHackSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSHackSet.m; sourceTree = "<group>"; };
+		2DACD0B31A4B98F200313F41 /* HSHackSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSHackSet.h; sourceTree = "<group>"; };
+		2DACD0BA1A4C817900313F41 /* CNLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLabel.m; sourceTree = "<group>"; };
+		2DACD0BC1A4C818000313F41 /* CNLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNLabel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +97,15 @@
 				2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */,
 				2DACD08C1A4B5D0E00313F41 /* FirstViewController.h */,
 				2DACD08D1A4B5D0E00313F41 /* FirstViewController.m */,
-				2DACD08F1A4B5D0E00313F41 /* SecondViewController.h */,
-				2DACD0901A4B5D0E00313F41 /* SecondViewController.m */,
+				2DACD08F1A4B5D0E00313F41 /* PlayViewController.h */,
+				2DACD0901A4B5D0E00313F41 /* PlayViewController.m */,
 				2DACD0921A4B5D0E00313F41 /* Main.storyboard */,
+				2DACD0AE1A4B600700313F41 /* HSLeaderBoardView.h */,
+				2DACD0AF1A4B600700313F41 /* HSLeaderBoardView.m */,
+				2DACD0B11A4B98E400313F41 /* HSHackSet.m */,
+				2DACD0B31A4B98F200313F41 /* HSHackSet.h */,
+				2DACD0BA1A4C817900313F41 /* CNLabel.m */,
+				2DACD0BC1A4C818000313F41 /* CNLabel.h */,
 				2DACD0951A4B5D0E00313F41 /* Images.xcassets */,
 				2DACD0971A4B5D0E00313F41 /* LaunchScreen.xib */,
 				2DACD0851A4B5D0E00313F41 /* Supporting Files */,
@@ -224,10 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DACD0911A4B5D0E00313F41 /* SecondViewController.m in Sources */,
+				2DACD0B21A4B98E400313F41 /* HSHackSet.m in Sources */,
+				2DACD0911A4B5D0E00313F41 /* PlayViewController.m in Sources */,
 				2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */,
+				2DACD0B01A4B600700313F41 /* HSLeaderBoardView.m in Sources */,
 				2DACD08E1A4B5D0E00313F41 /* FirstViewController.m in Sources */,
 				2DACD0881A4B5D0E00313F41 /* main.m in Sources */,
+				2DACD0BB1A4C817900313F41 /* CNLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +438,7 @@
 				2DACD0AA1A4B5D0E00313F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DACD0AB1A4B5D0E00313F41 /* Build configuration list for PBXNativeTarget "HackScoresTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +447,7 @@
 				2DACD0AD1A4B5D0E00313F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
