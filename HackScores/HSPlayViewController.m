@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 connorneville. All rights reserved.
 //
 
-#import "HSStatsViewController.h"
 #import "HSPlayViewController.h"
 #import "HSResultsViewController.h"
+#import "HSAddPlayersViewController.h"
 #import "CNLabel.h"
 #import "HSHackSet.h"
 #import "AppDelegate.h"
@@ -43,12 +43,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self populateWithInitialValues];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Sets the subviews to their initial values
+//Useful so that calling viewDidLoad clears
+//any residual changes
+- (void) populateWithInitialValues {
+    [self.attemptScoreLabel setText:@"0"];
+    [self.roundLabel setText:@"1"];
+    [self.setLabel setText:@"1"];
+    [self.hackLabelSmall setText:@"1"];
+    [self.pointsLabel setText:@"0"];
+    [self.hackLabelBig setText:@"1"];
+    [self.previousRound1 setText:@""];
+    [self.previousRound2 setText:@""];
 }
 
 //Current attempt score: "right arrow" button pressed
@@ -85,7 +100,6 @@
     //Restart hack labels and points label on new round
     [self.hackLabelSmall displayMessage:@"1" revertAfter:FALSE];
     [self.hackLabelBig displayMessage:@"1" revertAfter:FALSE];
-    [self.pointsLabel displayMessage:@"0" revertAfter:FALSE];
     //Possible rounds values: 1, 2, 3
     int rounds = [self.roundLabel.text intValue];
     //If round 1 or 2: increment round label and
@@ -101,11 +115,16 @@
     //Round = 3 (last round), set complete
     else
         [self setComplete];
+    [self.pointsLabel displayMessage:@"0" revertAfter:FALSE];
 }
 
 - (void) setComplete {
     //Write completed HSHackSet to file
     [self.hackSet writeToFile];
+    //Add to delegate data
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [[delegate getHackSetData] addObject: self.hackSet];
+    
     //Display results (Go to HSResultsViewController)
     [self performSegueWithIdentifier:@"DisplayResultsSegue" sender:self];
 }
@@ -132,6 +151,8 @@
 //Return to previous scene
 //No need to reload stats because game wasn't played
 - (IBAction)returnButtonPressed:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:TRUE completion:nil];
+    HSAddPlayersViewController* previous = (HSAddPlayersViewController*)self.presentingViewController;
+    [previous viewDidLoad];
+    [previous dismissViewControllerAnimated:TRUE completion:nil];
 }
 @end

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSHackSet.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property SortMode dataSortMode;
 
 - (NSMutableArray*) getHackSetData;
+- (void) sortHackSetData;
 
 + (int) HACKS_PER_ROUND;
 + (NSString*) hackSetDataPath;

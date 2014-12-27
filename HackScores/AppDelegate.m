@@ -23,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.dataSortMode = SortByBestLine;
     NSString* path = [AppDelegate hackSetDataPath];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -86,6 +87,52 @@
         [hackSetData addObject:[[HSHackSet alloc] initWithAttempts:attempts andPlayerNames:playerNames]];
     }
     return hackSetData;
+}
+
+- (void) sortHackSetData {
+    self.hackSetData = [self mergeSort:self.hackSetData];
+}
+
+-(NSMutableArray *)mergeSort:(NSMutableArray *)unsortedArray
+{
+    if ([unsortedArray count] < 2)
+    {
+        return unsortedArray;
+    }
+    int middle = ([unsortedArray count]/2);
+    NSRange left = NSMakeRange(0, middle);
+    NSRange right = NSMakeRange(middle, ([unsortedArray count] - middle));
+    NSMutableArray *rightArr = [[unsortedArray subarrayWithRange:right] mutableCopy];
+    NSMutableArray *leftArr = [[unsortedArray subarrayWithRange:left] mutableCopy];
+    return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]];
+}
+
+-(NSMutableArray *)merge:(NSMutableArray *)leftArr andRight:(NSMutableArray *)rightArr
+{
+    NSMutableArray *result = [[NSMutableArray alloc]init];
+    int right = 0;
+    int left = 0;
+    
+    while (left < [leftArr count] && right < [rightArr count])
+    {
+        HSHackSet* leftObj = leftArr[left];
+        HSHackSet* rightObj = rightArr[right];
+        NSComparisonResult comparison = [leftObj compare:rightObj];
+        if (comparison != NSOrderedDescending)
+        {
+            [result addObject:[leftArr objectAtIndex:left++]];
+        }
+        else
+        {
+            [result addObject:[rightArr objectAtIndex:right++]];
+        }
+    }
+    NSRange leftRange = NSMakeRange(left, ([leftArr count] - left));
+    NSRange rightRange = NSMakeRange(right, ([rightArr count] - right));
+    NSArray *newRight = [rightArr subarrayWithRange:rightRange];
+    NSArray *newLeft = [leftArr subarrayWithRange:leftRange];
+    newLeft = [result arrayByAddingObjectsFromArray:newLeft];
+    return [[newLeft arrayByAddingObjectsFromArray:newRight] mutableCopy];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

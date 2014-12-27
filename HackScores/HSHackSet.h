@@ -16,10 +16,21 @@
 - (id) initWithAttempts: (NSMutableArray*) attempts andPlayerNames: (NSMutableArray*) playerNames;
 
 - (void) addAttempt: (int) attempt;
+
 - (NSMutableArray*) getRoundScores;
 - (NSNumber*) getBestHack;
 - (NSNumber*) getBestRound;
 - (NSNumber*) getSetScore;
+
+typedef NS_ENUM(NSUInteger, SortMode) {
+    SortByBestLine,
+    SortByBestHack,
+    SortByBestRound,
+    SortBySetScore
+};
+
+- (NSComparisonResult)compare:(HSHackSet*)object;
+
 - (void) writeToFile;
 
 @end

@@ -135,4 +135,79 @@
     [fileHandle closeFile];
 }
 
+//Compare method used to merge sort list of HSHackSets
+//Each leaderboard uses a different dataSortMode
+- (NSComparisonResult)compare:(HSHackSet*)object {
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    //How to compare two HSHackSets depends
+    //on AppDelegate's sort mode
+    switch(delegate.dataSortMode) {
+            
+        case SortByBestLine: {
+            int netCount = 0;
+            //For each of 3 major stats, increment count if self
+            //has better value, decrement otherwise
+            
+            //Compare best hacks
+            if([self getBestHack].intValue > [object getBestHack].intValue)
+                netCount++;
+            else if([self getBestHack].intValue < [object getBestHack].intValue)
+                netCount--;
+            
+            //Compare best rounds
+            if([self getBestRound].intValue > [object getBestRound].intValue)
+                netCount++;
+            else if([self getBestRound].intValue < [object getBestRound].intValue)
+                netCount--;
+            
+            //Compare best rounds
+            if([self getSetScore].intValue > [object getSetScore].intValue)
+                netCount++;
+            else if([self getSetScore].intValue < [object getSetScore].intValue)
+                netCount--;
+            //Return value based on overall sign (positive,
+            //negative or zero) of netCount
+            
+            //NSLog(@"Comparing items with bestHacks (%d, %d),"
+                  //"bestRounds (%d, %d), setScores (%d, %d) gives netCount %d",
+                  //[self getBestHack].intValue, [object getBestHack].intValue,
+                  //[self getBestRound].intValue, [object getBestRound].intValue,
+                  //[self getSetScore].intValue, [object getSetScore].intValue, netCount);
+            
+            if(netCount > 0)
+                return NSOrderedAscending;
+            else if(netCount < 0)
+                return NSOrderedDescending;
+            else
+                return NSOrderedSame;
+        }
+            
+        //Remaining 3 cases are far simpler than best overall
+            
+        case SortByBestHack: {
+            if([self getBestHack].intValue > [object getBestHack].intValue)
+                return NSOrderedAscending;
+            else if([self getBestHack].intValue < [object getBestHack].intValue)
+                return NSOrderedDescending;
+            return NSOrderedSame;
+        }
+            
+        case SortByBestRound: {
+            if([self getBestRound].intValue > [object getBestRound].intValue)
+                return NSOrderedAscending;
+            else if([self getBestRound].intValue < [object getBestRound].intValue)
+                return NSOrderedDescending;
+            return NSOrderedSame;
+        }
+            
+        case SortBySetScore: {
+            if([self getSetScore].intValue > [object getSetScore].intValue)
+                return NSOrderedAscending;
+            else if([self getSetScore].intValue < [object getSetScore].intValue)
+                return NSOrderedDescending;
+            return NSOrderedSame;
+        }
+    }
+}
+
 @end

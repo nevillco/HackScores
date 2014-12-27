@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 connorneville. All rights reserved.
 //
 
+#import "HSStatsViewController.h"
 #import "HSAddPlayersViewController.h"
 #import "HSPlayViewController.h"
 #import "CNLabel.h"
@@ -27,6 +28,19 @@
 @end
 
 @implementation HSAddPlayersViewController
+
+- (void) viewDidLoad {
+    [self populateWithInitialValues];
+}
+
+//Sets the subviews to their initial values
+//Useful so that calling viewDidLoad clears
+//any residual changes
+- (void) populateWithInitialValues {
+    [self.name1TextField setText:@""];
+    [self.name2TextField setText:@""];
+    [self.name3TextField setText:@""];
+}
 
 //Button covering entire view for dismissing keyboard on tap
 - (IBAction)backgroundButtonPressed:(id)sender {
@@ -52,7 +66,9 @@
 //Return to previous scene
 //No need to reload stats because game wasn't played
 - (IBAction)returnButtonPressed:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:TRUE completion:nil];
+    HSStatsViewController* previous = (HSStatsViewController*)self.presentingViewController;
+    [previous viewDidLoad];
+    [previous dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 //If game is ready to be played, populate target HSPlayViewController
