@@ -405,10 +405,32 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLf-in-Xjv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="34"/>
+                                <state key="normal" title="SETTINGS">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-b3-Ce8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="34"/>
+                                <state key="normal" title="ABOUT">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="txu-ed-PHe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="width" secondItem="tIN-76-839" secondAttribute="width" id="1HI-zh-Ysh"/>
+                            <constraint firstItem="hLf-in-Xjv" firstAttribute="top" secondItem="a5s-id-Csq" secondAttribute="bottom" constant="-14" id="44u-XR-eXW">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-15"/>
+                            </constraint>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="width" secondItem="tRX-Y4-09z" secondAttribute="width" id="4jM-wH-VHS"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="E4S-pG-oby">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
@@ -432,6 +454,7 @@
                             </constraint>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="48" id="e2x-Xm-4v8"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="f8O-oJ-XvU"/>
+                            <constraint firstItem="a5s-id-Csq" firstAttribute="leading" secondItem="hLf-in-Xjv" secondAttribute="leading" id="fhb-67-fDa"/>
                             <constraint firstItem="g93-rL-zEM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="hTU-zu-CZ2"/>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="leading" secondItem="tIN-76-839" secondAttribute="leading" constant="-10" id="jAC-ue-aUT">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -440,12 +463,18 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                             </constraint>
                             <constraint firstItem="7gv-H4-oPg" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="p10-4n-EJw"/>
+                            <constraint firstItem="aVT-b3-Ce8" firstAttribute="top" secondItem="a5s-id-Csq" secondAttribute="bottom" constant="-6" id="p7u-Xw-zfR">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-15"/>
+                            </constraint>
                             <constraint firstAttribute="centerXWithinMargins" secondItem="sGp-NF-SdP" secondAttribute="trailing" constant="10" id="qO4-BR-wVL"/>
                             <constraint firstItem="7gv-H4-oPg" firstAttribute="leading" secondItem="g93-rL-zEM" secondAttribute="trailing" constant="8" id="rOA-dV-9yW"/>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="leading" secondItem="tIN-76-839" secondAttribute="leading" id="sYb-zd-OQB">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-10"/>
                             </constraint>
                             <constraint firstItem="g93-rL-zEM" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="sji-Uj-TTl"/>
+                            <constraint firstItem="a5s-id-Csq" firstAttribute="trailing" secondItem="aVT-b3-Ce8" secondAttribute="trailing" constant="14" id="vbw-nl-2Nn">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="tIN-76-839" firstAttribute="top" secondItem="PlN-qp-8Ut" secondAttribute="bottom" constant="8" id="vgx-E2-2fF">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
@@ -456,6 +485,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="a5s-id-Csq"/>
+                                <exclude reference="hLf-in-Xjv"/>
+                                <exclude reference="aVT-b3-Ce8"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="E4S-pG-oby"/>
@@ -466,11 +497,17 @@
                                 <exclude reference="jAC-ue-aUT"/>
                                 <exclude reference="KVk-6P-q91"/>
                                 <exclude reference="Xag-sE-tmD"/>
+                                <exclude reference="fhb-67-fDa"/>
+                                <exclude reference="vbw-nl-2Nn"/>
+                                <exclude reference="44u-XR-eXW"/>
+                                <exclude reference="p7u-Xw-zfR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="a5s-id-Csq"/>
+                                <include reference="hLf-in-Xjv"/>
+                                <include reference="aVT-b3-Ce8"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="E4S-pG-oby"/>
@@ -483,6 +520,10 @@
                                 <exclude reference="sYb-zd-OQB"/>
                                 <include reference="KVk-6P-q91"/>
                                 <include reference="Xag-sE-tmD"/>
+                                <include reference="fhb-67-fDa"/>
+                                <include reference="vbw-nl-2Nn"/>
+                                <include reference="44u-XR-eXW"/>
+                                <include reference="p7u-Xw-zfR"/>
                             </mask>
                         </variation>
                     </view>
@@ -500,6 +541,7 @@
                         <outletCollection property="bestRoundsHackViews" destination="Mh4-fW-aSq" id="PfN-Ay-6HC"/>
                         <outletCollection property="bestRoundsHackViews" destination="Buc-sV-pK5" id="9GW-07-ljT"/>
                         <segue destination="sQM-4b-0Fg" kind="show" identifier="AddPlayersSegue" id="UE3-f5-S1G"/>
+                        <segue destination="ALo-UH-gT1" kind="show" identifier="AboutSegue" id="l1C-dV-fUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -1307,6 +1349,145 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdy-XN-h1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1373.25" y="-324"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="xQs-Gk-Z14">
+            <objects>
+                <viewController id="ALo-UH-gT1" customClass="HSAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0kO-Xl-wsq"/>
+                        <viewControllerLayoutGuide type="bottom" id="gK8-Eu-V0m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XIv-7o-pAi">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2j-5e-qrS">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-MJ-VE5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <state key="normal" title="RETURN">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnButtonPressed:" destination="sQM-4b-0Fg" eventType="touchUpInside" id="pBb-Nd-xs1"/>
+                                    <action selector="returnButtonPressed:" destination="ALo-UH-gT1" eventType="touchUpInside" id="vkD-ZZ-ELl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-qd-x6G" customClass="CNLabel">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <mutableString key="text">HackScores is an app that provides a scoreboard for hacky sack games and a leaderboard to help players track their progress game to game. While many people are familiar with the game hacky sack, there normally isn't any sort of scoring system. HackScores creates one for the sake of quantifying improvement with your friends.
+
+A player starts an attempt by throwing the hacky sack to another player. If everyone is able to make contact with a body part (other than their hands) and the hacky sack before it touches the ground, the attempt is called a "hack" (on the app, this means you get 1 point for the attempt). If after that, everyone is able to make contact a second time, the attempt is called a "double hack" (2 points). This cycle can go on as long as the players can continue it.
+
+HackScores groups these attempts into "rounds" (you can choose how many attempts are in a round - the default is 30), and it groups 3 rounds into a single set (a set is a complete game). It is meant to be a cooperative game where players can enjoy their improvements together, but certainly multiple groups can use the app together competitively.
+
+I hope you enjoy what has been a great hobby for my friends and I. If you have any questions, please contact me via email (nevillco@bc.edu) below.</mutableString>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-gA-Gl9" customClass="CNLabel">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <string key="text">Connor Neville
+App Developer</string>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4O-ow-3cw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <state key="normal" title="EMAIL ME">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMailButtonPressed:" destination="ALo-UH-gT1" eventType="touchUpInside" id="f15-g1-AZA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Eb-qd-x6G" firstAttribute="top" secondItem="y2j-5e-qrS" secondAttribute="bottom" constant="8" id="63K-9l-7BP"/>
+                            <constraint firstItem="EcQ-MJ-VE5" firstAttribute="top" secondItem="0kO-Xl-wsq" secondAttribute="bottom" id="6UG-i6-QQk"/>
+                            <constraint firstItem="hBt-gA-Gl9" firstAttribute="top" secondItem="5Eb-qd-x6G" secondAttribute="bottom" constant="39" id="7Mg-gM-TyO">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="y4O-ow-3cw" firstAttribute="top" secondItem="hBt-gA-Gl9" secondAttribute="bottom" constant="15" id="8oa-qf-zp9"/>
+                            <constraint firstItem="EcQ-MJ-VE5" firstAttribute="trailing" secondItem="XIv-7o-pAi" secondAttribute="trailingMargin" id="R4m-uQ-MAK"/>
+                            <constraint firstItem="y2j-5e-qrS" firstAttribute="top" secondItem="0kO-Xl-wsq" secondAttribute="bottom" id="V40-V2-WRq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hBt-gA-Gl9" secondAttribute="trailing" constant="230" id="bMh-Fy-Uxf">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Eb-qd-x6G" secondAttribute="trailing" constant="-132" id="c6p-lt-Jlq">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="y2j-5e-qrS" firstAttribute="leading" secondItem="XIv-7o-pAi" secondAttribute="leadingMargin" id="fuY-1X-WsM"/>
+                            <constraint firstAttribute="centerX" secondItem="y4O-ow-3cw" secondAttribute="centerX" constant="28" id="mot-Nu-hkA">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="5Eb-qd-x6G" firstAttribute="leading" secondItem="XIv-7o-pAi" secondAttribute="leadingMargin" id="r2f-hV-9SD"/>
+                            <constraint firstItem="y4O-ow-3cw" firstAttribute="top" secondItem="5Eb-qd-x6G" secondAttribute="bottom" constant="76" id="u4J-JU-7gU">
+                                <variation key="heightClass=regular-widthClass=regular" constant="8" symbolic="YES"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="y2j-5e-qrS"/>
+                                <exclude reference="EcQ-MJ-VE5"/>
+                                <exclude reference="5Eb-qd-x6G"/>
+                                <exclude reference="hBt-gA-Gl9"/>
+                                <exclude reference="y4O-ow-3cw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="V40-V2-WRq"/>
+                                <exclude reference="fuY-1X-WsM"/>
+                                <exclude reference="63K-9l-7BP"/>
+                                <exclude reference="c6p-lt-Jlq"/>
+                                <exclude reference="r2f-hV-9SD"/>
+                                <exclude reference="6UG-i6-QQk"/>
+                                <exclude reference="R4m-uQ-MAK"/>
+                                <exclude reference="8oa-qf-zp9"/>
+                                <exclude reference="mot-Nu-hkA"/>
+                                <exclude reference="u4J-JU-7gU"/>
+                                <exclude reference="7Mg-gM-TyO"/>
+                                <exclude reference="bMh-Fy-Uxf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="y2j-5e-qrS"/>
+                                <include reference="EcQ-MJ-VE5"/>
+                                <include reference="5Eb-qd-x6G"/>
+                                <include reference="hBt-gA-Gl9"/>
+                                <include reference="y4O-ow-3cw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="V40-V2-WRq"/>
+                                <include reference="fuY-1X-WsM"/>
+                                <include reference="63K-9l-7BP"/>
+                                <include reference="c6p-lt-Jlq"/>
+                                <include reference="r2f-hV-9SD"/>
+                                <include reference="6UG-i6-QQk"/>
+                                <include reference="R4m-uQ-MAK"/>
+                                <include reference="8oa-qf-zp9"/>
+                                <include reference="mot-Nu-hkA"/>
+                                <exclude reference="u4J-JU-7gU"/>
+                                <include reference="7Mg-gM-TyO"/>
+                                <include reference="bMh-Fy-Uxf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odq-1i-KHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1995.75" y="-324"/>
         </scene>
     </scenes>
 </document>

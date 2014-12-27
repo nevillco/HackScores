@@ -27,6 +27,7 @@
 
 //Button action to play new game (will send user to HSAddPlayersViewController)
 - (IBAction)playNewButtonPressed:(id)sender;
+- (IBAction)aboutButtonPressed:(id)sender;
 
 @end
 
@@ -151,5 +152,9 @@
 
 - (IBAction)playNewButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"AddPlayersSegue" sender:self];
+}
+
+- (IBAction)aboutButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"AboutSegue" sender:self];
 }
 @end
