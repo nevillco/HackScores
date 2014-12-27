@@ -468,17 +468,17 @@ If you don't get it now, you never will</string>
                     </view>
                     <connections>
                         <outlet property="bestHacksLeaderBoard" destination="PlN-qp-8Ut" id="jG8-3z-34N"/>
-                        <outlet property="bestHacksSecondHackView" destination="ILZ-xH-r3R" id="b8I-eV-sbt"/>
-                        <outlet property="bestHacksTopHackView" destination="DOd-Af-gLv" id="3OO-k0-lRH"/>
                         <outlet property="bestLinesLeaderBoard" destination="sGp-NF-SdP" id="YK6-YM-oST"/>
-                        <outlet property="bestLinesSecondHackView" destination="XNG-pt-ncg" id="xzk-fL-qQa"/>
-                        <outlet property="bestLinesTopHackView" destination="RPb-X1-ACE" id="aG5-T3-mAc"/>
                         <outlet property="bestRoundsLeaderBoard" destination="tRX-Y4-09z" id="g55-LA-4TN"/>
-                        <outlet property="bestRoundsSecondHackView" destination="Buc-sV-pK5" id="L9Q-Eu-peL"/>
-                        <outlet property="bestRoundsTopHackView" destination="Mh4-fW-aSq" id="LbS-SU-mai"/>
                         <outlet property="bestSetsLeaderBoard" destination="tIN-76-839" id="PwK-la-yXZ"/>
-                        <outlet property="bestSetsSecondHackView" destination="Lc8-Yg-uoM" id="Adn-Fh-RmU"/>
-                        <outlet property="bestSetsTopHackView" destination="z95-yq-TZC" id="Llc-Gg-p0Y"/>
+                        <outletCollection property="bestLinesHackViews" destination="RPb-X1-ACE" id="lDA-SX-yzR"/>
+                        <outletCollection property="bestLinesHackViews" destination="XNG-pt-ncg" id="OLG-AI-LhU"/>
+                        <outletCollection property="bestHacksHackViews" destination="DOd-Af-gLv" id="wtu-0d-hX9"/>
+                        <outletCollection property="bestHacksHackViews" destination="ILZ-xH-r3R" id="XRz-jG-bvi"/>
+                        <outletCollection property="bestSetsHackViews" destination="z95-yq-TZC" id="1QU-PE-v4Q"/>
+                        <outletCollection property="bestSetsHackViews" destination="Lc8-Yg-uoM" id="Wox-k8-MT1"/>
+                        <outletCollection property="bestRoundsHackViews" destination="Mh4-fW-aSq" id="PfN-Ay-6HC"/>
+                        <outletCollection property="bestRoundsHackViews" destination="Buc-sV-pK5" id="9GW-07-ljT"/>
                         <segue destination="sQM-4b-0Fg" kind="show" identifier="AddPlayersSegue" id="UE3-f5-S1G"/>
                     </connections>
                 </viewController>
@@ -597,8 +597,8 @@ If you don't get it now, you never will</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(points - hack)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-X1-mro">
-                                <rect key="frame" x="248" y="345" width="104" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(points - hack)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-X1-mro">
+                                <rect key="frame" x="243" y="345" width="114" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
