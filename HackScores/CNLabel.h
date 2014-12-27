@@ -24,6 +24,11 @@
 - (BOOL) incrementTextAndRevertAfter: (BOOL) revertAfter withBound: (int) bound;
 - (BOOL) decrementTextAndRevertAfter: (BOOL) revertAfter;
 - (BOOL) decrementTextAndRevertAfter: (BOOL) revertAfter withBound: (int) bound;
+- (BOOL) addIntToText: (int) value revertAfter: (BOOL) revertAfter;
+- (BOOL) addIntToText: (int) value revertAfter: (BOOL) revertAfter withUpperBound: (int) bound;
+- (BOOL) addIntToText: (int) value revertAfter: (BOOL) revertAfter withLowerBound: (int) bound;
+- (BOOL) addIntToText: (int) value revertAfter: (BOOL) revertAfter
+       withLowerBound: (int) lowerBound andUpperBound: (int) upperBound;
 
 + (UIColor*) defaultColor;
 + (UIColor*) successColor;

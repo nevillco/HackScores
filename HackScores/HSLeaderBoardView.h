@@ -1,5 +1,5 @@
 //
-//  HSLeaderBoardView.h
+//  HSLeaderBoardView.h - view for a leaderboard (containing top 2 scores)
 //  HackScores
 //
 //  Created by Connor Neville on 12/24/14.
@@ -11,6 +11,5 @@
 @interface HSLeaderBoardView : UIView
 
 @property UILabel* titleLabel;
-@property SEL sortFunction;
 
 @end

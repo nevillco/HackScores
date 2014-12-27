@@ -7,17 +7,85 @@
 //
 
 #import "AppDelegate.h"
+#import "HSHackSet.h"
 
 @interface AppDelegate ()
+
+@property NSMutableArray* hackSetData;
 
 @end
 
 @implementation AppDelegate
 
++ (int) HACKS_PER_ROUND {
+    return 5;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSString* path = [AppDelegate hackSetDataPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //Uncomment to clear data
+    //if([fileManager fileExistsAtPath: path]){
+        //NSError* error;
+        //[fileManager removeItemAtPath:path error:&error];
+    //}
+    
+    //Create file if it doesn't exist
+    if(![fileManager fileExistsAtPath: path]) {
+        [fileManager createFileAtPath:path contents:nil attributes:nil];
+    }
+    [self setHackSetData: [self readHackSetData]];
     return YES;
+}
+
+//Returns a path to the hack set data file
++ (NSString*) hackSetDataPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"records.txt"];
+}
+
+- (NSMutableArray*) getHackSetData {
+    //SHOULD already be instantiated in didFinishLaunchingWithOptions
+    if(!self.hackSetData)
+        self.hackSetData = [self readHackSetData];
+    return self.hackSetData;
+}
+
+//Reads data text file into an array of HSHackSet objects
+- (NSMutableArray*) readHackSetData {
+    NSMutableArray* hackSetData = [[NSMutableArray alloc] init];
+    
+    NSError* error;
+    //String of entire text file contents
+    NSString* textFileAsString = [NSString stringWithContentsOfFile:[AppDelegate hackSetDataPath] encoding:NSUTF8StringEncoding error:&error];
+    
+    //Array of line-by-line contents
+    NSArray* hackSetStrings = [textFileAsString componentsSeparatedByCharactersInSet:
+                                      [NSCharacterSet newlineCharacterSet]];
+    
+    //Loop through each line
+    for(NSString* hackSetString in hackSetStrings) {
+        if([hackSetString isEqualToString:@""])
+            return hackSetData;
+        //Each name is separated by "|" (as is the last name from all scores)
+        NSArray* hackSetComponents = [hackSetString componentsSeparatedByString:@"|"];
+        //Player names is done
+        NSMutableArray* playerNames = [[NSMutableArray alloc] initWithObjects: hackSetComponents[0],
+                                       hackSetComponents[1], hackSetComponents[2], nil];
+        //All attempts (integers) separated by spaces
+        NSArray* hackValuesAsStrings = [hackSetComponents[3] componentsSeparatedByString:@" "];
+        //Now need to convert each string to NSNumber
+        NSMutableArray* attempts = [[NSMutableArray alloc] init];
+        for(NSString* hackValueString in hackValuesAsStrings) {
+            [attempts addObject: [NSNumber numberWithInt:[hackValueString intValue]]];
+        }
+        //Add HSHackSet object to array
+        [hackSetData addObject:[[HSHackSet alloc] initWithAttempts:attempts andPlayerNames:playerNames]];
+    }
+    return hackSetData;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

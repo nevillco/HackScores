@@ -12,6 +12,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (NSMutableArray*) getHackSetData;
+
++ (int) HACKS_PER_ROUND;
++ (NSString*) hackSetDataPath;
 
 @end
 

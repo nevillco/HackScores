@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  HSStatsViewController.h - view controller for opening leaderboard scene
 //  HackScores
 //
 //  Created by Connor Neville on 12/24/14.
@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HSHackSet.h"
 
-@interface PlayViewController : UIViewController
-
-@property HSHackSet* hackSet;
+@interface HSStatsViewController : UIViewController
 
 @end
 

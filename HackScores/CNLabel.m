@@ -132,7 +132,8 @@ static const int DEFAULT_ANIM_DELAY = 3;
 //Increments the integer value of the current text
 //Returns FALSE and takes no action if string is not
 //an integer or if the value would exceed the given boundary
-- (BOOL) incrementTextAndRevertAfter: (BOOL) revertAfter withBound: (int) bound {
+- (BOOL) incrementTextAndRevertAfter: (BOOL) revertAfter
+                           withBound: (int) bound {
     if(![self isInt])
         return FALSE;
     int intVal = [self.text intValue];
@@ -158,13 +159,84 @@ static const int DEFAULT_ANIM_DELAY = 3;
 //Increments the integer value of the current text
 //Returns FALSE and takes no action if string is not
 //an integer or if the value would exceed the given boundary
-- (BOOL) decrementTextAndRevertAfter: (BOOL) revertAfter withBound: (int) bound {
+- (BOOL) decrementTextAndRevertAfter: (BOOL) revertAfter
+                           withBound: (int) bound {
     if(![self isInt])
         return FALSE;
     int intVal = [self.text intValue];
     if(intVal == bound)
         return FALSE;
     intVal--;
+    [self displayMessage:[NSString stringWithFormat:@"%d", intVal] revertAfter:revertAfter];
+    return TRUE;
+}
+
+//Add any value to the current text
+//Returns FALSE and takes no action if the string is not
+//an integer
+//Can use negative numbers to subtract
+- (BOOL) addIntToText: (int) value
+          revertAfter: (BOOL) revertAfter {
+    if(![self isInt])
+        return FALSE;
+    int intVal = [self.text intValue];
+    intVal = intVal + value;
+    [self displayMessage:[NSString stringWithFormat:@"%d", intVal] revertAfter:revertAfter];
+    return TRUE;
+}
+
+//Add any value to the current text
+//Returns FALSE and takes no action if the string is not
+//an integer or if the string is at the bound
+//Will stop at bound
+//Can use negative numbers to subtract
+- (BOOL) addIntToText: (int) value
+          revertAfter: (BOOL) revertAfter
+       withUpperBound: (int) bound {
+    if(![self isInt])
+        return FALSE;
+    int intVal = [self.text intValue];
+    if(intVal == bound)
+        return FALSE;
+    intVal = MIN(intVal + value, bound);
+    [self displayMessage:[NSString stringWithFormat:@"%d", intVal] revertAfter:revertAfter];
+    return TRUE;
+}
+
+//Add any value to the current text
+//Returns FALSE and takes no action if the string is not
+//an integer or if the string is already at the bound
+//Will stop at bound
+//Can use negative numbers to subtract
+- (BOOL) addIntToText: (int) value
+          revertAfter: (BOOL) revertAfter
+       withLowerBound: (int) bound {
+    if(![self isInt])
+        return FALSE;
+    int intVal = [self.text intValue];
+    if(intVal == bound)
+        return FALSE;
+    intVal = MAX(intVal + value, bound);
+    [self displayMessage:[NSString stringWithFormat:@"%d", intVal] revertAfter:revertAfter];
+    return TRUE;
+}
+
+//Add any value to the current text
+//Returns FALSE and takes no action if the string is not
+//an integer or if the string is already at either bound (and will exceed)
+//Will stop at bound
+//Can use negative numbers to subtract
+- (BOOL) addIntToText: (int) value
+          revertAfter: (BOOL) revertAfter
+       withLowerBound: (int) lowerBound
+        andUpperBound: (int) upperBound {
+    if(![self isInt])
+        return FALSE;
+    int intVal = [self.text intValue];
+    if((intVal == lowerBound && value <= 0) ||
+       (intVal == upperBound && value >= 0))
+        return FALSE;
+    intVal = MIN(MAX(intVal + value, lowerBound), upperBound);
     [self displayMessage:[NSString stringWithFormat:@"%d", intVal] revertAfter:revertAfter];
     return TRUE;
 }
