@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HSAddPlayersViewController : UIViewController
+@interface HSAddPlayersViewController : UIViewController <UITextFieldDelegate>
 
 @end

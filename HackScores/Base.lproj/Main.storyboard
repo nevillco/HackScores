@@ -24,10 +24,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gv-H4-oPg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hacky sack scoreboard app" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gv-H4-oPg">
                                 <rect key="frame" x="222" y="20" width="226" height="40"/>
-                                <string key="text">Hacky sack top score recorder
-If you don't get it now, you never will</string>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -412,15 +410,26 @@ If you don't get it now, you never will</string>
                         <constraints>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="width" secondItem="tIN-76-839" secondAttribute="width" id="1HI-zh-Ysh"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="width" secondItem="tRX-Y4-09z" secondAttribute="width" id="4jM-wH-VHS"/>
+                            <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="E4S-pG-oby">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="PlN-qp-8Ut" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="KPl-cT-Zq1">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="a5s-id-Csq" secondAttribute="centerX" constant="10" id="KVk-6P-q91">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="7gv-H4-oPg" firstAttribute="bottom" secondItem="g93-rL-zEM" secondAttribute="baseline" constant="-28" id="N8P-57-Tl6">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="tRX-Y4-09z" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="RBp-VJ-uDE"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="tRX-Y4-09z" secondAttribute="top" constant="-208" id="WT3-j4-hJG"/>
                             <constraint firstItem="a5s-id-Csq" firstAttribute="top" secondItem="tRX-Y4-09z" secondAttribute="bottom" constant="22" id="Xag-sE-tmD">
-                                <variation key="heightClass=regular-widthClass=regular" constant="8"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
-                            <constraint firstItem="tRX-Y4-09z" firstAttribute="top" secondItem="sGp-NF-SdP" secondAttribute="bottom" constant="8" id="ahb-9H-8kt"/>
+                            <constraint firstItem="tRX-Y4-09z" firstAttribute="top" secondItem="sGp-NF-SdP" secondAttribute="bottom" constant="8" id="ahb-9H-8kt">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="48" id="e2x-Xm-4v8"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="f8O-oJ-XvU"/>
                             <constraint firstItem="g93-rL-zEM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="hTU-zu-CZ2"/>
@@ -437,7 +446,9 @@ If you don't get it now, you never will</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="-10"/>
                             </constraint>
                             <constraint firstItem="g93-rL-zEM" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="sji-Uj-TTl"/>
-                            <constraint firstItem="tIN-76-839" firstAttribute="top" secondItem="PlN-qp-8Ut" secondAttribute="bottom" constant="8" id="vgx-E2-2fF"/>
+                            <constraint firstItem="tIN-76-839" firstAttribute="top" secondItem="PlN-qp-8Ut" secondAttribute="bottom" constant="8" id="vgx-E2-2fF">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="xKh-w3-ftT"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="48" id="y1i-0q-k0t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PlN-qp-8Ut" secondAttribute="trailing" id="zoz-bi-7w5"/>
@@ -447,11 +458,14 @@ If you don't get it now, you never will</string>
                                 <exclude reference="a5s-id-Csq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KVk-6P-q91"/>
-                                <exclude reference="Xag-sE-tmD"/>
+                                <exclude reference="E4S-pG-oby"/>
                                 <exclude reference="WT3-j4-hJG"/>
                                 <exclude reference="f8O-oJ-XvU"/>
+                                <exclude reference="N8P-57-Tl6"/>
+                                <exclude reference="KPl-cT-Zq1"/>
                                 <exclude reference="jAC-ue-aUT"/>
+                                <exclude reference="KVk-6P-q91"/>
+                                <exclude reference="Xag-sE-tmD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -459,10 +473,16 @@ If you don't get it now, you never will</string>
                                 <include reference="a5s-id-Csq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KVk-6P-q91"/>
-                                <include reference="Xag-sE-tmD"/>
+                                <include reference="E4S-pG-oby"/>
+                                <exclude reference="y1i-0q-k0t"/>
+                                <include reference="N8P-57-Tl6"/>
+                                <exclude reference="p10-4n-EJw"/>
+                                <include reference="KPl-cT-Zq1"/>
+                                <exclude reference="e2x-Xm-4v8"/>
                                 <include reference="jAC-ue-aUT"/>
                                 <exclude reference="sYb-zd-OQB"/>
+                                <include reference="KVk-6P-q91"/>
+                                <include reference="Xag-sE-tmD"/>
                             </mask>
                         </variation>
                     </view>
@@ -486,7 +506,7 @@ If you don't get it now, you never will</string>
             </objects>
             <point key="canvasLocation" x="750" y="-320.25"/>
         </scene>
-        <!--Play-->
+        <!--Play View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="HSPlayViewController" sceneMemberID="viewController">
@@ -558,20 +578,10 @@ If you don't get it now, you never will</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-Ro-Drq">
-                                <rect key="frame" x="484" y="128" width="100" height="36"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
-                                <state key="normal" title="ADD ATTEMPT">
-                                    <color key="titleColor" red="0.78431372549019607" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addAttempt:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GFx-Uy-oJs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjo-sm-80b">
                                 <rect key="frame" x="484" y="81" width="30" height="62"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="36"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="60"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -582,13 +592,26 @@ If you don't get it now, you never will</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cu4-Xz-zz7">
                                 <rect key="frame" x="554" y="81" width="30" height="62"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="36"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="60"/>
                                 <state key="normal" title=">">
                                     <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="increaseAttemptScore:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qeH-nj-Jor"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-Ro-Drq">
+                                <rect key="frame" x="484" y="128" width="100" height="36"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
+                                <state key="normal" title="ADD ATTEMPT">
+                                    <color key="titleColor" red="0.78431372549019607" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAttempt:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GFx-Uy-oJs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Round Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-JI-81G">
@@ -654,13 +677,22 @@ If you don't get it now, you never will</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="Y9v-fe-RsV" secondAttribute="centerX" id="5IB-t9-Eca"/>
+                            <constraint firstItem="2e8-pT-qwR" firstAttribute="centerX" secondItem="7OR-aG-thw" secondAttribute="centerX" constant="9" id="82X-uN-66A">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="MYr-X1-mro" secondAttribute="centerX" id="9GS-vj-eVV"/>
                             <constraint firstItem="RzZ-Ms-oEY" firstAttribute="top" secondItem="2e8-pT-qwR" secondAttribute="top" id="ADU-Hc-98B"/>
+                            <constraint firstItem="7OR-aG-thw" firstAttribute="leading" secondItem="Kjo-sm-80b" secondAttribute="leading" constant="-17" id="Dre-Ax-v7L">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="RzZ-Ms-oEY" firstAttribute="top" secondItem="fQe-fX-EW1" secondAttribute="bottom" constant="8" id="FQB-Z6-Fnp"/>
                             <constraint firstItem="QBk-Bx-hVb" firstAttribute="leading" secondItem="Y9v-fe-RsV" secondAttribute="trailing" id="FYh-3L-dyL"/>
                             <constraint firstItem="cu4-Xz-zz7" firstAttribute="trailing" secondItem="oi7-Ro-Drq" secondAttribute="trailing" id="H6C-6y-Tqk"/>
                             <constraint firstItem="JGu-VQ-jif" firstAttribute="top" secondItem="dnJ-P5-TqL" secondAttribute="bottom" constant="21" id="H6d-7R-ZYA">
                                 <variation key="heightClass=regular-widthClass=regular" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="cu4-Xz-zz7" firstAttribute="centerY" secondItem="2e8-pT-qwR" secondAttribute="centerY" constant="-4" id="HD3-t9-k8I">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-10"/>
                             </constraint>
                             <constraint firstItem="Kjo-sm-80b" firstAttribute="centerY" secondItem="2e8-pT-qwR" secondAttribute="centerY" id="IUf-QS-2fX"/>
                             <constraint firstAttribute="centerX" secondItem="JGu-VQ-jif" secondAttribute="leading" constant="-49" id="KbP-ww-WSn">
@@ -670,6 +702,9 @@ If you don't get it now, you never will</string>
                             <constraint firstItem="fQe-fX-EW1" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="NdH-Te-cAO"/>
                             <constraint firstItem="dnJ-P5-TqL" firstAttribute="top" secondItem="MYr-X1-mro" secondAttribute="bottom" constant="60" id="OiU-Sl-pOM">
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="7OR-aG-thw" firstAttribute="centerX" secondItem="oi7-Ro-Drq" secondAttribute="centerX" constant="-8.5" id="PWb-EQ-E4j">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="m3O-G7-0g5" firstAttribute="top" secondItem="fQe-fX-EW1" secondAttribute="bottom" constant="8" id="Pa7-oN-94B"/>
                             <constraint firstItem="2e8-pT-qwR" firstAttribute="centerX" secondItem="oi7-Ro-Drq" secondAttribute="centerX" id="Q1m-W4-Fzp"/>
@@ -681,7 +716,11 @@ If you don't get it now, you never will</string>
                             <constraint firstItem="m3O-G7-0g5" firstAttribute="centerX" secondItem="gUW-TG-U2y" secondAttribute="centerX" id="SxR-he-45n"/>
                             <constraint firstItem="MrN-aW-YZ1" firstAttribute="top" secondItem="3ZW-My-NI2" secondAttribute="bottom" id="TB9-tg-8uq"/>
                             <constraint firstItem="Y9v-fe-RsV" firstAttribute="leading" secondItem="fxq-Df-q4q" secondAttribute="trailing" id="TDv-Xp-gqL"/>
+                            <constraint firstItem="cu4-Xz-zz7" firstAttribute="trailing" secondItem="7OR-aG-thw" secondAttribute="trailing" id="XNA-XD-4kz"/>
                             <constraint firstItem="Kjo-sm-80b" firstAttribute="leading" secondItem="oi7-Ro-Drq" secondAttribute="leading" id="XUJ-Ah-j7L"/>
+                            <constraint firstItem="2e8-pT-qwR" firstAttribute="centerY" secondItem="Kjo-sm-80b" secondAttribute="centerY" constant="4" id="ZnS-8K-x6w">
+                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="dnJ-P5-TqL" firstAttribute="top" secondItem="lAg-LW-FOP" secondAttribute="bottom" constant="166" id="acH-O2-LvV">
                                 <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                             </constraint>
@@ -690,10 +729,16 @@ If you don't get it now, you never will</string>
                             <constraint firstItem="7OR-aG-thw" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="dVe-kt-RsV"/>
                             <constraint firstItem="oi7-Ro-Drq" firstAttribute="top" secondItem="cu4-Xz-zz7" secondAttribute="bottom" constant="-15" id="dla-Q7-TZS"/>
                             <constraint firstItem="fxq-Df-q4q" firstAttribute="centerY" secondItem="Y9v-fe-RsV" secondAttribute="centerY" id="drG-m6-cGG"/>
+                            <constraint firstItem="2e8-pT-qwR" firstAttribute="top" secondItem="7OR-aG-thw" secondAttribute="bottom" constant="-4" id="eNx-YS-iQy">
+                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="QBk-Bx-hVb" firstAttribute="centerY" secondItem="Y9v-fe-RsV" secondAttribute="centerY" id="fr8-oB-N4g"/>
                             <constraint firstItem="3ZW-My-NI2" firstAttribute="centerX" secondItem="MrN-aW-YZ1" secondAttribute="centerX" id="gG9-pA-ceD"/>
                             <constraint firstItem="m3O-G7-0g5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="jMi-ua-CZc"/>
                             <constraint firstItem="3ZW-My-NI2" firstAttribute="leading" secondItem="m3O-G7-0g5" secondAttribute="trailing" constant="30" id="k6k-uJ-zUY"/>
+                            <constraint firstItem="oi7-Ro-Drq" firstAttribute="top" secondItem="2e8-pT-qwR" secondAttribute="bottom" constant="-20" id="kFU-Jy-qOp">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="gUW-TG-U2y" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="10" id="kaC-jY-WZB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oi7-Ro-Drq" secondAttribute="trailing" id="lP7-8v-nyb"/>
                             <constraint firstAttribute="centerX" secondItem="1Xg-JI-81G" secondAttribute="centerX" id="mhb-Ue-V7G"/>
@@ -718,20 +763,28 @@ If you don't get it now, you never will</string>
                                 <exclude reference="JGu-VQ-jif"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2g3-Ia-CO7"/>
-                                <exclude reference="H6d-7R-ZYA"/>
-                                <exclude reference="KbP-ww-WSn"/>
+                                <exclude reference="kaC-jY-WZB"/>
+                                <exclude reference="u6y-cp-TDm"/>
                                 <exclude reference="OiU-Sl-pOM"/>
                                 <exclude reference="acH-O2-LvV"/>
                                 <exclude reference="noo-VZ-nhb"/>
                                 <exclude reference="1Lm-rg-w7x"/>
                                 <exclude reference="4kc-mi-ZJ3"/>
                                 <exclude reference="Qp7-AQ-DSW"/>
+                                <exclude reference="2g3-Ia-CO7"/>
+                                <exclude reference="H6d-7R-ZYA"/>
+                                <exclude reference="KbP-ww-WSn"/>
                                 <exclude reference="2bN-Jq-VK2"/>
+                                <exclude reference="Dre-Ax-v7L"/>
+                                <exclude reference="PWb-EQ-E4j"/>
                                 <exclude reference="dVe-kt-RsV"/>
-                                <exclude reference="kaC-jY-WZB"/>
-                                <exclude reference="u6y-cp-TDm"/>
                                 <exclude reference="dla-Q7-TZS"/>
+                                <exclude reference="kFU-Jy-qOp"/>
+                                <exclude reference="82X-uN-66A"/>
+                                <exclude reference="ZnS-8K-x6w"/>
+                                <exclude reference="eNx-YS-iQy"/>
+                                <exclude reference="HD3-t9-k8I"/>
+                                <exclude reference="XNA-XD-4kz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -742,21 +795,36 @@ If you don't get it now, you never will</string>
                                 <include reference="JGu-VQ-jif"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2g3-Ia-CO7"/>
-                                <include reference="H6d-7R-ZYA"/>
-                                <include reference="KbP-ww-WSn"/>
+                                <exclude reference="ADU-Hc-98B"/>
+                                <exclude reference="u2L-9v-wcx"/>
                                 <include reference="OiU-Sl-pOM"/>
                                 <exclude reference="acH-O2-LvV"/>
                                 <include reference="noo-VZ-nhb"/>
                                 <include reference="1Lm-rg-w7x"/>
                                 <include reference="4kc-mi-ZJ3"/>
                                 <exclude reference="Qp7-AQ-DSW"/>
+                                <exclude reference="2g3-Ia-CO7"/>
+                                <include reference="H6d-7R-ZYA"/>
+                                <include reference="KbP-ww-WSn"/>
                                 <include reference="2bN-Jq-VK2"/>
+                                <include reference="Dre-Ax-v7L"/>
+                                <include reference="PWb-EQ-E4j"/>
                                 <include reference="dVe-kt-RsV"/>
+                                <exclude reference="IUf-QS-2fX"/>
+                                <exclude reference="XUJ-Ah-j7L"/>
+                                <include reference="kFU-Jy-qOp"/>
+                                <exclude reference="lP7-8v-nyb"/>
+                                <include reference="82X-uN-66A"/>
+                                <exclude reference="Q1m-W4-Fzp"/>
+                                <include reference="ZnS-8K-x6w"/>
+                                <include reference="eNx-YS-iQy"/>
+                                <exclude reference="H6C-6y-Tqk"/>
+                                <include reference="HD3-t9-k8I"/>
+                                <include reference="XNA-XD-4kz"/>
+                                <exclude reference="ap9-jo-qqD"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Play" image="first" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="attemptScoreLabel" destination="2e8-pT-qwR" id="lX5-OP-Gkt"/>
                         <outlet property="hackLabelBig" destination="QBk-Bx-hVb" id="jKC-ac-j0m"/>
@@ -1026,14 +1094,18 @@ If you don't get it now, you never will</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbq-bg-wjI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="bbq-bg-wjI">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="dti-y1-eDF"/>
-                                    <constraint firstAttribute="height" constant="45" id="hJX-ES-fFY"/>
+                                    <constraint firstAttribute="width" constant="200" id="dti-y1-eDF">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="45" id="hJX-ES-fFY">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="dti-y1-eDF"/>
@@ -1047,14 +1119,18 @@ If you don't get it now, you never will</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4E-Ww-DS0">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="w4E-Ww-DS0">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Jg2-pw-gIs"/>
-                                    <constraint firstAttribute="height" constant="45" id="vqQ-SY-bkc"/>
+                                    <constraint firstAttribute="width" constant="200" id="Jg2-pw-gIs">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="45" id="vqQ-SY-bkc">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Jg2-pw-gIs"/>
@@ -1068,14 +1144,18 @@ If you don't get it now, you never will</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92A-MV-aop">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="92A-MV-aop">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="AfJ-wh-QSZ"/>
-                                    <constraint firstAttribute="width" constant="200" id="fol-i7-ITq"/>
+                                    <constraint firstAttribute="height" constant="45" id="AfJ-wh-QSZ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="200" id="fol-i7-ITq">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="AfJ-wh-QSZ"/>
@@ -1218,9 +1298,9 @@ If you don't get it now, you never will</string>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="hjd-jy-1Sf" id="PD3-Sx-cfO"/>
-                        <outlet property="name1TextField" destination="bbq-bg-wjI" id="svZ-r9-iH0"/>
-                        <outlet property="name2TextField" destination="w4E-Ww-DS0" id="XVq-YG-Z4g"/>
-                        <outlet property="name3TextField" destination="92A-MV-aop" id="H3z-Og-XFt"/>
+                        <outletCollection property="nameFields" destination="bbq-bg-wjI" id="q0o-lB-bn5"/>
+                        <outletCollection property="nameFields" destination="w4E-Ww-DS0" id="9Fv-3c-7g5"/>
+                        <outletCollection property="nameFields" destination="92A-MV-aop" id="Ht5-co-EVA"/>
                         <segue destination="8rJ-Kc-sve" kind="show" identifier="PlayGameSegue" id="hN6-9P-9v8"/>
                     </connections>
                 </viewController>
@@ -1229,7 +1309,4 @@ If you don't get it now, you never will</string>
             <point key="canvasLocation" x="1373.25" y="-324"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-    </resources>
 </document>

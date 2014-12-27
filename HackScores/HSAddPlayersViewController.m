@@ -19,9 +19,7 @@
 //Return to HSStatsViewController
 - (IBAction)returnButtonPressed:(id)sender;
 //TextFields containing 3 potential names
-@property (weak, nonatomic) IBOutlet UITextField *name1TextField;
-@property (weak, nonatomic) IBOutlet UITextField *name2TextField;
-@property (weak, nonatomic) IBOutlet UITextField *name3TextField;
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray* nameFields;
 //Label displays error if any name is empty
 @property (weak, nonatomic) IBOutlet CNLabel *descriptionLabel;
 
@@ -37,30 +35,68 @@
 //Useful so that calling viewDidLoad clears
 //any residual changes
 - (void) populateWithInitialValues {
-    [self.name1TextField setText:@""];
-    [self.name2TextField setText:@""];
-    [self.name3TextField setText:@""];
+    for(UITextField* nameField in self.nameFields) {
+        [nameField setText:@""];
+        [nameField setDelegate:self];
+    }
 }
 
 //Button covering entire view for dismissing keyboard on tap
 - (IBAction)backgroundButtonPressed:(id)sender {
-    [self.name1TextField resignFirstResponder];
-    [self.name2TextField resignFirstResponder];
-    [self.name3TextField resignFirstResponder];
+    for(UITextField* nameField in self.nameFields) {
+        [nameField resignFirstResponder];
+    }
+}
+
+//UITextField delegate method - lets return key go from
+//one text field to the next
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    if(textField.returnKeyType==UIReturnKeyNext) {
+        UIView *next = [[textField superview] viewWithTag:textField.tag+1];
+        [next becomeFirstResponder];
+    } else if (textField.returnKeyType==UIReturnKeyDone) {
+        [textField resignFirstResponder];
+    }
+    return YES;
 }
 
 //Continue button press for advancing to HSPlayViewController
 - (IBAction)continueButtonPressed:(id)sender {
+    //Track total length of names (for displaying them on leaderboards,
+    //a cap is needed).
+    int totalNamesLength = 0;
+    //Array of names to check for duplicates
+    NSMutableArray* namesProcessed = [[NSMutableArray alloc] init];
     //Check if any names are empty
-    if([self.name1TextField.text length] < 1 ||
-       [self.name2TextField.text length] < 1 ||
-       [self.name3TextField.text length] < 1)
-        [self.descriptionLabel displayMessage:@"Names can't be left blank."
+    for(UITextField* nameField in self.nameFields) {
+        int nameLength = (int)[nameField.text length];
+        //If name is blank
+        if(nameLength == 0) {
+            [self.descriptionLabel displayMessage:@"Names can't be left blank."
+                                      revertAfter:TRUE
+                                        withColor:[CNLabel errorColor]];
+            return;
+        }
+        if([namesProcessed containsObject:nameField.text]) {
+            [self.descriptionLabel displayMessage:@"One or more of the names is a duplicate."
+                                      revertAfter:TRUE
+                                        withColor:[CNLabel errorColor]];
+            return;
+        }
+        [namesProcessed addObject: nameField.text];
+        totalNamesLength += nameLength;
+    }
+    int maxTotalLength = 21;
+    if(totalNamesLength > maxTotalLength) {
+        [self.descriptionLabel displayMessage:[NSString stringWithFormat:
+                                               @"The combined length of your names"
+                                               "are too long (max %d characters).",
+                                               maxTotalLength]
                                   revertAfter:TRUE
                                     withColor:[CNLabel errorColor]];
-    else {
-        [self performSegueWithIdentifier:@"PlayGameSegue" sender:self];
+        return;
     }
+    [self performSegueWithIdentifier:@"PlayGameSegue" sender:self];
 }
 
 //Return to previous scene
@@ -78,10 +114,10 @@
     if ([[segue identifier] isEqualToString:@"PlayGameSegue"])
     {
         HSPlayViewController *vc = [segue destinationViewController];
-        NSMutableArray* playerNames = [[NSMutableArray alloc] initWithObjects:
-                                       self.name1TextField.text,
-                                       self.name2TextField.text,
-                                       self.name3TextField.text, nil];
+        NSMutableArray* playerNames = [[NSMutableArray alloc] init];
+        for(UITextField* nameField in self.nameFields) {
+            [playerNames addObject: nameField.text];
+        }
         [vc setHackSet: [[HSHackSet alloc] initWithPlayerNames: playerNames]];
     }
 }
