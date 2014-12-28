@@ -12,33 +12,72 @@
 @interface AppDelegate ()
 
 @property NSMutableArray* hackSetData;
+@property NSNumber* hacksPerRound;
+@property NSMutableArray* savedNames;
 
 @end
 
 @implementation AppDelegate
 
-+ (int) HACKS_PER_ROUND {
-    return 5;
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     self.dataSortMode = SortByBestLine;
-    NSString* path = [AppDelegate hackSetDataPath];
+    [self initializeTextFilesIfNeeded];
+    [self setHackSetData: [self readHackSetData]];
+    [self readSettings];
+    
+    return YES;
+}
+
+- (void) initializeTextFilesIfNeeded {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    //Uncomment to clear data
-    //if([fileManager fileExistsAtPath: path]){
-        //NSError* error;
-        //[fileManager removeItemAtPath:path error:&error];
-    //}
-    
     //Create file if it doesn't exist
-    if(![fileManager fileExistsAtPath: path]) {
-        [fileManager createFileAtPath:path contents:nil attributes:nil];
+    if(![fileManager fileExistsAtPath: [AppDelegate hackSetDataPath]]) {
+        [fileManager createFileAtPath:[AppDelegate hackSetDataPath] contents:nil attributes:nil];
     }
-    [self setHackSetData: [self readHackSetData]];
-    return YES;
+    
+    //Write default settings
+    if(![fileManager fileExistsAtPath: [AppDelegate settingsDataPath]]) {
+        [self writeSettingsWithHacksPerRound: [NSNumber numberWithInt: 30]
+                               andSavedNames: [[NSMutableArray alloc] init]];
+    }
+}
+
+//Methods to get data from settings files.
+//Because of small size of file/infrequency of use,
+//should be okay to reread settings in case of changes
+//before access.
+
+- (NSNumber*) getHacksPerRound {
+    [self readSettings];
+    return self.hacksPerRound;
+}
+
+- (NSMutableArray*) getSavedNames {
+    [self readSettings];
+    return self.savedNames;
+}
+
+//Clears the data file
+- (void) clearHackData {
+    NSString* path = [AppDelegate hackSetDataPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if([fileManager fileExistsAtPath: path]){
+        NSError* error;
+        [fileManager removeItemAtPath:path error:&error];
+    }
+}
+
+//Clears the data file
+- (void) clearSettings {
+    NSString* path = [AppDelegate settingsDataPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if([fileManager fileExistsAtPath: path]){
+        NSError* error;
+        [fileManager removeItemAtPath:path error:&error];
+    }
 }
 
 //Returns a path to the hack set data file
@@ -48,6 +87,14 @@
     return [documentsDirectory stringByAppendingPathComponent:@"records.txt"];
 }
 
+//Returns a path to the settings data file
++ (NSString*) settingsDataPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"settings.txt"];
+}
+
+//Gets the hackSetData property, initializing it if it hasn't already been accessed
 - (NSMutableArray*) getHackSetData {
     //SHOULD already be instantiated in didFinishLaunchingWithOptions
     if(!self.hackSetData)
@@ -89,17 +136,60 @@
     return hackSetData;
 }
 
+//Reads the settings text file, initializing self.HacksPerRound and self.savedNames
+- (void) readSettings {
+    NSError* error;
+    //String of entire text file contents
+    NSString* textFileAsString = [NSString stringWithContentsOfFile:[AppDelegate settingsDataPath] encoding:NSUTF8StringEncoding error:&error];
+    //Array of line-by-line contents
+    NSArray* contentsByLine = [textFileAsString componentsSeparatedByCharactersInSet:
+                               [NSCharacterSet newlineCharacterSet]];
+    
+    self.hacksPerRound = [NSNumber numberWithInt: [[contentsByLine[0] stringByReplacingOccurrencesOfString:@"\n" withString:@""] intValue]];
+    
+    NSMutableArray* savedNames = [[NSMutableArray alloc] init];
+    for(int i = 1; i < contentsByLine.count; i++) {
+        NSString* currentLine = [contentsByLine[i] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        if(currentLine.length > 0)
+           [savedNames addObject:currentLine];
+    }
+    self.savedNames = savedNames;
+}
+
+//Writes data to settings file
+- (void) writeSettingsWithHacksPerRound: (NSNumber*) hacksPerRound
+                          andSavedNames: (NSMutableArray*) savedNames {
+    
+    [self clearSettings];
+    [[NSFileManager defaultManager] createFileAtPath:[AppDelegate settingsDataPath] contents:nil attributes:nil];
+    
+    NSString* stringToWrite = [NSString stringWithFormat:@"%d\n", [hacksPerRound intValue]];
+    for(NSString* name in savedNames)
+        stringToWrite = [stringToWrite stringByAppendingString:
+                         [NSString stringWithFormat:@"%@\n",
+                          name]];
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[AppDelegate settingsDataPath]];
+    [fileHandle writeData:[stringToWrite dataUsingEncoding:NSUTF8StringEncoding]];
+    [fileHandle closeFile];
+    
+}
+
+//Publically accessible method: calls mergeSort
+//on hackSetData
 - (void) sortHackSetData {
     self.hackSetData = [self mergeSort:self.hackSetData];
 }
 
+//Merge sort implementation
+//Can work on NSMutableArray of any object type
 -(NSMutableArray *)mergeSort:(NSMutableArray *)unsortedArray
 {
     if ([unsortedArray count] < 2)
     {
         return unsortedArray;
     }
-    int middle = ([unsortedArray count]/2);
+    int middle = (int)([unsortedArray count]/2);
     NSRange left = NSMakeRange(0, middle);
     NSRange right = NSMakeRange(middle, ([unsortedArray count] - middle));
     NSMutableArray *rightArr = [[unsortedArray subarrayWithRange:right] mutableCopy];

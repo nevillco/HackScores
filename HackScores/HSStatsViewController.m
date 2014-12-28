@@ -96,8 +96,10 @@
 
 - (void) populateBestRoundsLeaderboard: (AppDelegate*) delegate {
     //Title text
+    
     [self.bestRoundsLeaderBoard.titleLabel setText:
-     [NSString stringWithFormat: @"Best Rounds (%d hacks)", [AppDelegate HACKS_PER_ROUND]]];
+     [NSString stringWithFormat: @"Best Rounds (%d hacks)",
+      [delegate getHacksPerRound].intValue]];
     
     //Sort by appropriate mode
     [delegate setDataSortMode:SortByBestRound];
@@ -152,6 +154,9 @@
 
 - (IBAction)playNewButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"AddPlayersSegue" sender:self];
+}
+- (IBAction)settingsButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"SettingsSegue" sender:self];
 }
 
 - (IBAction)aboutButtonPressed:(id)sender {

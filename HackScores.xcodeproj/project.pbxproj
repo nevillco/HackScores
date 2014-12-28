@@ -22,6 +22,7 @@
 		2DACD0C81A4E075D00313F41 /* HSAddPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0C71A4E075D00313F41 /* HSAddPlayersViewController.m */; };
 		2DACD0CB1A4E3FA700313F41 /* HSHackSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0CA1A4E3FA700313F41 /* HSHackSetView.m */; };
 		2DACD0CE1A4F601500313F41 /* HSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0CD1A4F601500313F41 /* HSAboutViewController.m */; };
+		2DACD0D11A4FB5FB00313F41 /* HSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		2DACD0CA1A4E3FA700313F41 /* HSHackSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSHackSetView.m; sourceTree = "<group>"; };
 		2DACD0CC1A4F601500313F41 /* HSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAboutViewController.h; sourceTree = "<group>"; };
 		2DACD0CD1A4F601500313F41 /* HSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAboutViewController.m; sourceTree = "<group>"; };
+		2DACD0CF1A4FB5FB00313F41 /* HSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSettingsViewController.h; sourceTree = "<group>"; };
+		2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				2DACD08F1A4B5D0E00313F41 /* HSPlayViewController.h */,
 				2DACD0901A4B5D0E00313F41 /* HSPlayViewController.m */,
 				2DACD0921A4B5D0E00313F41 /* Main.storyboard */,
+				2DACD0CF1A4FB5FB00313F41 /* HSSettingsViewController.h */,
+				2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */,
 				2DACD0CC1A4F601500313F41 /* HSAboutViewController.h */,
 				2DACD0CD1A4F601500313F41 /* HSAboutViewController.m */,
 				2DACD0C61A4E075D00313F41 /* HSAddPlayersViewController.h */,
@@ -268,6 +273,7 @@
 				2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */,
 				2DACD0B01A4B600700313F41 /* HSLeaderBoardView.m in Sources */,
 				2DACD08E1A4B5D0E00313F41 /* HSStatsViewController.m in Sources */,
+				2DACD0D11A4FB5FB00313F41 /* HSSettingsViewController.m in Sources */,
 				2DACD0881A4B5D0E00313F41 /* main.m in Sources */,
 				2DACD0C21A4C94E700313F41 /* CNLabel.m in Sources */,
 				2DACD0CB1A4E3FA700313F41 /* HSHackSetView.m in Sources */,

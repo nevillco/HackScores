@@ -14,10 +14,14 @@
 @property (strong, nonatomic) UIWindow *window;
 @property SortMode dataSortMode;
 
-- (NSMutableArray*) getHackSetData;
 - (void) sortHackSetData;
+- (void) writeSettingsWithHacksPerRound: (NSNumber*) hacksPerRound
+                          andSavedNames: (NSMutableArray*) savedNames;
 
-+ (int) HACKS_PER_ROUND;
+- (NSMutableArray*) getHackSetData;
+- (NSNumber*) getHacksPerRound;
+- (NSMutableArray*) getSavedNames;
+
 + (NSString*) hackSetDataPath;
 
 @end

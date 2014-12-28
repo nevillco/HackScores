@@ -66,6 +66,8 @@
 
 //Get 3 round scores from (attempts per round * 3) attempts
 - (NSMutableArray*) getRoundScores {
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    int hacksPerRound = [delegate getHacksPerRound].intValue;
     if(self.roundScores != nil)
         return self.roundScores;
     NSMutableArray* roundScores = [[NSMutableArray alloc] init];
@@ -74,8 +76,8 @@
         int roundScore = 0;
         //For each (variable) number of hacks per round,
         //add to count
-        for(int j = 0; j < [AppDelegate HACKS_PER_ROUND]; j++) {
-            int currentIndex = ([AppDelegate HACKS_PER_ROUND] * i) + j;
+        for(int j = 0; j < hacksPerRound; j++) {
+            int currentIndex = (hacksPerRound * i) + j;
             roundScore += [[self.attempts objectAtIndex:currentIndex] intValue];
         }
         [roundScores addObject: [NSNumber numberWithInt: roundScore]];

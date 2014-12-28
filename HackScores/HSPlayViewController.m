@@ -78,6 +78,7 @@
 }
 
 - (IBAction)addAttempt:(id)sender {
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     //Value of current attempt
     int attemptValue = [self.attemptScoreLabel.text intValue];
     //Add attempt to HSHackSet object
@@ -86,7 +87,7 @@
     [self.pointsLabel addIntToText:attemptValue revertAfter:FALSE];
     int hacks = [self.hackLabelBig.text intValue];
     //If round is over, start new round
-    if(hacks == [AppDelegate HACKS_PER_ROUND])
+    if(hacks == [delegate getHacksPerRound].intValue)
         [self startNewRound];
     else {
         //Increment both round labels
