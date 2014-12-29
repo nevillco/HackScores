@@ -10,6 +10,7 @@
 #import "HSAddPlayersViewController.h"
 #import "HSPlayViewController.h"
 #import "CNLabel.h"
+#import "AppDelegate.h"
 
 @interface HSAddPlayersViewController ()
 //Button covering entire view for dismissing keyboard on tap
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray* nameFields;
 //Label displays error if any name is empty
 @property (weak, nonatomic) IBOutlet CNLabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *savedPlayersLabel;
 
 @end
 
@@ -39,6 +41,7 @@
         [nameField setText:@""];
         [nameField setDelegate:self];
     }
+    [self createSavedNameButtons];
 }
 
 //Button covering entire view for dismissing keyboard on tap
@@ -99,12 +102,124 @@
     [self performSegueWithIdentifier:@"PlayGameSegue" sender:self];
 }
 
+//Creates UIButtons for each saved name stores in AppDelegate
+- (void) createSavedNameButtons {
+    //Necessary to use savedPlayersLabel in constraints
+    [self.view addSubview:self.savedPlayersLabel];
+    //Get saved names
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSMutableArray* savedNames =[delegate getSavedNames];
+    //Store all buttons in temporary array to
+    //reference one another in constraints
+    NSMutableArray* buttons = [[NSMutableArray alloc] init];
+    //Constants used in loop
+    int buttonsPerColumn = 4;
+    int spacing = 10;
+    for(int i = 0; i < savedNames.count; i++) {
+        //Button appearance
+        UIButton* currentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [currentButton setTitle:savedNames[i] forState:UIControlStateNormal];
+        [currentButton setTitleColor:[UIColor colorWithRed:200.0f/255.0f
+                                                     green:50.0f/255.0f
+                                                      blue:50.0f/255.0f
+                                                     alpha:1.0f]
+                            forState:UIControlStateNormal];
+        [currentButton.titleLabel setFont:[UIFont fontWithName:@"DIN Condensed" size:42.0f]];
+        [currentButton.titleLabel setTextColor:[UIColor whiteColor]];
+        [currentButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        //Add button to view and to array
+        [self.view addSubview:currentButton];
+        [buttons addObject: currentButton];
+        //Add button action
+        [currentButton addTarget:self
+                   action:@selector(savedNameButtonPressed:)
+         forControlEvents:UIControlEventTouchUpInside];
+        
+        //Constraints
+        currentButton.translatesAutoresizingMaskIntoConstraints = NO;
+        //Fixed width (for gridlike display)
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                         attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:nil
+                                                         attribute:NSLayoutAttributeNotAnAttribute 
+                                                        multiplier:1.0 
+                                                          constant:250]];
+        //Vertical position
+        if(i % buttonsPerColumn == 0) {
+            //If button is first in column, vertical position
+            //is based on above label
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                             attribute:NSLayoutAttributeTop
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.savedPlayersLabel
+                                                             attribute:NSLayoutAttributeBottom
+                                                            multiplier:1.0
+                                                              constant:spacing]];
+        }
+        else {
+            //Otherwise, vertical position is based on
+            //previously created UIButton
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                                  attribute:NSLayoutAttributeTop
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:buttons[i - 1]
+                                                                  attribute:NSLayoutAttributeBottom
+                                                                 multiplier:1.0
+                                                                   constant:spacing]];
+            
+        }
+        //Horizontal position
+        if(i < buttonsPerColumn) {
+            //If button is in first column, horizontal
+            //position is based on view left bound
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeLeadingMargin
+                                                                 multiplier:1.0
+                                                                   constant:0]];
+        }
+        else {
+            //Otherwise, horizontal position is based
+            //on button from previous column
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:buttons[i - buttonsPerColumn]
+                                                                  attribute:NSLayoutAttributeTrailing
+                                                                 multiplier:1.0
+                                                                   constant:spacing]];
+        }
+    }
+}
+
 //Return to previous scene
 //No need to reload stats because game wasn't played
 - (IBAction)returnButtonPressed:(id)sender {
     HSStatsViewController* previous = (HSStatsViewController*)self.presentingViewController;
     [previous viewDidLoad];
     [previous dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+//Returns the textfield that should be populated with
+//a saved name. Should be the first blank one -
+//if none are blank, return the last one
+- (UITextField*) nextTextFieldToPopulate {
+    int i;
+    for(i = 0; i < self.nameFields.count; i++) {
+        UITextField* currentTextField = self.nameFields[i];
+        if([currentTextField.text length] == 0)
+            return currentTextField;
+    }
+    return self.nameFields[i - 1];
+}
+
+- (IBAction)savedNameButtonPressed:(id)sender {
+    NSString* namePressed = [((UIButton*)sender).titleLabel text];
+    UITextField* fieldToPopulate = [self nextTextFieldToPopulate];
+    [fieldToPopulate setText: namePressed];
 }
 
 //If game is ready to be played, populate target HSPlayViewController

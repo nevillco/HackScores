@@ -307,7 +307,7 @@ by Connor Neville</string>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5s-id-Csq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="100"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="124"/>
                                 <state key="normal" title="PLAY NEW">
                                     <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -409,7 +409,7 @@ by Connor Neville</string>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLf-in-Xjv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
                                 <state key="normal" title="SETTINGS">
                                     <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +420,7 @@ by Connor Neville</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-b3-Ce8">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
                                 <state key="normal" title="ABOUT">
                                     <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1241,6 +1241,19 @@ by Connor Neville</string>
                                     <action selector="returnButtonPressed:" destination="sQM-4b-0Fg" eventType="touchUpInside" id="r0z-0t-jdo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cf-cG-u6M">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <string key="text">You can set a list of reusable names for easy access by going to "Settings" from the home page. Click on any of the names to automatically add them.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVED PLAYERS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mH-BZ-abG">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
@@ -1257,12 +1270,24 @@ by Connor Neville</string>
                             <constraint firstItem="9ux-rq-rPF" firstAttribute="leading" secondItem="0HB-Ek-PHk" secondAttribute="leadingMargin" id="Ene-cL-q2b"/>
                             <constraint firstItem="hjd-jy-1Sf" firstAttribute="leading" secondItem="0HB-Ek-PHk" secondAttribute="leadingMargin" id="Erx-2M-k78"/>
                             <constraint firstAttribute="centerX" secondItem="hiH-H2-a3Z" secondAttribute="centerX" id="H2s-WE-Axq"/>
+                            <constraint firstItem="7Cf-cG-u6M" firstAttribute="top" secondItem="1mH-BZ-abG" secondAttribute="bottom" constant="8" id="Ifr-VH-H4o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Cf-cG-u6M" secondAttribute="trailing" constant="726" id="Jq4-RE-7Bm">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="w4E-Ww-DS0" secondAttribute="centerX" constant="75" id="KhP-uS-XEP">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="HwJ-u0-Nm1" firstAttribute="width" secondItem="0HB-Ek-PHk" secondAttribute="width" id="NTa-5W-ezN"/>
+                            <constraint firstItem="HwJ-u0-Nm1" firstAttribute="leading" secondItem="1mH-BZ-abG" secondAttribute="trailing" constant="-221" id="QPy-lu-7LH"/>
+                            <constraint firstItem="7Cf-cG-u6M" firstAttribute="leading" secondItem="0HB-Ek-PHk" secondAttribute="leadingMargin" id="YYX-4i-pVv"/>
+                            <constraint firstItem="1mH-BZ-abG" firstAttribute="leading" secondItem="0HB-Ek-PHk" secondAttribute="leadingMargin" constant="5" id="ZoO-FO-5KH">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="9ux-rq-rPF" firstAttribute="top" secondItem="8Qc-UO-gX7" secondAttribute="bottom" id="Zwz-Uc-fHh"/>
                             <constraint firstAttribute="centerX" secondItem="HwJ-u0-Nm1" secondAttribute="centerX" id="bER-Ov-p0g"/>
+                            <constraint firstItem="1mH-BZ-abG" firstAttribute="top" secondItem="hiH-H2-a3Z" secondAttribute="bottom" constant="3" id="fpX-Vh-mZb">
+                                <variation key="heightClass=regular-widthClass=regular" constant="8"/>
+                            </constraint>
                             <constraint firstItem="bbq-bg-wjI" firstAttribute="top" secondItem="hjd-jy-1Sf" secondAttribute="bottom" constant="27" id="hZS-UH-y8P">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
@@ -1291,26 +1316,34 @@ by Connor Neville</string>
                                 <exclude reference="92A-MV-aop"/>
                                 <exclude reference="hiH-H2-a3Z"/>
                                 <exclude reference="Iyt-dX-oBW"/>
+                                <exclude reference="7Cf-cG-u6M"/>
+                                <exclude reference="1mH-BZ-abG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DsO-GG-Sfn"/>
-                                <exclude reference="jIg-wy-sZx"/>
-                                <exclude reference="Ene-cL-q2b"/>
-                                <exclude reference="Zwz-Uc-fHh"/>
-                                <exclude reference="hZS-UH-y8P"/>
-                                <exclude reference="vEr-ZI-D1q"/>
-                                <exclude reference="Erx-2M-k78"/>
-                                <exclude reference="o7t-vS-gGu"/>
-                                <exclude reference="95t-Wr-kUx"/>
-                                <exclude reference="KhP-uS-XEP"/>
                                 <exclude reference="82W-IB-AXB"/>
                                 <exclude reference="NTa-5W-ezN"/>
+                                <exclude reference="QPy-lu-7LH"/>
                                 <exclude reference="bER-Ov-p0g"/>
                                 <exclude reference="sSI-8v-eUK"/>
-                                <exclude reference="m1p-hE-rz9"/>
-                                <exclude reference="sHh-h7-dvn"/>
+                                <exclude reference="Ene-cL-q2b"/>
+                                <exclude reference="Zwz-Uc-fHh"/>
+                                <exclude reference="Erx-2M-k78"/>
+                                <exclude reference="o7t-vS-gGu"/>
+                                <exclude reference="hZS-UH-y8P"/>
+                                <exclude reference="vEr-ZI-D1q"/>
+                                <exclude reference="95t-Wr-kUx"/>
+                                <exclude reference="KhP-uS-XEP"/>
+                                <exclude reference="DsO-GG-Sfn"/>
+                                <exclude reference="jIg-wy-sZx"/>
+                                <exclude reference="ZoO-FO-5KH"/>
+                                <exclude reference="fpX-Vh-mZb"/>
+                                <exclude reference="Ifr-VH-H4o"/>
+                                <exclude reference="Jq4-RE-7Bm"/>
+                                <exclude reference="YYX-4i-pVv"/>
                                 <exclude reference="4l5-Qf-V29"/>
                                 <exclude reference="H2s-WE-Axq"/>
+                                <exclude reference="m1p-hE-rz9"/>
+                                <exclude reference="sHh-h7-dvn"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1323,31 +1356,40 @@ by Connor Neville</string>
                                 <include reference="92A-MV-aop"/>
                                 <include reference="hiH-H2-a3Z"/>
                                 <include reference="Iyt-dX-oBW"/>
+                                <include reference="7Cf-cG-u6M"/>
+                                <include reference="1mH-BZ-abG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DsO-GG-Sfn"/>
-                                <include reference="jIg-wy-sZx"/>
-                                <include reference="Ene-cL-q2b"/>
-                                <include reference="Zwz-Uc-fHh"/>
-                                <include reference="hZS-UH-y8P"/>
-                                <include reference="vEr-ZI-D1q"/>
-                                <include reference="Erx-2M-k78"/>
-                                <include reference="o7t-vS-gGu"/>
-                                <include reference="95t-Wr-kUx"/>
-                                <include reference="KhP-uS-XEP"/>
                                 <include reference="82W-IB-AXB"/>
                                 <include reference="NTa-5W-ezN"/>
+                                <exclude reference="QPy-lu-7LH"/>
                                 <include reference="bER-Ov-p0g"/>
                                 <include reference="sSI-8v-eUK"/>
-                                <include reference="m1p-hE-rz9"/>
-                                <include reference="sHh-h7-dvn"/>
+                                <include reference="Ene-cL-q2b"/>
+                                <include reference="Zwz-Uc-fHh"/>
+                                <include reference="Erx-2M-k78"/>
+                                <include reference="o7t-vS-gGu"/>
+                                <include reference="hZS-UH-y8P"/>
+                                <include reference="vEr-ZI-D1q"/>
+                                <include reference="95t-Wr-kUx"/>
+                                <include reference="KhP-uS-XEP"/>
+                                <include reference="DsO-GG-Sfn"/>
+                                <include reference="jIg-wy-sZx"/>
+                                <include reference="ZoO-FO-5KH"/>
+                                <include reference="fpX-Vh-mZb"/>
+                                <include reference="Ifr-VH-H4o"/>
+                                <include reference="Jq4-RE-7Bm"/>
+                                <include reference="YYX-4i-pVv"/>
                                 <include reference="4l5-Qf-V29"/>
                                 <include reference="H2s-WE-Axq"/>
+                                <include reference="m1p-hE-rz9"/>
+                                <include reference="sHh-h7-dvn"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="hjd-jy-1Sf" id="PD3-Sx-cfO"/>
+                        <outlet property="savedPlayersLabel" destination="7Cf-cG-u6M" id="S7p-Gx-BJ9"/>
                         <outletCollection property="nameFields" destination="bbq-bg-wjI" id="q0o-lB-bn5"/>
                         <outletCollection property="nameFields" destination="w4E-Ww-DS0" id="9Fv-3c-7g5"/>
                         <outletCollection property="nameFields" destination="92A-MV-aop" id="Ht5-co-EVA"/>
@@ -1399,7 +1441,7 @@ by Connor Neville</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-lX-LTa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-lX-LTa">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="LEP-Eh-vQe">
@@ -1422,7 +1464,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oPQ-1e-vSJ">
+                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oPQ-1e-vSJ">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Ipq-E9-LyB">
@@ -1445,7 +1487,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-QJ-bkX">
+                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-QJ-bkX">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AN2-0V-96z"/>
@@ -1468,7 +1510,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rat-kR-gI8">
+                            <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Rat-kR-gI8">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="XaR-mv-w5F">
@@ -1491,7 +1533,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="O9t-Oh-gE4">
+                            <textField opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="O9t-Oh-gE4">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="5Dq-5H-cCb"/>
@@ -1514,7 +1556,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JKa-8f-ee6">
+                            <textField opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JKa-8f-ee6">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="dRw-oW-JZM">
@@ -1537,7 +1579,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lRK-xB-ELj">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lRK-xB-ELj">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="8Td-1Q-vtF">
@@ -1560,7 +1602,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dlb-Gv-Md6">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dlb-Gv-Md6">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="5qV-TK-ygq"/>
@@ -1583,7 +1625,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-8D-1y1">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-8D-1y1">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="V6f-rr-AhB"/>
@@ -1606,7 +1648,7 @@ by Connor Neville</string>
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mb8-9d-Fwj">
+                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="mb8-9d-Fwj">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="s0h-vD-h7g"/>

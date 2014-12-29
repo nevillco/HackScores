@@ -37,6 +37,8 @@
     [super viewDidLoad];
     
     //Will need delegate object for hackSetData
+    //(can't just reference hackSetData because
+    //delegate repeatedly sorts it)
     AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     [self populateBestLinesLeaderboard:delegate];
     [self populateBestHacksLeaderboard:delegate];
