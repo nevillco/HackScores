@@ -73,7 +73,7 @@ static const int DEFAULT_ANIM_DELAY = 3;
                      completion:nil];
     if(revertAfter)
         [NSTimer scheduledTimerWithTimeInterval: self.animationDelay target:self
-            selector:@selector(resetText:) userInfo:previousColor repeats:NO];
+                                       selector:@selector(resetText:) userInfo:previousColor repeats:NO];
 }
 
 //Display a (temporary or permanent) message without a new color
@@ -92,7 +92,7 @@ static const int DEFAULT_ANIM_DELAY = 3;
                      completion:nil];
     if(revertAfter)
         [NSTimer scheduledTimerWithTimeInterval: self.animationDelay target:self
-            selector:@selector(resetText:) userInfo:nil repeats:NO];
+                                       selector:@selector(resetText:) userInfo:nil repeats:NO];
 }
 
 //Reset text called after a temporary message is displayed
@@ -103,7 +103,8 @@ static const int DEFAULT_ANIM_DELAY = 3;
     self.alpha = 0;
     //Label content/color change
     self.text = self.persistentText;
-    [self setTextColor: [timer userInfo]];
+    if([timer userInfo])
+        [self setTextColor: [timer userInfo]];
     //Label animation
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
                      animations:^{ self.alpha = 1;}

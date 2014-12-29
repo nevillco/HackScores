@@ -216,6 +216,7 @@
     return self.nameFields[i - 1];
 }
 
+//Action shared by all buttons generated for saved names
 - (IBAction)savedNameButtonPressed:(id)sender {
     NSString* namePressed = [((UIButton*)sender).titleLabel text];
     UITextField* fieldToPopulate = [self nextTextFieldToPopulate];

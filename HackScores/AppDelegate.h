@@ -21,6 +21,8 @@
 - (NSMutableArray*) getHackSetData;
 - (NSNumber*) getHacksPerRound;
 - (NSMutableArray*) getSavedNames;
+- (void) clearHackData;
+- (void) initializeTextFilesIfNeeded;
 
 + (NSString*) hackSetDataPath;
 

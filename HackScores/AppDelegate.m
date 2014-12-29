@@ -197,6 +197,7 @@
     return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]];
 }
 
+//Merge function called by mergeSort
 -(NSMutableArray *)merge:(NSMutableArray *)leftArr andRight:(NSMutableArray *)rightArr
 {
     NSMutableArray *result = [[NSMutableArray alloc]init];

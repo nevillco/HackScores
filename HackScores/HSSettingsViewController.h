@@ -1,5 +1,5 @@
 //
-//  HSSettingsViewController.h
+//  HSSettingsViewController.h - view controller for settings page
 //  HackScores
 //
 //  Created by Connor Neville on 12/27/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HSSettingsViewController : UIViewController
+@interface HSSettingsViewController : UIViewController <UITextFieldDelegate>
 
 @end
