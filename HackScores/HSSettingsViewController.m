@@ -30,6 +30,7 @@
     for(UITextField* field in self.savedNameFields) {
         [field setDelegate:self];
     }
+    [self.numberOfHacksField setDelegate: self];
 }
 
 //Populate text fields with prior settings
