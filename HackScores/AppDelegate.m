@@ -21,9 +21,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //Error handling
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
     self.dataSortMode = SortByBestLine;
     [self initializeTextFilesIfNeeded];
     [self setHackSetData: [self readHackSetData]];
@@ -70,6 +67,8 @@
         NSError* error;
         [fileManager removeItemAtPath:path error:&error];
     }
+    //Also reset the array
+    self.hackSetData = [[NSMutableArray alloc] init];
 }
 
 //Clears the data file
@@ -226,13 +225,6 @@
     NSArray *newLeft = [leftArr subarrayWithRange:leftRange];
     newLeft = [result arrayByAddingObjectsFromArray:newLeft];
     return [[newLeft arrayByAddingObjectsFromArray:newRight] mutableCopy];
-}
-
-//To symbolicate errors
-void uncaughtExceptionHandler(NSException *exception) {
-    NSLog(@"CRASH: %@", exception);
-    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
-    // Internal error reporting
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

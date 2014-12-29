@@ -8,6 +8,7 @@
 
 #import "HSResultsViewController.h"
 #import "HSPlayViewController.h"
+#import "HSStatsViewController.h"
 #import "HSHackSet.h"
 
 @interface HSResultsViewController ()
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *setScoreLabel;
 
 - (IBAction)returnButtonPressed:(id)sender;
+- (IBAction)returnHomeButtonPressed:(id)sender;
 
 @end
 
@@ -41,5 +43,13 @@
     HSPlayViewController* previousView = (HSPlayViewController*) self.presentingViewController;
     [previousView refreshRetainingSetNumber];
     [previousView dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+//Return all the way to stats view controller,
+//reloading it in the process
+- (IBAction)returnHomeButtonPressed:(id)sender {
+    HSStatsViewController* rootView = (HSStatsViewController*) self.view.window.rootViewController;
+    [rootView viewDidLoad];
+    [rootView dismissViewControllerAnimated:TRUE completion:nil];
 }
 @end

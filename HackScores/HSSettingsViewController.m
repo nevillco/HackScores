@@ -91,7 +91,8 @@
     //Write settings to text file and display message
     [delegate writeSettingsWithHacksPerRound:[NSNumber numberWithInt:numberOfHacks]
                                andSavedNames:savedNamesArray];
-    [self.savedNamesLabel displayMessage:@"Your settings have been saved." revertAfter:TRUE];
+    //Use return segue to go back
+    [self returnButtonPressed: nil];
 }
 
 //UITextField delegate method - lets return key go from
@@ -102,6 +103,24 @@
         [next becomeFirstResponder];
     } else if (textField.returnKeyType==UIReturnKeyDone) {
         [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+//UITextField delegate method - requires numbers-only input
+//for numberOfHacksField
+#define ACCEPTABLE_CHARECTERS @"0123456789"
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:
+        (NSRange)range replacementString:(NSString *)string  {
+    if (textField==self.numberOfHacksField)
+    {
+        NSCharacterSet *cs =
+        [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARECTERS] invertedSet];
+        
+        NSString *filtered =
+        [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+        
+        return [string isEqualToString:filtered];
     }
     return YES;
 }
