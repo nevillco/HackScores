@@ -1320,30 +1320,30 @@ by Connor Neville</string>
                                 <exclude reference="1mH-BZ-abG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="82W-IB-AXB"/>
-                                <exclude reference="NTa-5W-ezN"/>
-                                <exclude reference="QPy-lu-7LH"/>
-                                <exclude reference="bER-Ov-p0g"/>
-                                <exclude reference="sSI-8v-eUK"/>
-                                <exclude reference="Ene-cL-q2b"/>
-                                <exclude reference="Zwz-Uc-fHh"/>
-                                <exclude reference="Erx-2M-k78"/>
-                                <exclude reference="o7t-vS-gGu"/>
-                                <exclude reference="hZS-UH-y8P"/>
-                                <exclude reference="vEr-ZI-D1q"/>
-                                <exclude reference="95t-Wr-kUx"/>
-                                <exclude reference="KhP-uS-XEP"/>
-                                <exclude reference="DsO-GG-Sfn"/>
-                                <exclude reference="jIg-wy-sZx"/>
                                 <exclude reference="ZoO-FO-5KH"/>
                                 <exclude reference="fpX-Vh-mZb"/>
                                 <exclude reference="Ifr-VH-H4o"/>
                                 <exclude reference="Jq4-RE-7Bm"/>
                                 <exclude reference="YYX-4i-pVv"/>
-                                <exclude reference="4l5-Qf-V29"/>
-                                <exclude reference="H2s-WE-Axq"/>
+                                <exclude reference="DsO-GG-Sfn"/>
+                                <exclude reference="jIg-wy-sZx"/>
+                                <exclude reference="Ene-cL-q2b"/>
+                                <exclude reference="Zwz-Uc-fHh"/>
+                                <exclude reference="hZS-UH-y8P"/>
+                                <exclude reference="vEr-ZI-D1q"/>
+                                <exclude reference="Erx-2M-k78"/>
+                                <exclude reference="o7t-vS-gGu"/>
+                                <exclude reference="95t-Wr-kUx"/>
+                                <exclude reference="KhP-uS-XEP"/>
+                                <exclude reference="82W-IB-AXB"/>
+                                <exclude reference="NTa-5W-ezN"/>
+                                <exclude reference="QPy-lu-7LH"/>
+                                <exclude reference="bER-Ov-p0g"/>
+                                <exclude reference="sSI-8v-eUK"/>
                                 <exclude reference="m1p-hE-rz9"/>
                                 <exclude reference="sHh-h7-dvn"/>
+                                <exclude reference="4l5-Qf-V29"/>
+                                <exclude reference="H2s-WE-Axq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1360,30 +1360,30 @@ by Connor Neville</string>
                                 <include reference="1mH-BZ-abG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="82W-IB-AXB"/>
-                                <include reference="NTa-5W-ezN"/>
-                                <exclude reference="QPy-lu-7LH"/>
-                                <include reference="bER-Ov-p0g"/>
-                                <include reference="sSI-8v-eUK"/>
-                                <include reference="Ene-cL-q2b"/>
-                                <include reference="Zwz-Uc-fHh"/>
-                                <include reference="Erx-2M-k78"/>
-                                <include reference="o7t-vS-gGu"/>
-                                <include reference="hZS-UH-y8P"/>
-                                <include reference="vEr-ZI-D1q"/>
-                                <include reference="95t-Wr-kUx"/>
-                                <include reference="KhP-uS-XEP"/>
-                                <include reference="DsO-GG-Sfn"/>
-                                <include reference="jIg-wy-sZx"/>
                                 <include reference="ZoO-FO-5KH"/>
                                 <include reference="fpX-Vh-mZb"/>
                                 <include reference="Ifr-VH-H4o"/>
                                 <include reference="Jq4-RE-7Bm"/>
                                 <include reference="YYX-4i-pVv"/>
-                                <include reference="4l5-Qf-V29"/>
-                                <include reference="H2s-WE-Axq"/>
+                                <include reference="DsO-GG-Sfn"/>
+                                <include reference="jIg-wy-sZx"/>
+                                <include reference="Ene-cL-q2b"/>
+                                <include reference="Zwz-Uc-fHh"/>
+                                <include reference="hZS-UH-y8P"/>
+                                <include reference="vEr-ZI-D1q"/>
+                                <include reference="Erx-2M-k78"/>
+                                <include reference="o7t-vS-gGu"/>
+                                <include reference="95t-Wr-kUx"/>
+                                <include reference="KhP-uS-XEP"/>
+                                <include reference="82W-IB-AXB"/>
+                                <include reference="NTa-5W-ezN"/>
+                                <exclude reference="QPy-lu-7LH"/>
+                                <include reference="bER-Ov-p0g"/>
+                                <include reference="sSI-8v-eUK"/>
                                 <include reference="m1p-hE-rz9"/>
                                 <include reference="sHh-h7-dvn"/>
+                                <include reference="4l5-Qf-V29"/>
+                                <include reference="H2s-WE-Axq"/>
                             </mask>
                         </variation>
                     </view>
@@ -1499,14 +1499,14 @@ by Connor Neville</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Dl1-pe-6rr"/>
                                         <exclude reference="AN2-0V-96z"/>
+                                        <exclude reference="Dl1-pe-6rr"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="Dl1-pe-6rr"/>
                                         <include reference="AN2-0V-96z"/>
+                                        <include reference="Dl1-pe-6rr"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1545,14 +1545,14 @@ by Connor Neville</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="91L-nE-kVt"/>
                                         <exclude reference="5Dq-5H-cCb"/>
+                                        <exclude reference="91L-nE-kVt"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="91L-nE-kVt"/>
                                         <include reference="5Dq-5H-cCb"/>
+                                        <include reference="91L-nE-kVt"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1614,14 +1614,14 @@ by Connor Neville</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="uZE-zC-3A7"/>
                                         <exclude reference="5qV-TK-ygq"/>
+                                        <exclude reference="uZE-zC-3A7"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="uZE-zC-3A7"/>
                                         <include reference="5qV-TK-ygq"/>
+                                        <include reference="uZE-zC-3A7"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1637,14 +1637,14 @@ by Connor Neville</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="pnx-I7-Yaj"/>
                                         <exclude reference="V6f-rr-AhB"/>
+                                        <exclude reference="pnx-I7-Yaj"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="pnx-I7-Yaj"/>
                                         <include reference="V6f-rr-AhB"/>
+                                        <include reference="pnx-I7-Yaj"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1660,14 +1660,14 @@ by Connor Neville</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="wbf-DP-v1B"/>
                                         <exclude reference="s0h-vD-h7g"/>
+                                        <exclude reference="wbf-DP-v1B"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="wbf-DP-v1B"/>
                                         <include reference="s0h-vD-h7g"/>
+                                        <include reference="wbf-DP-v1B"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1677,7 +1677,7 @@ by Connor Neville</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-8b-Tun">
+                            <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-8b-Tun">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="aTt-YX-f7J"/>
@@ -1803,39 +1803,39 @@ by Connor Neville</string>
                                 <exclude reference="Srr-eY-opM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Oz7-vK-KvH"/>
-                                <exclude reference="us7-V2-sIz"/>
                                 <exclude reference="AJM-k4-YjI"/>
                                 <exclude reference="jdw-Qr-tnF"/>
-                                <exclude reference="AyF-HB-czc"/>
-                                <exclude reference="aMf-7U-Vsx"/>
-                                <exclude reference="eSE-Av-rfD"/>
-                                <exclude reference="qPg-lw-vz7"/>
-                                <exclude reference="sNc-Qa-mip"/>
-                                <exclude reference="2xC-B5-nE1"/>
-                                <exclude reference="dT6-XM-bB4"/>
+                                <exclude reference="AQ5-pv-K8F"/>
+                                <exclude reference="Kld-Hv-Hua"/>
+                                <exclude reference="Ban-fF-y0u"/>
+                                <exclude reference="Z0l-Q5-xQj"/>
+                                <exclude reference="aMj-5g-HuU"/>
+                                <exclude reference="7aM-cI-1yU"/>
+                                <exclude reference="QBm-tg-oeV"/>
+                                <exclude reference="Oz7-vK-KvH"/>
+                                <exclude reference="us7-V2-sIz"/>
+                                <exclude reference="Ale-13-pDc"/>
+                                <exclude reference="J2Z-mX-SNe"/>
+                                <exclude reference="UaX-HD-xxA"/>
                                 <exclude reference="e54-Z2-3X7"/>
                                 <exclude reference="wTf-O8-0Mm"/>
                                 <exclude reference="0DL-lA-hjf"/>
                                 <exclude reference="TG0-nU-cE1"/>
                                 <exclude reference="WXP-rY-T00"/>
-                                <exclude reference="gUL-44-tM9"/>
-                                <exclude reference="v6P-fl-Yfj"/>
+                                <exclude reference="2xC-B5-nE1"/>
+                                <exclude reference="dT6-XM-bB4"/>
+                                <exclude reference="AyF-HB-czc"/>
+                                <exclude reference="aMf-7U-Vsx"/>
+                                <exclude reference="eSE-Av-rfD"/>
                                 <exclude reference="MhK-RQ-9ub"/>
-                                <exclude reference="Ban-fF-y0u"/>
-                                <exclude reference="Z0l-Q5-xQj"/>
-                                <exclude reference="aMj-5g-HuU"/>
-                                <exclude reference="ydd-bZ-Cs1"/>
                                 <exclude reference="cDf-sm-Opb"/>
                                 <exclude reference="hlZ-0x-OJR"/>
                                 <exclude reference="sHg-HL-DdP"/>
-                                <exclude reference="UaX-HD-xxA"/>
-                                <exclude reference="Ale-13-pDc"/>
-                                <exclude reference="J2Z-mX-SNe"/>
-                                <exclude reference="7aM-cI-1yU"/>
-                                <exclude reference="QBm-tg-oeV"/>
-                                <exclude reference="AQ5-pv-K8F"/>
-                                <exclude reference="Kld-Hv-Hua"/>
+                                <exclude reference="gUL-44-tM9"/>
+                                <exclude reference="v6P-fl-Yfj"/>
+                                <exclude reference="ydd-bZ-Cs1"/>
+                                <exclude reference="qPg-lw-vz7"/>
+                                <exclude reference="sNc-Qa-mip"/>
                                 <exclude reference="3Fi-UL-YjI"/>
                                 <exclude reference="3l1-eX-NWd"/>
                                 <exclude reference="wzw-uT-aTl"/>
@@ -1865,39 +1865,39 @@ by Connor Neville</string>
                                 <include reference="Srr-eY-opM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Oz7-vK-KvH"/>
-                                <include reference="us7-V2-sIz"/>
                                 <include reference="AJM-k4-YjI"/>
                                 <include reference="jdw-Qr-tnF"/>
-                                <include reference="AyF-HB-czc"/>
-                                <include reference="aMf-7U-Vsx"/>
-                                <include reference="eSE-Av-rfD"/>
-                                <include reference="qPg-lw-vz7"/>
-                                <include reference="sNc-Qa-mip"/>
-                                <include reference="2xC-B5-nE1"/>
-                                <include reference="dT6-XM-bB4"/>
+                                <include reference="AQ5-pv-K8F"/>
+                                <include reference="Kld-Hv-Hua"/>
+                                <include reference="Ban-fF-y0u"/>
+                                <include reference="Z0l-Q5-xQj"/>
+                                <include reference="aMj-5g-HuU"/>
+                                <include reference="7aM-cI-1yU"/>
+                                <include reference="QBm-tg-oeV"/>
+                                <include reference="Oz7-vK-KvH"/>
+                                <include reference="us7-V2-sIz"/>
+                                <include reference="Ale-13-pDc"/>
+                                <include reference="J2Z-mX-SNe"/>
+                                <include reference="UaX-HD-xxA"/>
                                 <include reference="e54-Z2-3X7"/>
                                 <include reference="wTf-O8-0Mm"/>
                                 <include reference="0DL-lA-hjf"/>
                                 <include reference="TG0-nU-cE1"/>
                                 <include reference="WXP-rY-T00"/>
-                                <include reference="gUL-44-tM9"/>
-                                <include reference="v6P-fl-Yfj"/>
+                                <include reference="2xC-B5-nE1"/>
+                                <include reference="dT6-XM-bB4"/>
+                                <include reference="AyF-HB-czc"/>
+                                <include reference="aMf-7U-Vsx"/>
+                                <include reference="eSE-Av-rfD"/>
                                 <include reference="MhK-RQ-9ub"/>
-                                <include reference="Ban-fF-y0u"/>
-                                <include reference="Z0l-Q5-xQj"/>
-                                <include reference="aMj-5g-HuU"/>
-                                <include reference="ydd-bZ-Cs1"/>
                                 <include reference="cDf-sm-Opb"/>
                                 <include reference="hlZ-0x-OJR"/>
                                 <include reference="sHg-HL-DdP"/>
-                                <include reference="UaX-HD-xxA"/>
-                                <include reference="Ale-13-pDc"/>
-                                <include reference="J2Z-mX-SNe"/>
-                                <include reference="7aM-cI-1yU"/>
-                                <include reference="QBm-tg-oeV"/>
-                                <include reference="AQ5-pv-K8F"/>
-                                <include reference="Kld-Hv-Hua"/>
+                                <include reference="gUL-44-tM9"/>
+                                <include reference="v6P-fl-Yfj"/>
+                                <include reference="ydd-bZ-Cs1"/>
+                                <include reference="qPg-lw-vz7"/>
+                                <include reference="sNc-Qa-mip"/>
                                 <include reference="3Fi-UL-YjI"/>
                                 <exclude reference="3l1-eX-NWd"/>
                                 <include reference="wzw-uT-aTl"/>
