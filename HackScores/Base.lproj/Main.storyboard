@@ -1712,7 +1712,7 @@ by Connor Neville</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveNamesButtonPressed:" destination="mnG-fr-SIV" eventType="touchUpInside" id="5zv-kr-lsJ"/>
+                                    <action selector="saveButtonPressed:" destination="mnG-fr-SIV" eventType="touchUpInside" id="KzH-3P-Wuw"/>
                                 </connections>
                             </button>
                         </subviews>

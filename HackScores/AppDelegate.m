@@ -21,7 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Override point for customization after application launch.
+    //Error handling
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     self.dataSortMode = SortByBestLine;
     [self initializeTextFilesIfNeeded];
     [self setHackSetData: [self readHackSetData]];
@@ -224,6 +226,13 @@
     NSArray *newLeft = [leftArr subarrayWithRange:leftRange];
     newLeft = [result arrayByAddingObjectsFromArray:newLeft];
     return [[newLeft arrayByAddingObjectsFromArray:newRight] mutableCopy];
+}
+
+//To symbolicate errors
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
