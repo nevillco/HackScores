@@ -568,61 +568,61 @@ by Connor Neville</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW SET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-fX-EW1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NEW SET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-fX-EW1">
                                 <rect key="frame" x="16" y="20" width="130" height="48"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3O-G7-0g5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3O-G7-0g5">
                                 <rect key="frame" x="16" y="76" width="27" height="24"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUW-TG-U2y" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUW-TG-U2y" customClass="CNLabel">
                                 <rect key="frame" x="16" y="100" width="27" height="72"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZW-My-NI2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ROUND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZW-My-NI2">
                                 <rect key="frame" x="73" y="76" width="52" height="24"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-aW-YZ1" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-aW-YZ1" customClass="CNLabel">
                                 <rect key="frame" x="86" y="100" width="27" height="72"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HACK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzZ-Ms-oEY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HACK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzZ-Ms-oEY">
                                 <rect key="frame" x="155" y="76" width="40" height="24"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQW-xv-E0g" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQW-xv-E0g" customClass="CNLabel">
                                 <rect key="frame" x="162" y="100" width="27" height="72"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9v-fe-RsV" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9v-fe-RsV" customClass="CNLabel">
                                 <rect key="frame" x="272" y="211" width="57" height="144"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="144"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxq-Df-q4q" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxq-Df-q4q" customClass="CNLabel">
                                 <rect key="frame" x="218" y="211" width="54" height="144"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="144"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-pT-qwR" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-pT-qwR" customClass="CNLabel">
                                 <rect key="frame" x="521" y="76" width="27" height="72"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -652,7 +652,7 @@ by Connor Neville</string>
                                     <action selector="increaseAttemptScore:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qeH-nj-Jor"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-Ro-Drq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-Ro-Drq">
                                 <rect key="frame" x="484" y="128" width="100" height="36"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
@@ -664,19 +664,19 @@ by Connor Neville</string>
                                     <action selector="addAttempt:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GFx-Uy-oJs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Round Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-JI-81G">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Round Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-JI-81G">
                                 <rect key="frame" x="196" y="172" width="208" height="31"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(points - hack)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-X1-mro">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(points - hack)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-X1-mro">
                                 <rect key="frame" x="243" y="345" width="114" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-Bx-hVb" customClass="CNLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-Bx-hVb" customClass="CNLabel">
                                 <rect key="frame" x="329" y="211" width="54" height="144"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="144"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -903,13 +903,13 @@ by Connor Neville</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-9y-X8l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RESULTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-9y-X8l">
                                 <rect key="frame" x="16" y="20" width="128" height="48"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIw-ZW-so9">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIw-ZW-so9">
                                 <rect key="frame" x="467" y="20" width="117" height="60"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
                                 <state key="normal" title="RETURN">
@@ -1062,27 +1062,27 @@ by Connor Neville</string>
                                 <exclude reference="xfl-UH-gHE"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9cJ-I9-1gx"/>
+                                <exclude reference="quX-ep-8eZ"/>
+                                <exclude reference="Kgm-Ru-IGT"/>
+                                <exclude reference="glx-f2-7Z0"/>
+                                <exclude reference="CdZ-p4-RxB"/>
+                                <exclude reference="g4E-ps-amM"/>
+                                <exclude reference="hoz-Up-1dL"/>
+                                <exclude reference="gbA-fL-1in"/>
                                 <exclude reference="0Uf-zg-Qtp"/>
                                 <exclude reference="Mly-KT-Uiu"/>
                                 <exclude reference="hQi-cF-Hhc"/>
-                                <exclude reference="Kgm-Ru-IGT"/>
-                                <exclude reference="glx-f2-7Z0"/>
+                                <exclude reference="HRz-yS-VTF"/>
+                                <exclude reference="a5v-SE-0AT"/>
+                                <exclude reference="f5y-9g-dX3"/>
                                 <exclude reference="DHQ-6L-ZrA"/>
                                 <exclude reference="GuS-AR-uQ2"/>
                                 <exclude reference="IDP-oq-3eM"/>
                                 <exclude reference="NrE-Kf-oQy"/>
                                 <exclude reference="v5h-yq-cAm"/>
-                                <exclude reference="gbA-fL-1in"/>
-                                <exclude reference="9cJ-I9-1gx"/>
-                                <exclude reference="quX-ep-8eZ"/>
-                                <exclude reference="HRz-yS-VTF"/>
-                                <exclude reference="a5v-SE-0AT"/>
-                                <exclude reference="f5y-9g-dX3"/>
-                                <exclude reference="CdZ-p4-RxB"/>
-                                <exclude reference="g4E-ps-amM"/>
                                 <exclude reference="QRk-fj-3Mb"/>
                                 <exclude reference="RMt-3b-E31"/>
-                                <exclude reference="hoz-Up-1dL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1099,27 +1099,27 @@ by Connor Neville</string>
                                 <include reference="xfl-UH-gHE"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9cJ-I9-1gx"/>
+                                <include reference="quX-ep-8eZ"/>
+                                <include reference="Kgm-Ru-IGT"/>
+                                <include reference="glx-f2-7Z0"/>
+                                <include reference="CdZ-p4-RxB"/>
+                                <include reference="g4E-ps-amM"/>
+                                <include reference="hoz-Up-1dL"/>
+                                <include reference="gbA-fL-1in"/>
                                 <include reference="0Uf-zg-Qtp"/>
                                 <include reference="Mly-KT-Uiu"/>
                                 <include reference="hQi-cF-Hhc"/>
-                                <include reference="Kgm-Ru-IGT"/>
-                                <include reference="glx-f2-7Z0"/>
+                                <include reference="HRz-yS-VTF"/>
+                                <exclude reference="a5v-SE-0AT"/>
+                                <include reference="f5y-9g-dX3"/>
                                 <include reference="DHQ-6L-ZrA"/>
                                 <include reference="GuS-AR-uQ2"/>
                                 <include reference="IDP-oq-3eM"/>
                                 <include reference="NrE-Kf-oQy"/>
                                 <include reference="v5h-yq-cAm"/>
-                                <include reference="gbA-fL-1in"/>
-                                <include reference="9cJ-I9-1gx"/>
-                                <include reference="quX-ep-8eZ"/>
-                                <include reference="HRz-yS-VTF"/>
-                                <exclude reference="a5v-SE-0AT"/>
-                                <include reference="f5y-9g-dX3"/>
-                                <include reference="CdZ-p4-RxB"/>
-                                <include reference="g4E-ps-amM"/>
                                 <include reference="QRk-fj-3Mb"/>
                                 <include reference="RMt-3b-E31"/>
-                                <include reference="hoz-Up-1dL"/>
                             </mask>
                         </variation>
                     </view>
@@ -1435,6 +1435,15 @@ by Connor Neville</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-eh-EDE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backgroundButtonPressed:" destination="mnG-fr-SIV" eventType="touchUpInside" id="3oA-Sw-jiS"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzr-0q-MQ4">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
@@ -1738,6 +1747,17 @@ by Connor Neville</string>
                                     <action selector="saveButtonPressed:" destination="mnG-fr-SIV" eventType="touchUpInside" id="KzH-3P-Wuw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sx6-MU-6e4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
+                                <state key="normal" title="CLEAR DATA">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearDataButtonPressed:" destination="mnG-fr-SIV" eventType="touchUpInside" id="QCQ-he-rUe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
@@ -1759,7 +1779,11 @@ by Connor Neville</string>
                             <constraint firstItem="O7L-8b-Tun" firstAttribute="leading" secondItem="Xc7-CY-rF7" secondAttribute="leadingMargin" id="Ban-fF-y0u"/>
                             <constraint firstItem="Rat-kR-gI8" firstAttribute="top" secondItem="TXO-QJ-bkX" secondAttribute="bottom" constant="8" id="J2Z-mX-SNe"/>
                             <constraint firstItem="JKa-8f-ee6" firstAttribute="centerX" secondItem="O9t-Oh-gE4" secondAttribute="centerX" id="Kld-Hv-Hua"/>
+                            <constraint firstAttribute="centerY" secondItem="L1J-eh-EDE" secondAttribute="centerY" constant="91" id="MVJ-v9-6uc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="mb8-9d-Fwj" firstAttribute="top" secondItem="e3c-8D-1y1" secondAttribute="bottom" constant="8" id="MhK-RQ-9ub"/>
+                            <constraint firstAttribute="height" secondItem="L1J-eh-EDE" secondAttribute="height" id="OWQ-9a-qhK"/>
                             <constraint firstItem="Qzr-0q-MQ4" firstAttribute="leading" secondItem="Xc7-CY-rF7" secondAttribute="leadingMargin" constant="6" id="Oz7-vK-KvH">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
@@ -1787,16 +1811,22 @@ by Connor Neville</string>
                             <constraint firstItem="vzY-lX-LTa" firstAttribute="top" secondItem="llV-sK-zBr" secondAttribute="bottom" constant="77" id="qPg-lw-vz7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="8"/>
                             </constraint>
+                            <constraint firstItem="sx6-MU-6e4" firstAttribute="top" secondItem="Srr-eY-opM" secondAttribute="bottom" constant="8" id="qzW-i8-ZGc"/>
+                            <constraint firstAttribute="width" secondItem="L1J-eh-EDE" secondAttribute="width" id="s2a-Nd-K6n"/>
                             <constraint firstItem="oPQ-1e-vSJ" firstAttribute="top" secondItem="llV-sK-zBr" secondAttribute="bottom" id="sHg-HL-DdP">
                                 <variation key="heightClass=regular-widthClass=regular" constant="8"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="vzY-lX-LTa" secondAttribute="centerX" constant="71.5" id="sNc-Qa-mip">
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
+                            <constraint firstAttribute="centerX" secondItem="L1J-eh-EDE" secondAttribute="centerX" constant="-287" id="u8R-9N-9wr">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Qzr-0q-MQ4" firstAttribute="top" secondItem="Tsj-fr-xxe" secondAttribute="bottom" id="us7-V2-sIz"/>
                             <constraint firstItem="s5v-o7-meV" firstAttribute="top" secondItem="mb8-9d-Fwj" secondAttribute="bottom" constant="16" id="v6P-fl-Yfj">
                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                             </constraint>
+                            <constraint firstAttribute="centerX" secondItem="sx6-MU-6e4" secondAttribute="centerX" id="vlp-PF-XXn"/>
                             <constraint firstItem="dlb-Gv-Md6" firstAttribute="centerX" secondItem="lRK-xB-ELj" secondAttribute="centerX" id="wTf-O8-0Mm"/>
                             <constraint firstItem="Srr-eY-opM" firstAttribute="top" secondItem="tmI-ST-Rip" secondAttribute="bottom" constant="8" id="wzw-uT-aTl"/>
                             <constraint firstItem="z7p-Dj-KlL" firstAttribute="top" secondItem="Tsj-fr-xxe" secondAttribute="bottom" constant="-8" id="yWc-C9-QZY">
@@ -1806,6 +1836,7 @@ by Connor Neville</string>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="L1J-eh-EDE"/>
                                 <exclude reference="Qzr-0q-MQ4"/>
                                 <exclude reference="5sa-x4-Gil"/>
                                 <exclude reference="z7p-Dj-KlL"/>
@@ -1824,50 +1855,58 @@ by Connor Neville</string>
                                 <exclude reference="O7L-8b-Tun"/>
                                 <exclude reference="tmI-ST-Rip"/>
                                 <exclude reference="Srr-eY-opM"/>
+                                <exclude reference="sx6-MU-6e4"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="AJM-k4-YjI"/>
-                                <exclude reference="jdw-Qr-tnF"/>
-                                <exclude reference="AQ5-pv-K8F"/>
-                                <exclude reference="Kld-Hv-Hua"/>
-                                <exclude reference="Ban-fF-y0u"/>
-                                <exclude reference="Z0l-Q5-xQj"/>
-                                <exclude reference="aMj-5g-HuU"/>
-                                <exclude reference="7aM-cI-1yU"/>
-                                <exclude reference="QBm-tg-oeV"/>
                                 <exclude reference="Oz7-vK-KvH"/>
                                 <exclude reference="us7-V2-sIz"/>
-                                <exclude reference="Ale-13-pDc"/>
-                                <exclude reference="J2Z-mX-SNe"/>
-                                <exclude reference="UaX-HD-xxA"/>
+                                <exclude reference="AJM-k4-YjI"/>
+                                <exclude reference="jdw-Qr-tnF"/>
+                                <exclude reference="AyF-HB-czc"/>
+                                <exclude reference="aMf-7U-Vsx"/>
+                                <exclude reference="eSE-Av-rfD"/>
+                                <exclude reference="qPg-lw-vz7"/>
+                                <exclude reference="sNc-Qa-mip"/>
+                                <exclude reference="2xC-B5-nE1"/>
+                                <exclude reference="dT6-XM-bB4"/>
                                 <exclude reference="e54-Z2-3X7"/>
                                 <exclude reference="wTf-O8-0Mm"/>
                                 <exclude reference="0DL-lA-hjf"/>
                                 <exclude reference="TG0-nU-cE1"/>
                                 <exclude reference="WXP-rY-T00"/>
-                                <exclude reference="2xC-B5-nE1"/>
-                                <exclude reference="dT6-XM-bB4"/>
-                                <exclude reference="AyF-HB-czc"/>
-                                <exclude reference="aMf-7U-Vsx"/>
-                                <exclude reference="eSE-Av-rfD"/>
                                 <exclude reference="MhK-RQ-9ub"/>
+                                <exclude reference="gUL-44-tM9"/>
+                                <exclude reference="v6P-fl-Yfj"/>
                                 <exclude reference="cDf-sm-Opb"/>
                                 <exclude reference="hlZ-0x-OJR"/>
                                 <exclude reference="sHg-HL-DdP"/>
-                                <exclude reference="gUL-44-tM9"/>
-                                <exclude reference="v6P-fl-Yfj"/>
+                                <exclude reference="Ban-fF-y0u"/>
+                                <exclude reference="Z0l-Q5-xQj"/>
+                                <exclude reference="aMj-5g-HuU"/>
+                                <exclude reference="UaX-HD-xxA"/>
                                 <exclude reference="ydd-bZ-Cs1"/>
-                                <exclude reference="qPg-lw-vz7"/>
-                                <exclude reference="sNc-Qa-mip"/>
+                                <exclude reference="Ale-13-pDc"/>
+                                <exclude reference="J2Z-mX-SNe"/>
+                                <exclude reference="7aM-cI-1yU"/>
+                                <exclude reference="QBm-tg-oeV"/>
+                                <exclude reference="AQ5-pv-K8F"/>
+                                <exclude reference="Kld-Hv-Hua"/>
                                 <exclude reference="3Fi-UL-YjI"/>
                                 <exclude reference="3l1-eX-NWd"/>
                                 <exclude reference="wzw-uT-aTl"/>
                                 <exclude reference="Wcr-4H-37u"/>
                                 <exclude reference="yWc-C9-QZY"/>
+                                <exclude reference="MVJ-v9-6uc"/>
+                                <exclude reference="OWQ-9a-qhK"/>
+                                <exclude reference="s2a-Nd-K6n"/>
+                                <exclude reference="u8R-9N-9wr"/>
+                                <exclude reference="qzW-i8-ZGc"/>
+                                <exclude reference="vlp-PF-XXn"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
+                                <include reference="L1J-eh-EDE"/>
                                 <include reference="Qzr-0q-MQ4"/>
                                 <include reference="5sa-x4-Gil"/>
                                 <include reference="z7p-Dj-KlL"/>
@@ -1886,46 +1925,53 @@ by Connor Neville</string>
                                 <include reference="O7L-8b-Tun"/>
                                 <include reference="tmI-ST-Rip"/>
                                 <include reference="Srr-eY-opM"/>
+                                <include reference="sx6-MU-6e4"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="AJM-k4-YjI"/>
-                                <include reference="jdw-Qr-tnF"/>
-                                <include reference="AQ5-pv-K8F"/>
-                                <include reference="Kld-Hv-Hua"/>
-                                <include reference="Ban-fF-y0u"/>
-                                <include reference="Z0l-Q5-xQj"/>
-                                <include reference="aMj-5g-HuU"/>
-                                <include reference="7aM-cI-1yU"/>
-                                <include reference="QBm-tg-oeV"/>
                                 <include reference="Oz7-vK-KvH"/>
                                 <include reference="us7-V2-sIz"/>
-                                <include reference="Ale-13-pDc"/>
-                                <include reference="J2Z-mX-SNe"/>
-                                <include reference="UaX-HD-xxA"/>
+                                <include reference="AJM-k4-YjI"/>
+                                <include reference="jdw-Qr-tnF"/>
+                                <include reference="AyF-HB-czc"/>
+                                <include reference="aMf-7U-Vsx"/>
+                                <include reference="eSE-Av-rfD"/>
+                                <include reference="qPg-lw-vz7"/>
+                                <include reference="sNc-Qa-mip"/>
+                                <include reference="2xC-B5-nE1"/>
+                                <include reference="dT6-XM-bB4"/>
                                 <include reference="e54-Z2-3X7"/>
                                 <include reference="wTf-O8-0Mm"/>
                                 <include reference="0DL-lA-hjf"/>
                                 <include reference="TG0-nU-cE1"/>
                                 <include reference="WXP-rY-T00"/>
-                                <include reference="2xC-B5-nE1"/>
-                                <include reference="dT6-XM-bB4"/>
-                                <include reference="AyF-HB-czc"/>
-                                <include reference="aMf-7U-Vsx"/>
-                                <include reference="eSE-Av-rfD"/>
                                 <include reference="MhK-RQ-9ub"/>
+                                <include reference="gUL-44-tM9"/>
+                                <include reference="v6P-fl-Yfj"/>
                                 <include reference="cDf-sm-Opb"/>
                                 <include reference="hlZ-0x-OJR"/>
                                 <include reference="sHg-HL-DdP"/>
-                                <include reference="gUL-44-tM9"/>
-                                <include reference="v6P-fl-Yfj"/>
+                                <include reference="Ban-fF-y0u"/>
+                                <include reference="Z0l-Q5-xQj"/>
+                                <include reference="aMj-5g-HuU"/>
+                                <include reference="UaX-HD-xxA"/>
                                 <include reference="ydd-bZ-Cs1"/>
-                                <include reference="qPg-lw-vz7"/>
-                                <include reference="sNc-Qa-mip"/>
+                                <include reference="Ale-13-pDc"/>
+                                <include reference="J2Z-mX-SNe"/>
+                                <include reference="7aM-cI-1yU"/>
+                                <include reference="QBm-tg-oeV"/>
+                                <include reference="AQ5-pv-K8F"/>
+                                <include reference="Kld-Hv-Hua"/>
                                 <include reference="3Fi-UL-YjI"/>
                                 <exclude reference="3l1-eX-NWd"/>
                                 <include reference="wzw-uT-aTl"/>
                                 <include reference="Wcr-4H-37u"/>
                                 <include reference="yWc-C9-QZY"/>
+                                <include reference="MVJ-v9-6uc"/>
+                                <include reference="OWQ-9a-qhK"/>
+                                <include reference="s2a-Nd-K6n"/>
+                                <include reference="u8R-9N-9wr"/>
+                                <include reference="qzW-i8-ZGc"/>
+                                <include reference="vlp-PF-XXn"/>
                             </mask>
                         </variation>
                     </view>

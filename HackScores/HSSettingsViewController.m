@@ -17,7 +17,11 @@
 @property (weak, nonatomic) IBOutlet UITextField*numberOfHacksField;
 @property (weak, nonatomic) IBOutlet CNLabel*savedNamesLabel;
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *savedNameFields;
+@property bool alertAccepted;
+- (IBAction)returnButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)clearDataButtonPressed:(id)sender;
+- (IBAction)backgroundButtonPressed:(id)sender;
 
 @end
 
@@ -65,9 +69,11 @@
 
 //Save button press action
 - (IBAction)saveButtonPressed:(id)sender {
-    NSMutableSet* savedNames = [self getSavedNamesFromTextFields];
-    NSMutableArray* savedNamesArray = [[savedNames allObjects] mutableCopy];
+    //Resign keyboards
+    [self resignKeyboardResponders];
     
+    //Needed for error check
+    //and comparison to old value
     int numberOfHacks = [self.numberOfHacksField text].intValue;
     
     //Error check: if field value is (somehow) non-integer,
@@ -84,13 +90,73 @@
     //If the entered value is different from the previous
     //setting, all data has to be cleared
     if(numberOfHacks != [delegate getHacksPerRound].intValue) {
+        //Data will wipe: alert user before continuing
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear Stats"
+                                                        message:@"You have changed the number of hacks. For score consistency, this will clear the leaderboard stats. Continue?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:@"Cancel", nil];
+        [alert show];
+    }
+    //No change in hacks per round
+    else {
+        [self saveDataAndClose];
+    }
+}
+
+//Action for the "clear data" button (uses same
+//alertview method
+- (IBAction)clearDataButtonPressed:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear Stats"
+                                                    message:@"This will wipe your leaderboards and records. Continue?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Continue"
+                                          otherButtonTitles:@"Cancel", nil];
+    [alert show];
+}
+
+//Background tap remove keyboards
+- (IBAction)backgroundButtonPressed:(id)sender {
+    [self resignKeyboardResponders];
+}
+
+//UIAlertView action: clear data if user accepts
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self resignKeyboardResponders];
+    bool clearData = (buttonIndex == 0);
+    if (clearData){
+        AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [delegate clearHackData];
         [delegate initializeTextFilesIfNeeded];
+        [self saveDataAndClose];
+        
     }
+}
+
+//Method that removes the keyboard from the screen
+//on any button press (including hidden background
+//button)
+- (void) resignKeyboardResponders {
+    for(UITextField* nameField in self.savedNameFields) {
+        [nameField resignFirstResponder];
+    }
+    [self.numberOfHacksField resignFirstResponder];
+}
+
+//Method for saving settings and returning home
+- (void) saveDataAndClose {
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    //Retrieve data
+    NSMutableSet* savedNames = [self getSavedNamesFromTextFields];
+    NSMutableArray* savedNamesArray = [[savedNames allObjects] mutableCopy];
+    
+    int numberOfHacks = [self.numberOfHacksField text].intValue;
     
     //Write settings to text file and display message
     [delegate writeSettingsWithHacksPerRound:[NSNumber numberWithInt:numberOfHacks]
                                andSavedNames:savedNamesArray];
+    
     //Use return segue to go back
     [self returnButtonPressed: nil];
 }
