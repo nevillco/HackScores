@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HSStatsViewController.h"
+#import "HSSetStatsViewController.h"
 #import "HSLeaderBoardView.h"
 #import "HSHackSetView.h"
 
@@ -28,6 +29,7 @@
 //Button action to play new game (will send user to HSAddPlayersViewController)
 - (IBAction)playNewButtonPressed:(id)sender;
 - (IBAction)aboutButtonPressed:(id)sender;
+- (IBAction)viewSetStatsTouched:(id)sender;
 
 @end
 
@@ -183,5 +185,22 @@
 
 - (IBAction)aboutButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"AboutSegue" sender:self];
+}
+
+//Prepare for SetStatsSegue by passing appropriate
+//game stats
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SetStatsSegue"])
+    {
+        HSSetStatsViewController *destination = [segue destinationViewController];
+        HSHackSetView* senderView = sender;
+        [destination setHackData:[senderView hackData]];
+    }
+}
+
+//Perform segue, sending HSHackSetView as sender
+- (IBAction)viewSetStatsTouched:(id)sender {
+    [self performSegueWithIdentifier:@"SetStatsSegue" sender:sender];
 }
 @end

@@ -3,25 +3,31 @@
 //  HackScores
 //
 //  Created by Connor Neville on 12/24/14.
-//  Copyright (c) 2014 connorneville. All rights reserved.
+//  Copyright (c) 2014 ;. All rights reserved.
 //
 
 @interface HSHackSet : NSObject
 
+@property NSDate* dateOfGame;
 @property NSMutableArray* attempts;
 @property NSMutableArray* playerNames;
 
 - (id) initWithPlayerNames: (NSMutableArray*) playerNames;
 - (id) initWithAttempts: (NSMutableArray*) attempts;
-- (id) initWithAttempts: (NSMutableArray*) attempts andPlayerNames: (NSMutableArray*) playerNames;
+- (id) initWithDate: (NSDate*) date andAttempts: (NSMutableArray*) attempts andPlayerNames: (NSMutableArray*) playerNames;
 
 - (void) addAttempt: (int) attempt;
 
 - (NSMutableArray*) getRoundScores;
 - (NSNumber*) getBestHack;
 - (NSNumber*) getBestRound;
+- (int) getWorstRound;
 - (NSNumber*) getSetScore;
 - (int) getAverageHack;
+- (int) getCommonHack;
+- (int) getNumOccurrencesOf: (int) value;
+- (NSString*) getRoundString: (int) round
+               withDelimiter: (NSString*) delimiter;
 
 typedef NS_ENUM(NSUInteger, SortMode) {
     SortByBestLine,

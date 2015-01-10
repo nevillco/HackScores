@@ -32,6 +32,7 @@
     if(self) {
         [self setPlayerNames: playerNames];
         [self setAttempts: [[NSMutableArray alloc] init]];
+        [self setDateOfGame:[NSDate date]];
     }
     return self;
 }
@@ -43,16 +44,19 @@
     if(self) {
         [self setPlayerNames:[[NSMutableArray alloc] init]];
         [self setAttempts: attempts];
+        [self setDateOfGame:[NSDate date]];
     }
     return self;
 }
 
 //Constructor specifying both public properties
 //Used in AppDelegate when reading HSHackSets from text file
-- (id) initWithAttempts:(NSMutableArray *)attempts
-         andPlayerNames: (NSMutableArray*) playerNames {
+- (id) initWithDate: (NSDate*) date
+        andAttempts:(NSMutableArray *)attempts
+    andPlayerNames: (NSMutableArray*) playerNames {
     self = [super init];
     if(self) {
+        [self setDateOfGame: date];
         [self setPlayerNames: playerNames];
         [self setAttempts: attempts];
     }
@@ -110,6 +114,17 @@
     return self.bestRound;
 }
 
+//Simple calculation of min value of rounds
+//Uses getRoundScores values
+//Does not save in a property
+- (int) getWorstRound {
+    int worstRound = INT32_MAX;
+    for(int i = 0; i < [self getRoundScores].count; i++) {
+        worstRound = MIN(worstRound, [[[self getRoundScores] objectAtIndex:i] intValue]);
+    }
+    return worstRound;
+}
+
 //Simple calculation of total value of attempts
 - (NSNumber*) getSetScore {
     if(self.setScore != nil)
@@ -131,14 +146,71 @@
     return total / [self attempts].count;
 }
 
+//Gets the most frequent hack. O(n^2) but easy to understand
+//and implement. Arrays will likely never have size large enough
+//that this implementation is a problem
+- (int) getCommonHack {
+    int popularCount = 1, tempCount;
+    int popular = [self.attempts[0] intValue], temp;
+    //Check each number
+    for(int i = 0; i < self.attempts.count; i++) {
+        temp = [self.attempts[i] intValue];
+        //Will also loop again
+        tempCount = [self getNumOccurrencesOf: temp];
+        //If new most popular (or, equally popular and bigger
+        //number)
+        if(tempCount > popularCount ||
+           (tempCount == popularCount && temp > popular)) {
+            popular = temp;
+            popularCount = tempCount;
+        }
+            
+    }
+    return popular;
+}
+
+//Get occurrences of an int. Used in getCommonHack and
+//to find number of non-hacks in HSSetStatsController
+- (int) getNumOccurrencesOf: (int) value {
+    int count = 0;
+    for(int i = 0; i < self.attempts.count; i++) {
+        if([self.attempts[i] intValue] == value)
+            count++;
+    }
+    return count;
+}
+
+//Generates a string with all of the attempts in the given round
+- (NSString*) getRoundString: (int) round
+               withDelimiter: (NSString*) delimiter {
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    int hacksPerRound = [delegate getHacksPerRound].intValue;
+    NSString* roundString = [NSString stringWithFormat:@"%d",
+                             [[self.attempts objectAtIndex:(hacksPerRound * round)] intValue]];
+    for(int i = (hacksPerRound * round) + 1; i < hacksPerRound * (round + 1); i++) {
+        roundString = [roundString stringByAppendingString:
+                       [NSString stringWithFormat:@"%@%d",
+                        delimiter, [[self.attempts objectAtIndex:i] intValue]]];
+    }
+    return roundString;
+}
+
 //Write HSHackSet data to end of file
 - (void) writeToFile {
+    
+    //Create string with date
+    NSDateFormatter *formatter;
+    
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    
+    NSString* dateAsString = [formatter stringFromDate:[self dateOfGame]];
     //Names (may contain spaces) separated by "|"
     NSString* namesAsString = [self.playerNames componentsJoinedByString: @"|"];
     //Attempts (integers) separated by spaces
     NSString* dataAsString = [self.attempts componentsJoinedByString:@" "];
     //Last player name separated from attempts by "|"
-    NSString* stringToWrite = [NSString stringWithFormat:@"%@|%@\n", namesAsString, dataAsString];
+    NSString* stringToWrite = [NSString stringWithFormat:@"%@|%@|%@\n", dateAsString, namesAsString, dataAsString];
     
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[AppDelegate hackSetDataPath]];
     [fileHandle seekToEndOfFile];

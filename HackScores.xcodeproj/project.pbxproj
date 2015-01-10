@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D7F0CAC1A61AA1F0038837F /* HSSetStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */; };
 		2DACD0881A4B5D0E00313F41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0871A4B5D0E00313F41 /* main.m */; };
 		2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */; };
 		2DACD08E1A4B5D0E00313F41 /* HSStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08D1A4B5D0E00313F41 /* HSStatsViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D7F0CAA1A61AA1F0038837F /* HSSetStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetStatsViewController.h; sourceTree = "<group>"; };
+		2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetStatsViewController.m; sourceTree = "<group>"; };
 		2DACD0821A4B5D0E00313F41 /* HackScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DACD0861A4B5D0E00313F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACD0871A4B5D0E00313F41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				2DACD08F1A4B5D0E00313F41 /* HSPlayViewController.h */,
 				2DACD0901A4B5D0E00313F41 /* HSPlayViewController.m */,
 				2DACD0921A4B5D0E00313F41 /* Main.storyboard */,
+				2D7F0CAA1A61AA1F0038837F /* HSSetStatsViewController.h */,
+				2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */,
 				2DACD0CF1A4FB5FB00313F41 /* HSSettingsViewController.h */,
 				2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */,
 				2DACD0CC1A4F601500313F41 /* HSAboutViewController.h */,
@@ -281,6 +286,7 @@
 				2DACD0881A4B5D0E00313F41 /* main.m in Sources */,
 				2DACD0C21A4C94E700313F41 /* CNLabel.m in Sources */,
 				2DACD0CB1A4E3FA700313F41 /* HSHackSetView.m in Sources */,
+				2D7F0CAC1A61AA1F0038837F /* HSSetStatsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HSHackSet.h"
 
-@interface HSHackSetView : UIView
+@interface HSHackSetView : UIControl
 
+@property HSHackSet* hackData;
 //By default, view is empty. Needs HSHackSet for content
 - (void) addHackContent: (HSHackSet*) hackSet;
 

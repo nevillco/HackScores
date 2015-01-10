@@ -196,7 +196,6 @@
 }
 
 //Return to previous scene
-//No need to reload stats because game wasn't played
 - (IBAction)returnButtonPressed:(id)sender {
     HSStatsViewController* previous = (HSStatsViewController*)self.presentingViewController;
     [previous viewDidLoad];

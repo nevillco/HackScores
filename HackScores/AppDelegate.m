@@ -22,10 +22,6 @@
 
 @implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.dataSortMode = SortByBestLine;
@@ -116,11 +112,13 @@
     
     NSError* error;
     //String of entire text file contents
-    NSString* textFileAsString = [NSString stringWithContentsOfFile:[AppDelegate hackSetDataPath] encoding:NSUTF8StringEncoding error:&error];
+    NSString* textFileAsString = [NSString stringWithContentsOfFile:
+                                  [AppDelegate hackSetDataPath] encoding:NSUTF8StringEncoding error:&error];
     
     //Array of line-by-line contents
-    NSArray* hackSetStrings = [textFileAsString componentsSeparatedByCharactersInSet:
-                                      [NSCharacterSet newlineCharacterSet]];
+    NSArray* hackSetStrings = [[textFileAsString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]
+                               componentsSeparatedByCharactersInSet:
+                               [NSCharacterSet newlineCharacterSet]];
     
     //Loop through each line
     for(NSString* hackSetString in hackSetStrings) {
@@ -128,18 +126,23 @@
             return hackSetData;
         //Each name is separated by "|" (as is the last name from all scores)
         NSArray* hackSetComponents = [hackSetString componentsSeparatedByString:@"|"];
-        //Player names is done
-        NSMutableArray* playerNames = [[NSMutableArray alloc] initWithObjects: hackSetComponents[0],
-                                       hackSetComponents[1], hackSetComponents[2], nil];
+        //Get date
+        NSString* dateAsString = hackSetComponents[0];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+        NSDate *dateOfGame = [formatter dateFromString: dateAsString];
+        //Get player names
+        NSMutableArray* playerNames = [[NSMutableArray alloc] initWithObjects: hackSetComponents[1],
+                                       hackSetComponents[2], hackSetComponents[3], nil];
         //All attempts (integers) separated by spaces
-        NSArray* hackValuesAsStrings = [hackSetComponents[3] componentsSeparatedByString:@" "];
+        NSArray* hackValuesAsStrings = [hackSetComponents[4] componentsSeparatedByString:@" "];
         //Now need to convert each string to NSNumber
         NSMutableArray* attempts = [[NSMutableArray alloc] init];
         for(NSString* hackValueString in hackValuesAsStrings) {
             [attempts addObject: [NSNumber numberWithInt:[hackValueString intValue]]];
         }
         //Add HSHackSet object to array
-        [hackSetData addObject:[[HSHackSet alloc] initWithAttempts:attempts andPlayerNames:playerNames]];
+        [hackSetData addObject:[[HSHackSet alloc] initWithDate:dateOfGame andAttempts:attempts andPlayerNames:playerNames]];
     }
     return hackSetData;
 }

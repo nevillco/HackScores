@@ -23,7 +23,6 @@
 - (NSMutableArray*) getSavedNames;
 - (void) clearHackData;
 - (void) initializeTextFilesIfNeeded;
-- (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
 + (NSString*) hackSetDataPath;

@@ -48,6 +48,8 @@
 //Process for each label: generate (and apply style effects),
 //Add to view, then add auto layout constraints
 - (void) addHackContent: (HSHackSet*) hackSet {
+    [self setHackData: hackSet];
+    
     self.roundScore = [self generateRoundScoresLabel:hackSet];
     [self addSubview: self.roundScore];
     [self makeRoundScoreConstraints];
