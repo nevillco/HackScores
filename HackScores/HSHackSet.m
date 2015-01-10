@@ -146,11 +146,6 @@
     [fileHandle closeFile];
 }
 
-- (void) writeToCoreData {
-    
-    
-}
-
 //Compare method used to merge sort list of HSHackSets
 //Each leaderboard uses a different dataSortMode
 - (NSComparisonResult)compare:(HSHackSet*)object {

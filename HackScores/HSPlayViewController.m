@@ -23,6 +23,8 @@
 - (IBAction)returnButtonPressed:(id)sender;
 //Add attempt button pressed
 - (IBAction)addAttempt:(id)sender;
+//Undo button pressed
+- (IBAction)undoButtonPressed:(id)sender;
 
 //Labels in top right for set - round - hack
 @property (weak, nonatomic) IBOutlet CNLabel *roundLabel;
@@ -38,6 +40,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *addAttemptButtons;
 @property (weak, nonatomic) IBOutlet UIButton *decreaseButton;
 @property (weak, nonatomic) IBOutlet UIButton *increaseButton;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
 @property int currentAverage;
 
 @end
@@ -78,9 +81,13 @@
     [self applyRoundedStyleToButton:self.decreaseButton];
     [self addDecreaseButtonConstraints];
     
-    //All constraints for increaseButton
+    //All constraints for increaseButton and undoButton
     //Can be done in IB and will adapt to programmatic constraints
     [self applyRoundedStyleToButton:self.increaseButton];
+    [self applyRoundedStyleToButton:self.undoButton];
+    
+    //Disable until there is an attempt to undo
+    [self.undoButton setEnabled:FALSE];
     
     [self addAttemptButtonConstraints];
     NSArray* initialValues = @[@0, @1, @2, @0];
@@ -196,6 +203,16 @@
 
 //Current attempt score: increase button pressed
 - (IBAction)increaseAttemptScore:(id)sender {
+    //Enable decrease button
+    UIColor* customRed = [UIColor colorWithRed:200.0f/255.0f
+                                         green:50.0f/255.0f
+                                          blue:50.0f/255.0f
+                                         alpha:1.0f];
+    [self.decreaseButton setTitleColor:customRed
+                          forState:UIControlStateNormal];
+    [self.decreaseButton.layer setBorderColor:[customRed CGColor]];
+    [self.decreaseButton setEnabled:TRUE];
+    
     UIButton* changeableButton = [self.addAttemptButtons lastObject];
     int currentValue = [changeableButton.titleLabel.text intValue];
     [changeableButton setTitle:[NSString stringWithFormat:@"%d", (currentValue + 1)] forState:UIControlStateNormal];
@@ -208,6 +225,14 @@
     int currentValue = [changeableButton.titleLabel.text intValue];
     if(currentValue != 0)
         [changeableButton setTitle:[NSString stringWithFormat:@"%d", (currentValue - 1)] forState:UIControlStateNormal];
+    if(currentValue == 1) {
+        //Disable decrease button
+        [self.decreaseButton setTitleColor:[UIColor grayColor]
+                              forState:UIControlStateNormal];
+        [self.decreaseButton.layer setBorderColor:[[UIColor grayColor] CGColor]];
+        [self.decreaseButton setEnabled:TRUE];
+    }
+        
 }
 
 //Action triggered when an add attempt button is pressed
@@ -228,6 +253,16 @@
         //Increment both round labels
         [self.hackLabelBig incrementTextAndRevertAfter:FALSE];
         [self.hackLabelSmall incrementTextAndRevertAfter:FALSE];
+        
+        //Change color & enable undo button
+        UIColor* customRed = [UIColor colorWithRed:200.0f/255.0f
+                                             green:50.0f/255.0f
+                                              blue:50.0f/255.0f
+                                             alpha:1.0f];
+        [self.undoButton setTitleColor:customRed
+                              forState:UIControlStateNormal];
+        [self.undoButton.layer setBorderColor:[customRed CGColor]];
+        [self.undoButton setEnabled:TRUE];
     }
     //If there is a change in the average hack, change attempt buttons
     int newHackAverage = [self.hackSet getAverageHack];
@@ -235,6 +270,26 @@
         [self setCurrentAverage: newHackAverage];
         [self updateAttemptButtonValues];
     }
+}
+
+//Undo button action
+- (IBAction)undoButtonPressed:(id)sender {
+    //Go back 1 hack
+    [self.hackLabelBig decrementTextAndRevertAfter:FALSE];
+    [self.hackLabelSmall decrementTextAndRevertAfter:FALSE];
+    //Subtract points
+    int previousAttempt = [[self.hackSet.attempts lastObject] intValue];
+    [self.pointsLabel addIntToText:(-1 * previousAttempt) revertAfter:FALSE];
+    int currentHack = [self.hackLabelBig.text intValue];
+    //Can't undo first hack of round (may change in future but
+    //would require a lot of manipulation of labels in clunky way)
+    if(currentHack == 1) {
+        [self.undoButton setEnabled:FALSE];
+        [self.undoButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self.undoButton.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    }
+    //Remove last hack
+    [self.hackSet.attempts removeLastObject];
 }
 
 - (void) updateAttemptButtonValues {

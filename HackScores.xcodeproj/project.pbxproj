@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D7F0CA91A5CA91E0038837F /* HackSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F0CA81A5CA91E0038837F /* HackSet.m */; };
 		2DACD0881A4B5D0E00313F41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0871A4B5D0E00313F41 /* main.m */; };
 		2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */; };
 		2DACD08E1A4B5D0E00313F41 /* HSStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08D1A4B5D0E00313F41 /* HSStatsViewController.m */; };
@@ -25,7 +24,6 @@
 		2DACD0CE1A4F601500313F41 /* HSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0CD1A4F601500313F41 /* HSAboutViewController.m */; };
 		2DACD0D11A4FB5FB00313F41 /* HSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */; };
 		2DB3194C1A52393400BE8014 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB3194B1A52393400BE8014 /* CoreData.framework */; };
-		2DB3194F1A5239C000BE8014 /* HackScoresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DB3194D1A5239C000BE8014 /* HackScoresModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D7F0CA71A5CA91E0038837F /* HackSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackSet.h; sourceTree = "<group>"; };
-		2D7F0CA81A5CA91E0038837F /* HackSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackSet.m; sourceTree = "<group>"; };
 		2DACD0821A4B5D0E00313F41 /* HackScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DACD0861A4B5D0E00313F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACD0871A4B5D0E00313F41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,7 +69,6 @@
 		2DACD0CF1A4FB5FB00313F41 /* HSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSettingsViewController.h; sourceTree = "<group>"; };
 		2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSettingsViewController.m; sourceTree = "<group>"; };
 		2DB3194B1A52393400BE8014 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		2DB3194E1A5239C000BE8014 /* HackScoresModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackScoresModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +112,6 @@
 		2DACD0841A4B5D0E00313F41 /* HackScores */ = {
 			isa = PBXGroup;
 			children = (
-				2DB3194D1A5239C000BE8014 /* HackScoresModel.xcdatamodeld */,
-				2D7F0CA71A5CA91E0038837F /* HackSet.h */,
-				2D7F0CA81A5CA91E0038837F /* HackSet.m */,
 				2DACD0891A4B5D0E00313F41 /* AppDelegate.h */,
 				2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */,
 				2DACD08C1A4B5D0E00313F41 /* HSStatsViewController.h */,
@@ -282,12 +274,10 @@
 				2DACD0911A4B5D0E00313F41 /* HSPlayViewController.m in Sources */,
 				2DACD0C81A4E075D00313F41 /* HSAddPlayersViewController.m in Sources */,
 				2DACD0CE1A4F601500313F41 /* HSAboutViewController.m in Sources */,
-				2D7F0CA91A5CA91E0038837F /* HackSet.m in Sources */,
 				2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */,
 				2DACD0B01A4B600700313F41 /* HSLeaderBoardView.m in Sources */,
 				2DACD08E1A4B5D0E00313F41 /* HSStatsViewController.m in Sources */,
 				2DACD0D11A4FB5FB00313F41 /* HSSettingsViewController.m in Sources */,
-				2DB3194F1A5239C000BE8014 /* HackScoresModel.xcdatamodeld in Sources */,
 				2DACD0881A4B5D0E00313F41 /* main.m in Sources */,
 				2DACD0C21A4C94E700313F41 /* CNLabel.m in Sources */,
 				2DACD0CB1A4E3FA700313F41 /* HSHackSetView.m in Sources */,
@@ -503,19 +493,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2DB3194D1A5239C000BE8014 /* HackScoresModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2DB3194E1A5239C000BE8014 /* HackScoresModel.xcdatamodel */,
-			);
-			currentVersion = 2DB3194E1A5239C000BE8014 /* HackScoresModel.xcdatamodel */;
-			path = HackScoresModel.xcdatamodeld;
-			sourceTree = SOURCE_ROOT;
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2DACD07A1A4B5D0E00313F41 /* Project object */;
 }

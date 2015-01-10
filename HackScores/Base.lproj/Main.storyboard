@@ -717,7 +717,7 @@ by Connor Neville</string>
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="decrease">
-                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -733,6 +733,18 @@ by Connor Neville</string>
                                 </state>
                                 <connections>
                                     <action selector="increaseAttemptScore:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="R2k-4h-xuy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgz-w2-Pux">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="undo">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decreaseAttemptScore:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Jpx-Mz-o52"/>
+                                    <action selector="undoButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="unH-9J-MHe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -759,6 +771,7 @@ by Connor Neville</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="MYr-X1-mro" secondAttribute="centerX" id="9GS-vj-eVV"/>
+                            <constraint firstItem="Zgz-w2-Pux" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="30" id="A2d-Sd-rTt"/>
                             <constraint firstItem="j3H-jr-otg" firstAttribute="leading" secondItem="CUg-Bk-6lO" secondAttribute="trailing" constant="37" placeholder="YES" id="FMd-0h-Ges">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
@@ -783,6 +796,7 @@ by Connor Neville</string>
                             <constraint firstItem="lAg-LW-FOP" firstAttribute="top" secondItem="MYr-X1-mro" secondAttribute="bottom" constant="106" id="Qp7-AQ-DSW">
                                 <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                             </constraint>
+                            <constraint firstItem="3uZ-Ar-GUF" firstAttribute="centerY" secondItem="Zgz-w2-Pux" secondAttribute="centerY" id="QtP-Cu-2c5"/>
                             <constraint firstItem="3ZW-My-NI2" firstAttribute="top" secondItem="fQe-fX-EW1" secondAttribute="bottom" constant="8" id="Rpx-2o-Hl9"/>
                             <constraint firstItem="CUg-Bk-6lO" firstAttribute="top" secondItem="lAg-LW-FOP" secondAttribute="bottom" constant="-8" placeholder="YES" id="Rv0-56-sm4">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -830,12 +844,16 @@ by Connor Neville</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="RzZ-Ms-oEY" firstAttribute="centerX" secondItem="RQW-xv-E0g" secondAttribute="centerX" id="sPf-VK-4hB"/>
+                            <constraint firstItem="Zgz-w2-Pux" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="shj-cE-DUG">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
                             <constraint firstItem="gUW-TG-U2y" firstAttribute="top" secondItem="m3O-G7-0g5" secondAttribute="bottom" id="tKb-n9-36t"/>
                             <constraint firstItem="RQW-xv-E0g" firstAttribute="top" secondItem="1Xg-JI-81G" secondAttribute="top" id="u6y-cp-TDm"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="3uZ-Ar-GUF" secondAttribute="bottom" constant="43" id="uOd-RH-lMn">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstItem="3uZ-Ar-GUF" firstAttribute="width" secondItem="XYe-YJ-ZoX" secondAttribute="width" id="vr1-W2-yur"/>
+                            <constraint firstItem="3uZ-Ar-GUF" firstAttribute="width" secondItem="Zgz-w2-Pux" secondAttribute="width" id="yT9-Gb-s2Y"/>
                             <constraint firstItem="RzZ-Ms-oEY" firstAttribute="leading" secondItem="3ZW-My-NI2" secondAttribute="trailing" constant="30" id="yzZ-gO-ka8"/>
                         </constraints>
                         <variation key="default">
@@ -850,6 +868,7 @@ by Connor Neville</string>
                                 <exclude reference="sQV-GZ-qiC"/>
                                 <exclude reference="3uZ-Ar-GUF"/>
                                 <exclude reference="XYe-YJ-ZoX"/>
+                                <exclude reference="Zgz-w2-Pux"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="kaC-jY-WZB"/>
@@ -877,10 +896,14 @@ by Connor Neville</string>
                                 <exclude reference="KbP-ww-WSn"/>
                                 <exclude reference="2bN-Jq-VK2"/>
                                 <exclude reference="dVe-kt-RsV"/>
+                                <exclude reference="A2d-Sd-rTt"/>
+                                <exclude reference="shj-cE-DUG"/>
                                 <exclude reference="uOd-RH-lMn"/>
+                                <exclude reference="QtP-Cu-2c5"/>
                                 <exclude reference="VQ5-TU-A2f"/>
                                 <exclude reference="qs0-XK-c3J"/>
                                 <exclude reference="vr1-W2-yur"/>
+                                <exclude reference="yT9-Gb-s2Y"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -895,6 +918,7 @@ by Connor Neville</string>
                                 <include reference="sQV-GZ-qiC"/>
                                 <include reference="3uZ-Ar-GUF"/>
                                 <include reference="XYe-YJ-ZoX"/>
+                                <include reference="Zgz-w2-Pux"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6MF-zp-SU4"/>
@@ -920,10 +944,14 @@ by Connor Neville</string>
                                 <include reference="KbP-ww-WSn"/>
                                 <include reference="2bN-Jq-VK2"/>
                                 <include reference="dVe-kt-RsV"/>
+                                <include reference="A2d-Sd-rTt"/>
+                                <exclude reference="shj-cE-DUG"/>
                                 <include reference="uOd-RH-lMn"/>
+                                <include reference="QtP-Cu-2c5"/>
                                 <include reference="VQ5-TU-A2f"/>
                                 <include reference="qs0-XK-c3J"/>
                                 <include reference="vr1-W2-yur"/>
+                                <include reference="yT9-Gb-s2Y"/>
                             </mask>
                         </variation>
                     </view>
@@ -937,6 +965,7 @@ by Connor Neville</string>
                         <outlet property="previousRound2" destination="JGu-VQ-jif" id="Wog-Zq-vqO"/>
                         <outlet property="roundLabel" destination="MrN-aW-YZ1" id="1eT-vr-7tq"/>
                         <outlet property="setLabel" destination="gUW-TG-U2y" id="5ci-zi-YHR"/>
+                        <outlet property="undoButton" destination="Zgz-w2-Pux" id="fhQ-pg-zV5"/>
                         <outletCollection property="addAttemptButtons" destination="CUg-Bk-6lO" id="wgl-28-ir3"/>
                         <outletCollection property="addAttemptButtons" destination="j3H-jr-otg" id="dET-gs-duD"/>
                         <outletCollection property="addAttemptButtons" destination="ag5-EP-jkj" id="OKV-2h-TtX"/>
