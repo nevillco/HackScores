@@ -13,6 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property SortMode dataSortMode;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void) sortHackSetData;
 - (void) writeSettingsWithHacksPerRound: (NSNumber*) hacksPerRound
@@ -23,6 +26,8 @@
 - (NSMutableArray*) getSavedNames;
 - (void) clearHackData;
 - (void) initializeTextFilesIfNeeded;
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 + (NSString*) hackSetDataPath;
 

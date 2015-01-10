@@ -122,6 +122,15 @@
     return self.setScore;
 }
 
+//Get average hack: used to display add attempt buttons
+- (int) getAverageHack {
+    int total = 0;
+    for(int i = 0; i < [self attempts].count; i++) {
+        total += [[self.attempts objectAtIndex:i] intValue];
+    }
+    return total / [self attempts].count;
+}
+
 //Write HSHackSet data to end of file
 - (void) writeToFile {
     //Names (may contain spaces) separated by "|"
@@ -135,6 +144,11 @@
     [fileHandle seekToEndOfFile];
     [fileHandle writeData:[stringToWrite dataUsingEncoding:NSUTF8StringEncoding]];
     [fileHandle closeFile];
+}
+
+- (void) writeToCoreData {
+    
+    
 }
 
 //Compare method used to merge sort list of HSHackSets

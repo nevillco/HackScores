@@ -21,6 +21,7 @@
 - (NSNumber*) getBestHack;
 - (NSNumber*) getBestRound;
 - (NSNumber*) getSetScore;
+- (int) getAverageHack;
 
 typedef NS_ENUM(NSUInteger, SortMode) {
     SortByBestLine,

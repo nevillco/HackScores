@@ -19,13 +19,11 @@
 - (IBAction)increaseAttemptScore:(id)sender;
 //Current attempt score: "left arrow" button pressed
 - (IBAction)decreaseAttemptScore:(id)sender;
-//"Add Attempt" button pressed
-- (IBAction)addAttempt:(id)sender;
 //Return button pressed - reverts segue
 - (IBAction)returnButtonPressed:(id)sender;
+//Add attempt button pressed
+- (IBAction)addAttempt:(id)sender;
 
-//Label with current attempt score
-@property (weak, nonatomic) IBOutlet CNLabel *attemptScoreLabel;
 //Labels in top right for set - round - hack
 @property (weak, nonatomic) IBOutlet CNLabel *roundLabel;
 @property (weak, nonatomic) IBOutlet CNLabel *setLabel;
@@ -36,6 +34,11 @@
 //Labels in bottom of screen for previous rounds
 @property (weak, nonatomic) IBOutlet CNLabel *previousRound1;
 @property (weak, nonatomic) IBOutlet CNLabel *previousRound2;
+//Collection of buttons for various values to add
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *addAttemptButtons;
+@property (weak, nonatomic) IBOutlet UIButton *decreaseButton;
+@property (weak, nonatomic) IBOutlet UIButton *increaseButton;
+@property int currentAverage;
 
 @end
 
@@ -43,7 +46,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setCurrentAverage: 0];
     [self populateWithInitialValues];
+    [self initializeAddAttemptButtons];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -56,7 +61,6 @@
 //Useful so that calling viewDidLoad clears
 //any residual changes
 - (void) populateWithInitialValues {
-    [self.attemptScoreLabel setText:@"0"];
     [self.roundLabel setText:@"1"];
     [self.setLabel setText:@"1"];
     [self.hackLabelSmall setText:@"1"];
@@ -66,21 +70,152 @@
     [self.previousRound2 setText:@""];
 }
 
-//Current attempt score: "right arrow" button pressed
-- (IBAction)increaseAttemptScore:(id)sender {
-    [self.attemptScoreLabel incrementTextAndRevertAfter:FALSE];
+//Initialize displays and values of add attempt buttons
+- (void) initializeAddAttemptButtons {
+    //Initialize decrease button
+    //Must be first so it is a descendant of UIView
+    //before addAttemptButtonConstraints
+    [self applyRoundedStyleToButton:self.decreaseButton];
+    [self addDecreaseButtonConstraints];
+    
+    //All constraints for increaseButton
+    //Can be done in IB and will adapt to programmatic constraints
+    [self applyRoundedStyleToButton:self.increaseButton];
+    
+    [self addAttemptButtonConstraints];
+    NSArray* initialValues = @[@0, @1, @2, @0];
+    //Up to 4 buttons can be found, extras not used
+    int numButtonsToUse = MIN([self.addAttemptButtons count], 4);
+    for(int i = 0; i < numButtonsToUse; i++) {
+        UIButton* current = [self.addAttemptButtons objectAtIndex:i];
+        [current setTitle: [NSString stringWithFormat:@"%d",
+                            [initialValues[i] intValue]] forState:UIControlStateNormal];
+        [self applyRoundedStyleToButton:current];
+    }
 }
 
-//Current attempt score: "left arrow" button pressed
+//Applies static style to a given button
+- (void) applyRoundedStyleToButton: (UIButton*) button {
+    //Border color same as text color
+    [button.layer setBorderColor:
+     [[button titleColorForState:UIControlStateNormal] CGColor]];
+    //Rounded border
+    [button.layer setBorderWidth: 5.0f];
+    [button.layer setCornerRadius: 25.0f];
+    [button setClipsToBounds:TRUE];
+}
+
+//Add fixed width constraint to decrease button
+- (void) addDecreaseButtonConstraints {
+    [self.view addSubview: self.decreaseButton];
+    [self.decreaseButton sizeToFit];
+    self.decreaseButton.translatesAutoresizingMaskIntoConstraints = NO;
+    int numButtonsToUse = MIN([self.addAttemptButtons count], 4);
+    int padding = 30;
+    //Horizontal position: trailing to self.view trailing
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.decreaseButton
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:-1 * padding]];
+    //Fixed width: based on how many buttons and superview
+    int fixedWidth = (self.view.bounds.size.width - (padding * (numButtonsToUse + 1))) / numButtonsToUse;
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.decreaseButton
+                                                          attribute:NSLayoutAttributeWidth
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:nil
+                                                          attribute:NSLayoutAttributeNotAnAttribute
+                                                         multiplier:1.0
+                                                           constant:fixedWidth]];
+}
+
+//Add constraints to add attempts buttons
+- (void) addAttemptButtonConstraints {
+    int numButtonsToUse = MIN([self.addAttemptButtons count], 4);
+    int padding = 30;
+    for(int i = 0; i < numButtonsToUse; i++) {
+        UIButton* currentButton = [self.addAttemptButtons objectAtIndex:i];
+        //Add to view (required to add constraints)
+        [self.view addSubview:currentButton];
+        //Constraints
+        currentButton.translatesAutoresizingMaskIntoConstraints = NO;
+        //Fixed width: based on how many buttons and superview
+        int fixedWidth = (self.view.bounds.size.width - (padding * (numButtonsToUse + 1))) / numButtonsToUse;
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                              attribute:NSLayoutAttributeWidth
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:nil
+                                                              attribute:NSLayoutAttributeNotAnAttribute
+                                                             multiplier:1.0
+                                                               constant:fixedWidth]];
+        //Fixed height: based on suggested height and constant for appearance
+        CGFloat suggestedHeight = [currentButton sizeThatFits:self.view.bounds.size].height;
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                              attribute:NSLayoutAttributeHeight
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:nil
+                                                              attribute:NSLayoutAttributeNotAnAttribute
+                                                             multiplier:1.0
+                                                               constant:suggestedHeight + 110]];
+        
+        
+        //Horizontal position: first is special case
+        //Special case: leading to leading of view
+        if(i == 0) {
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                 multiplier:1.0
+                                                                   constant:padding]];
+        }
+        //Normal case: leading to trailing of previous button
+        else {
+            UIButton* previousButton = [self.addAttemptButtons objectAtIndex:i - 1];
+            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                                  attribute:NSLayoutAttributeLeading
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:previousButton
+                                                                  attribute:NSLayoutAttributeTrailing
+                                                                 multiplier:1.0
+                                                                   constant:padding]];
+        }
+        //Vertical position: above decrease button
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:currentButton
+                                                              attribute:NSLayoutAttributeBottom
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self.decreaseButton
+                                                              attribute:NSLayoutAttributeTop
+                                                             multiplier:1.0
+                                                               constant:-1 * padding]];
+    }
+}
+
+//Current attempt score: increase button pressed
+- (IBAction)increaseAttemptScore:(id)sender {
+    UIButton* changeableButton = [self.addAttemptButtons lastObject];
+    int currentValue = [changeableButton.titleLabel.text intValue];
+    [changeableButton setTitle:[NSString stringWithFormat:@"%d", (currentValue + 1)] forState:UIControlStateNormal];
+}
+
+//Current attempt score: decrease button pressed
 //Decrements to a minimum of 0
 - (IBAction)decreaseAttemptScore:(id)sender {
-    [self.attemptScoreLabel decrementTextAndRevertAfter:FALSE withBound:0];
+    UIButton* changeableButton = [self.addAttemptButtons lastObject];
+    int currentValue = [changeableButton.titleLabel.text intValue];
+    if(currentValue != 0)
+        [changeableButton setTitle:[NSString stringWithFormat:@"%d", (currentValue - 1)] forState:UIControlStateNormal];
 }
 
+//Action triggered when an add attempt button is pressed
 - (IBAction)addAttempt:(id)sender {
     AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     //Value of current attempt
-    int attemptValue = [self.attemptScoreLabel.text intValue];
+    UIButton* buttonPressed = sender;
+    int attemptValue = [buttonPressed.titleLabel.text intValue];
     //Add attempt to HSHackSet object
     [self.hackSet addAttempt: attemptValue];
     //Add attempt to total points
@@ -93,6 +228,22 @@
         //Increment both round labels
         [self.hackLabelBig incrementTextAndRevertAfter:FALSE];
         [self.hackLabelSmall incrementTextAndRevertAfter:FALSE];
+    }
+    //If there is a change in the average hack, change attempt buttons
+    int newHackAverage = [self.hackSet getAverageHack];
+    if(newHackAverage != self.currentAverage) {
+        [self setCurrentAverage: newHackAverage];
+        [self updateAttemptButtonValues];
+    }
+}
+
+- (void) updateAttemptButtonValues {
+    //Buttons contain {a, b, c} starting with
+    //a = average - 1 (bounded by 0)
+    int firstValue = MAX(0, self.currentAverage - 1);
+    for(int i = 0; i < 3; i++) {
+        [[self.addAttemptButtons objectAtIndex: i] setTitle:
+         [NSString stringWithFormat:@"%d", firstValue + i] forState:UIControlStateNormal];
     }
 }
 
@@ -119,6 +270,7 @@
     [self.pointsLabel displayMessage:@"0" revertAfter:FALSE];
 }
 
+//Set complete - save & display data
 - (void) setComplete {
     //Write completed HSHackSet to file
     [self.hackSet writeToFile];
@@ -151,8 +303,27 @@
 
 //Return to previous scene
 - (IBAction)returnButtonPressed:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Return"
+                                                    message:@"You're in the middle of a game. Are you sure you want to return? You will lose your progress."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Continue"
+                                          otherButtonTitles:@"Cancel", nil];
+    [alert show];
+}
+
+
+//UIAlertView action: return if user accepts
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    bool clearData = (buttonIndex == 0);
+    if (clearData){
+        [self returnToPresentingViewController];
+    }
+}
+
+- (void) returnToPresentingViewController {
     HSAddPlayersViewController* previous = (HSAddPlayersViewController*)self.presentingViewController;
     [previous viewDidLoad];
     [previous dismissViewControllerAnimated:TRUE completion:nil];
+    
 }
 @end
