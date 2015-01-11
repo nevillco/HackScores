@@ -10,5 +10,7 @@
 
 @interface HSStatsViewController : UIViewController
 
+- (void) populateAllLeaderboards;
+
 @end
 

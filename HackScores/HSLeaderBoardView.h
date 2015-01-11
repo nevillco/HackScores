@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSHackSet.h"
 
 @interface HSLeaderBoardView : UIView
 
 @property UILabel* titleLabel;
+@property NSMutableArray* hackSetViews;
+@property SortMode sortMode;
+@property bool expanded;
+
+- (void) addNumberOfHackSetViews: (int) count;
+- (void) removeNumberOfHackSetViews: (int) count;
 
 @end

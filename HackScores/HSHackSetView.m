@@ -32,6 +32,14 @@
     return self;
 }
 
+- (id) init {
+    self = [super init];
+    if(self) {
+        [self applyStyle];
+    }
+    return self;
+}
+
 //Apply basic style
 - (void) applyStyle {
     //Background: transparent black (darker than HSLeaderboardView)

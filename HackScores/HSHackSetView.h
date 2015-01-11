@@ -11,8 +11,11 @@
 
 @interface HSHackSetView : UIControl
 
+- (id) init;
+- (id) initWithCoder:(NSCoder *)aDecoder;
+
 @property HSHackSet* hackData;
-//By default, view is empty. Needs HSHackSet for content
+
 - (void) addHackContent: (HSHackSet*) hackSet;
 
 @end

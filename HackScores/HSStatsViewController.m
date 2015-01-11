@@ -20,12 +20,6 @@
 @property (weak, nonatomic) IBOutlet HSLeaderBoardView *bestRoundsLeaderBoard;
 @property (weak, nonatomic) IBOutlet HSLeaderBoardView *bestSetsLeaderBoard;
 
-//Each leaderboard box has two HSHackSetView (8 totals)
-@property (strong, nonatomic) IBOutletCollection(HSHackSetView) NSArray* bestLinesHackViews;
-@property (strong, nonatomic) IBOutletCollection(HSHackSetView) NSArray* bestHacksHackViews;
-@property (strong, nonatomic) IBOutletCollection(HSHackSetView) NSArray* bestRoundsHackViews;
-@property (strong, nonatomic) IBOutletCollection(HSHackSetView) NSArray* bestSetsHackViews;
-
 //Button action to play new game (will send user to HSAddPlayersViewController)
 - (IBAction)playNewButtonPressed:(id)sender;
 - (IBAction)aboutButtonPressed:(id)sender;
@@ -37,15 +31,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Will need delegate object for hackSetData
-    //(can't just reference hackSetData because
-    //delegate repeatedly sorts it)
+    [self populateAllLeaderboards];
+}
+
+- (void) populateAllLeaderboards {
     AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [self.bestLinesLeaderBoard setSortMode:SortByBestLine];
+    [self.bestHacksLeaderBoard setSortMode:SortByBestHack];
+    [self.bestRoundsLeaderBoard setSortMode:SortByBestRound];
+    [self.bestSetsLeaderBoard setSortMode:SortBySetScore];
     [self populateBestLinesLeaderboard:delegate];
     [self populateBestHacksLeaderboard:delegate];
     [self populateBestRoundsLeaderboard:delegate];
     [self populateBestSetsLeaderboard:delegate];
+    
 }
 
 - (void) populateBestLinesLeaderboard: (AppDelegate*) delegate {
@@ -58,21 +57,21 @@
     [delegate sortHackSetData];
     
     //Clear all views
-    for(int i = 0; i < self.bestLinesHackViews.count; i++) {
-        HSHackSetView* current = self.bestLinesHackViews[i];
+    for(int i = 0; i < self.bestLinesLeaderBoard.hackSetViews.count; i++) {
+        HSHackSetView* current = self.bestLinesLeaderBoard.hackSetViews[i];
         [current.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
     
     //Populate as many views as possible (bounded by how many views
     //are on screen and by how many data objects we have)
     int numViewsToPopulate = (int)MIN([delegate getHackSetData].count,
-                                      self.bestLinesHackViews.count);
+                                      self.bestLinesLeaderBoard.hackSetViews.count);
     for(int i = 0; i < numViewsToPopulate; i++) {
         //Clear ALL views
-        [[[self.bestLinesHackViews objectAtIndex:i] subviews]
+        [[[self.bestLinesLeaderBoard.hackSetViews objectAtIndex:i] subviews]
          makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-        [[self.bestLinesHackViews objectAtIndex:i] addHackContent:
+        [[self.bestLinesLeaderBoard.hackSetViews objectAtIndex:i] addHackContent:
          [[delegate getHackSetData] objectAtIndex: i]];
     }
 }
@@ -87,23 +86,23 @@
     [delegate sortHackSetData];
     
     //Clear all views
-    for(int i = 0; i < self.bestHacksHackViews.count; i++) {
-        HSHackSetView* current = self.bestHacksHackViews[i];
+    for(int i = 0; i < self.bestHacksLeaderBoard.hackSetViews.count; i++) {
+        HSHackSetView* current = self.bestHacksLeaderBoard.hackSetViews[i];
         [current.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
     
     //Populate as many views as possible (bounded by how many views
     //are on screen and by how many data objects we have)
     int numViewsToPopulate = (int)MIN([delegate getHackSetData].count,
-                                      self.bestHacksHackViews.count);
+                                      self.bestHacksLeaderBoard.hackSetViews.count);
     
     for(int i = 0; i < numViewsToPopulate; i++) {
         //Remove all content from HSHackSetView
         //in case view was previously loaded
-        [[[self.bestHacksHackViews objectAtIndex:i] subviews]
+        [[[self.bestHacksLeaderBoard.hackSetViews objectAtIndex:i] subviews]
          makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-        [[self.bestHacksHackViews objectAtIndex:i] addHackContent:
+        [[self.bestHacksLeaderBoard.hackSetViews objectAtIndex:i] addHackContent:
          [[delegate getHackSetData] objectAtIndex: i]];
     }
 }
@@ -120,23 +119,23 @@
     [delegate sortHackSetData];
     
     //Clear all views
-    for(int i = 0; i < self.bestRoundsHackViews.count; i++) {
-        HSHackSetView* current = self.bestRoundsHackViews[i];
+    for(int i = 0; i < self.bestRoundsLeaderBoard.hackSetViews.count; i++) {
+        HSHackSetView* current = self.bestRoundsLeaderBoard.hackSetViews[i];
         [current.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
     
     //Populate as many views as possible (bounded by how many views
     //are on screen and by how many data objects we have)
     int numViewsToPopulate = (int)MIN([delegate getHackSetData].count,
-                                      self.bestRoundsHackViews.count);
+                                      self.bestRoundsLeaderBoard.hackSetViews.count);
     
     for(int i = 0; i < numViewsToPopulate; i++) {
         //Remove all content from HSHackSetView
         //in case view was previously loaded
-        [[[self.bestRoundsHackViews objectAtIndex:i] subviews]
+        [[[self.bestRoundsLeaderBoard.hackSetViews objectAtIndex:i] subviews]
          makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
-        [[self.bestRoundsHackViews objectAtIndex:i] addHackContent:
+        [[self.bestRoundsLeaderBoard.hackSetViews objectAtIndex:i] addHackContent:
          [[delegate getHackSetData] objectAtIndex: i]];
     }
 }
@@ -150,23 +149,23 @@
     [delegate sortHackSetData];
     
     //Clear all views
-    for(int i = 0; i < self.bestSetsHackViews.count; i++) {
-        HSHackSetView* current = self.bestSetsHackViews[i];
+    for(int i = 0; i < self.bestSetsLeaderBoard.hackSetViews.count; i++) {
+        HSHackSetView* current = self.bestSetsLeaderBoard.hackSetViews[i];
         [current.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     }
     
     //Populate as many views as possible (bounded by how many views
     //are on screen and by how many data objects we have)
     int numViewsToPopulate = (int)MIN([delegate getHackSetData].count,
-                                      self.bestSetsHackViews.count);
+                                      self.bestSetsLeaderBoard.hackSetViews.count);
     
     for(int i = 0; i < numViewsToPopulate; i++) {
         //Remove all content from HSHackSetView
         //in case view was previously loaded
-        [[[self.bestSetsHackViews objectAtIndex:i] subviews]
+        [[[self.bestSetsLeaderBoard.hackSetViews objectAtIndex:i] subviews]
          makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
-        [[self.bestSetsHackViews objectAtIndex:i] addHackContent:
+        [[self.bestSetsLeaderBoard.hackSetViews objectAtIndex:i] addHackContent:
          [[delegate getHackSetData] objectAtIndex: i]];
     }
 }
