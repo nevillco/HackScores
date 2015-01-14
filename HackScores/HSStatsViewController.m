@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HSStatsViewController.h"
 #import "HSSetStatsViewController.h"
+#import "HSRecentGamesViewController.h"
 #import "HSLeaderBoardView.h"
 #import "HSHackSetView.h"
 
@@ -24,6 +25,7 @@
 - (IBAction)playNewButtonPressed:(id)sender;
 - (IBAction)aboutButtonPressed:(id)sender;
 - (IBAction)viewSetStatsTouched:(id)sender;
+- (IBAction)recentGamesButtonPressed:(id)sender;
 
 @end
 
@@ -188,18 +190,25 @@
 
 //Prepare for SetStatsSegue by passing appropriate
 //game stats
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"SetStatsSegue"])
-    {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"SetStatsSegue"]) {
         HSSetStatsViewController *destination = [segue destinationViewController];
         HSHackSetView* senderView = sender;
         [destination setHackData:[senderView hackData]];
+    }
+    else if([[segue identifier] isEqualToString:@"RecentGamesSegue"]) {
+        HSRecentGamesViewController *destination = [segue destinationViewController];
+        AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [destination setHackData:[delegate getHackSetData]];
     }
 }
 
 //Perform segue, sending HSHackSetView as sender
 - (IBAction)viewSetStatsTouched:(id)sender {
     [self performSegueWithIdentifier:@"SetStatsSegue" sender:sender];
+}
+
+- (IBAction)recentGamesButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"RecentGamesSegue" sender:self];
 }
 @end

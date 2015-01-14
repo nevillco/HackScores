@@ -78,7 +78,7 @@
     if(self.hackSetViews == nil) {
         self.hackSetViews = [[NSMutableArray alloc] init];
     }
-    int lastExistingIndex = [self.hackSetViews count] - 1;
+    int lastExistingIndex = (int)[self.hackSetViews count] - 1;
     for(int i = 0; i < count; i++) {
         HSHackSetView* currentView = [[HSHackSetView alloc] init];
         //Add to view
@@ -143,7 +143,7 @@
 
 //Removes HackSetViews from the end of the array
 - (void) removeNumberOfHackSetViews: (int) count {
-    for(int i = [self.hackSetViews count] - 1; i >=
+    for(int i = (int)[self.hackSetViews count] - 1; i >=
         MAX(0, [self.hackSetViews count] - 1 - count); i--) {
         HSHackSetView* current = self.hackSetViews[i];
         [current removeFromSuperview];

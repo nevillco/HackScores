@@ -111,16 +111,38 @@ by Connor Neville</string>
                                     <action selector="aboutButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="txu-ed-PHe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248-NM-h44">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                <state key="normal" title="RECENT GAMES">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recentGamesButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="baz-Hu-fRA"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="double tap a leaderboard to expand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qh-gn-rvP">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFw-wX-wCe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                                <state key="normal" title="PLAYER STATS">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="width" secondItem="tIN-76-839" secondAttribute="width" id="1HI-zh-Ysh"/>
+                            <constraint firstItem="eFw-wX-wCe" firstAttribute="top" secondItem="hLf-in-Xjv" secondAttribute="bottom" constant="-44" id="34w-Up-x8c">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="hLf-in-Xjv" firstAttribute="top" secondItem="a5s-id-Csq" secondAttribute="bottom" constant="-14" id="44u-XR-eXW">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-15"/>
                             </constraint>
@@ -129,6 +151,9 @@ by Connor Neville</string>
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstItem="a5s-id-Csq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tIN-76-839" secondAttribute="bottom" constant="30" id="GeN-HK-5rt"/>
+                            <constraint firstItem="hLf-in-Xjv" firstAttribute="leading" secondItem="eFw-wX-wCe" secondAttribute="leading" constant="152" id="HdQ-dZ-Hta">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="KPl-cT-Zq1">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
@@ -141,6 +166,9 @@ by Connor Neville</string>
                             <constraint firstItem="3qh-gn-rvP" firstAttribute="trailing" secondItem="tIN-76-839" secondAttribute="trailing" id="Q6i-2m-SdX"/>
                             <constraint firstItem="tRX-Y4-09z" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="RBp-VJ-uDE"/>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="tRX-Y4-09z" secondAttribute="top" constant="-208" id="WT3-j4-hJG"/>
+                            <constraint firstItem="aVT-b3-Ce8" firstAttribute="bottom" secondItem="248-NM-h44" secondAttribute="top" constant="-33" id="WiE-hF-B73">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="a5s-id-Csq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tRX-Y4-09z" secondAttribute="bottom" constant="22" id="Xag-sE-tmD">
                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                             </constraint>
@@ -151,6 +179,9 @@ by Connor Neville</string>
                             <constraint firstItem="sGp-NF-SdP" firstAttribute="top" secondItem="g93-rL-zEM" secondAttribute="bottom" id="f8O-oJ-XvU"/>
                             <constraint firstItem="a5s-id-Csq" firstAttribute="top" secondItem="tIN-76-839" secondAttribute="bottom" constant="30" id="fRP-g2-p4F"/>
                             <constraint firstItem="a5s-id-Csq" firstAttribute="leading" secondItem="hLf-in-Xjv" secondAttribute="leading" id="fhb-67-fDa"/>
+                            <constraint firstItem="aVT-b3-Ce8" firstAttribute="trailing" secondItem="248-NM-h44" secondAttribute="trailing" constant="-120" id="gaV-5X-WZb">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="g93-rL-zEM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="hTU-zu-CZ2"/>
                             <constraint firstItem="PlN-qp-8Ut" firstAttribute="leading" secondItem="tIN-76-839" secondAttribute="leading" constant="-10" id="jAC-ue-aUT">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -189,7 +220,9 @@ by Connor Neville</string>
                                 <exclude reference="a5s-id-Csq"/>
                                 <exclude reference="hLf-in-Xjv"/>
                                 <exclude reference="aVT-b3-Ce8"/>
+                                <exclude reference="248-NM-h44"/>
                                 <exclude reference="3qh-gn-rvP"/>
+                                <exclude reference="eFw-wX-wCe"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="E4S-pG-oby"/>
@@ -205,9 +238,13 @@ by Connor Neville</string>
                                 <exclude reference="fhb-67-fDa"/>
                                 <exclude reference="vbw-nl-2Nn"/>
                                 <exclude reference="xL3-pz-GnG"/>
+                                <exclude reference="34w-Up-x8c"/>
                                 <exclude reference="44u-XR-eXW"/>
+                                <exclude reference="HdQ-dZ-Hta"/>
                                 <exclude reference="Q6i-2m-SdX"/>
                                 <exclude reference="vdb-5W-Ccu"/>
+                                <exclude reference="WiE-hF-B73"/>
+                                <exclude reference="gaV-5X-WZb"/>
                                 <exclude reference="p7u-Xw-zfR"/>
                             </mask>
                         </variation>
@@ -216,7 +253,9 @@ by Connor Neville</string>
                                 <include reference="a5s-id-Csq"/>
                                 <include reference="hLf-in-Xjv"/>
                                 <include reference="aVT-b3-Ce8"/>
+                                <include reference="248-NM-h44"/>
                                 <include reference="3qh-gn-rvP"/>
+                                <include reference="eFw-wX-wCe"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="E4S-pG-oby"/>
@@ -234,9 +273,13 @@ by Connor Neville</string>
                                 <include reference="fhb-67-fDa"/>
                                 <include reference="vbw-nl-2Nn"/>
                                 <include reference="xL3-pz-GnG"/>
+                                <include reference="34w-Up-x8c"/>
                                 <include reference="44u-XR-eXW"/>
+                                <include reference="HdQ-dZ-Hta"/>
                                 <include reference="Q6i-2m-SdX"/>
                                 <include reference="vdb-5W-Ccu"/>
+                                <include reference="WiE-hF-B73"/>
+                                <include reference="gaV-5X-WZb"/>
                                 <include reference="p7u-Xw-zfR"/>
                             </mask>
                         </variation>
@@ -250,11 +293,138 @@ by Connor Neville</string>
                         <segue destination="ALo-UH-gT1" kind="show" identifier="AboutSegue" id="l1C-dV-fUl"/>
                         <segue destination="mnG-fr-SIV" kind="show" identifier="SettingsSegue" id="hI7-4y-n9w"/>
                         <segue destination="kpF-Iy-alW" kind="show" identifier="SetStatsSegue" id="40l-ND-0lU"/>
+                        <segue destination="x2R-i3-nix" kind="show" identifier="RecentGamesSegue" id="YqL-FZ-nzx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320.25"/>
+        </scene>
+        <!--Recent Games View Controller-->
+        <scene sceneID="V6l-mF-QcH">
+            <objects>
+                <viewController id="x2R-i3-nix" customClass="HSRecentGamesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gwM-B2-qTI"/>
+                        <viewControllerLayoutGuide type="bottom" id="hbm-v5-wxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1sk-b2-KH1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RECENT GAMES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbF-NX-0ny">
+                                <rect key="frame" x="16" y="20" width="130" height="48"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iml-lr-Q2a">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
+                                <state key="normal" title="RETURN">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnButtonPressed:" destination="x2R-i3-nix" eventType="touchUpInside" id="sBO-A1-w0k"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below is a list of up to 10 recent games. Tap them to view more info." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRZ-qH-dES">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g4G-Hi-ojZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentGamesTableCell" rowHeight="100" id="5lJ-lm-Uh3">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5lJ-lm-Uh3" id="ItG-LV-kIr">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="x2R-i3-nix" id="SHd-IY-JXm"/>
+                                    <outlet property="delegate" destination="x2R-i3-nix" id="Kmj-LU-CMd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iml-lr-Q2a" firstAttribute="trailing" secondItem="1sk-b2-KH1" secondAttribute="trailingMargin" id="40C-Il-8AW"/>
+                            <constraint firstItem="FbF-NX-0ny" firstAttribute="leading" secondItem="1sk-b2-KH1" secondAttribute="leadingMargin" id="BrH-vS-5rG"/>
+                            <constraint firstItem="g4G-Hi-ojZ" firstAttribute="top" secondItem="XRZ-qH-dES" secondAttribute="bottom" constant="16" id="CJn-le-ot5"/>
+                            <constraint firstItem="hbm-v5-wxd" firstAttribute="top" secondItem="g4G-Hi-ojZ" secondAttribute="bottom" constant="116" id="K0L-Ar-s08">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="FbF-NX-0ny" firstAttribute="top" secondItem="gwM-B2-qTI" secondAttribute="bottom" constant="8" id="Nxa-d6-6mx">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="XRZ-qH-dES" firstAttribute="leading" secondItem="1sk-b2-KH1" secondAttribute="leadingMargin" id="QcV-m9-qWu"/>
+                            <constraint firstItem="XRZ-qH-dES" firstAttribute="top" secondItem="FbF-NX-0ny" secondAttribute="bottom" constant="-9" id="UuR-n0-KAu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g4G-Hi-ojZ" secondAttribute="trailing" constant="224" id="kVx-KV-DIx">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="iml-lr-Q2a" firstAttribute="top" secondItem="gwM-B2-qTI" secondAttribute="bottom" id="otj-c7-RXQ"/>
+                            <constraint firstItem="g4G-Hi-ojZ" firstAttribute="leading" secondItem="1sk-b2-KH1" secondAttribute="leadingMargin" constant="224" id="qdn-TN-TPK">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="FbF-NX-0ny"/>
+                                <exclude reference="iml-lr-Q2a"/>
+                                <exclude reference="XRZ-qH-dES"/>
+                                <exclude reference="g4G-Hi-ojZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BrH-vS-5rG"/>
+                                <exclude reference="Nxa-d6-6mx"/>
+                                <exclude reference="QcV-m9-qWu"/>
+                                <exclude reference="UuR-n0-KAu"/>
+                                <exclude reference="CJn-le-ot5"/>
+                                <exclude reference="kVx-KV-DIx"/>
+                                <exclude reference="qdn-TN-TPK"/>
+                                <exclude reference="40C-Il-8AW"/>
+                                <exclude reference="otj-c7-RXQ"/>
+                                <exclude reference="K0L-Ar-s08"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="FbF-NX-0ny"/>
+                                <include reference="iml-lr-Q2a"/>
+                                <include reference="XRZ-qH-dES"/>
+                                <include reference="g4G-Hi-ojZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BrH-vS-5rG"/>
+                                <include reference="Nxa-d6-6mx"/>
+                                <include reference="QcV-m9-qWu"/>
+                                <include reference="UuR-n0-KAu"/>
+                                <include reference="CJn-le-ot5"/>
+                                <include reference="kVx-KV-DIx"/>
+                                <include reference="qdn-TN-TPK"/>
+                                <include reference="40C-Il-8AW"/>
+                                <include reference="otj-c7-RXQ"/>
+                                <include reference="K0L-Ar-s08"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="g4G-Hi-ojZ" id="b0u-gV-y65"/>
+                        <segue destination="kpF-Iy-alW" kind="show" identifier="RecentGamesToSetStatsSegue" id="qWa-fA-ff1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yzo-lz-mg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1006.5"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -340,17 +510,6 @@ by Connor Neville</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-aG-thw">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
-                                <state key="normal" title="RETURN">
-                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="J2N-dU-m83"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Rounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-P5-TqL">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
@@ -445,6 +604,17 @@ by Connor Neville</string>
                                 <connections>
                                     <action selector="decreaseAttemptScore:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Jpx-Mz-o52"/>
                                     <action selector="undoButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="unH-9J-MHe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-aG-thw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
+                                <state key="normal" title="RETURN">
+                                    <color key="titleColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="J2N-dU-m83"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -558,7 +728,6 @@ by Connor Neville</string>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="7OR-aG-thw"/>
                                 <exclude reference="dnJ-P5-TqL"/>
                                 <exclude reference="lAg-LW-FOP"/>
                                 <exclude reference="JGu-VQ-jif"/>
@@ -569,6 +738,7 @@ by Connor Neville</string>
                                 <exclude reference="3uZ-Ar-GUF"/>
                                 <exclude reference="XYe-YJ-ZoX"/>
                                 <exclude reference="Zgz-w2-Pux"/>
+                                <exclude reference="7OR-aG-thw"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2g3-Ia-CO7"/>
@@ -608,7 +778,6 @@ by Connor Neville</string>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="7OR-aG-thw"/>
                                 <include reference="dnJ-P5-TqL"/>
                                 <include reference="lAg-LW-FOP"/>
                                 <include reference="JGu-VQ-jif"/>
@@ -619,6 +788,7 @@ by Connor Neville</string>
                                 <include reference="3uZ-Ar-GUF"/>
                                 <include reference="XYe-YJ-ZoX"/>
                                 <include reference="Zgz-w2-Pux"/>
+                                <include reference="7OR-aG-thw"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2g3-Ia-CO7"/>
@@ -2710,4 +2880,7 @@ App Developer</string>
             <point key="canvasLocation" x="1995.75" y="-324"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qWa-fA-ff1"/>
+    </inferredMetricsTieBreakers>
 </document>

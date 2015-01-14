@@ -92,7 +92,7 @@
     [self addAttemptButtonConstraints];
     NSArray* initialValues = @[@0, @1, @2, @0];
     //Up to 4 buttons can be found, extras not used
-    int numButtonsToUse = MIN([self.addAttemptButtons count], 4);
+    int numButtonsToUse = MIN((int)[self.addAttemptButtons count], 4);
     for(int i = 0; i < numButtonsToUse; i++) {
         UIButton* current = [self.addAttemptButtons objectAtIndex:i];
         [current setTitle: [NSString stringWithFormat:@"%d",
@@ -117,7 +117,7 @@
     [self.view addSubview: self.decreaseButton];
     [self.decreaseButton sizeToFit];
     self.decreaseButton.translatesAutoresizingMaskIntoConstraints = NO;
-    int numButtonsToUse = MIN([self.addAttemptButtons count], 4);
+    int numButtonsToUse = MIN((int)[self.addAttemptButtons count], 4);
     int padding = 30;
     //Horizontal position: trailing to self.view trailing
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.decreaseButton
@@ -140,7 +140,7 @@
 
 //Add constraints to add attempts buttons
 - (void) addAttemptButtonConstraints {
-    int numButtonsToUse = MIN([self.addAttemptButtons count], 4);
+    int numButtonsToUse = MIN((int)[self.addAttemptButtons count], 4);
     int padding = 30;
     for(int i = 0; i < numButtonsToUse; i++) {
         UIButton* currentButton = [self.addAttemptButtons objectAtIndex:i];
@@ -327,6 +327,8 @@
 
 //Set complete - save & display data
 - (void) setComplete {
+    //Make wasRecentlyPlayed: changes appearance in stats
+    self.hackSet.wasRecentlyPlayed = true;
     //Write completed HSHackSet to file
     [self.hackSet writeToFile];
     //Add to delegate data

@@ -42,11 +42,11 @@
 
 //Apply basic style
 - (void) applyStyle {
-    //Background: transparent black (darker than HSLeaderboardView)
+    //Background color
     [self setBackgroundColor:[UIColor colorWithRed:0.0f
-                                             green:0.0f
-                                              blue:0.0f
-                                             alpha:0.5f]];
+                                                 green:0.0f
+                                                  blue:0.0f
+                                                 alpha:0.5f]];
     //Rounded white border
     [self.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [self.layer setBorderWidth: 1.0f];
@@ -57,6 +57,9 @@
 //Add to view, then add auto layout constraints
 - (void) addHackContent: (HSHackSet*) hackSet {
     [self setHackData: hackSet];
+    if([self.hackData wasRecentlyPlayed]) {
+        [self setBackgroundColor:[UIColor darkGrayColor]];
+    }
     
     self.roundScore = [self generateRoundScoresLabel:hackSet];
     [self addSubview: self.roundScore];
