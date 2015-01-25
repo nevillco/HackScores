@@ -265,8 +265,7 @@
                 return NSOrderedSame;
         }
             
-        //Remaining 3 cases are far simpler than best overall
-            
+        //Remaining 4 cases are far simpler than best overall
         case SortByBestHack: {
             if([self getBestHack].intValue > [object getBestHack].intValue)
                 return NSOrderedAscending;
@@ -289,6 +288,10 @@
             else if([self getSetScore].intValue < [object getSetScore].intValue)
                 return NSOrderedDescending;
             return NSOrderedSame;
+        }
+            
+        case SortByDate: {
+            return [[self dateOfGame] compare: [object dateOfGame]];
         }
     }
 }

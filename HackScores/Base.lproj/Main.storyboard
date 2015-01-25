@@ -225,12 +225,8 @@ by Connor Neville</string>
                                 <exclude reference="eFw-wX-wCe"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="E4S-pG-oby"/>
-                                <exclude reference="WT3-j4-hJG"/>
-                                <exclude reference="f8O-oJ-XvU"/>
-                                <exclude reference="N8P-57-Tl6"/>
-                                <exclude reference="KPl-cT-Zq1"/>
-                                <exclude reference="jAC-ue-aUT"/>
+                                <exclude reference="Q6i-2m-SdX"/>
+                                <exclude reference="vdb-5W-Ccu"/>
                                 <exclude reference="GeN-HK-5rt"/>
                                 <exclude reference="KVk-6P-q91"/>
                                 <exclude reference="Xag-sE-tmD"/>
@@ -238,14 +234,18 @@ by Connor Neville</string>
                                 <exclude reference="fhb-67-fDa"/>
                                 <exclude reference="vbw-nl-2Nn"/>
                                 <exclude reference="xL3-pz-GnG"/>
-                                <exclude reference="34w-Up-x8c"/>
-                                <exclude reference="44u-XR-eXW"/>
-                                <exclude reference="HdQ-dZ-Hta"/>
-                                <exclude reference="Q6i-2m-SdX"/>
-                                <exclude reference="vdb-5W-Ccu"/>
                                 <exclude reference="WiE-hF-B73"/>
                                 <exclude reference="gaV-5X-WZb"/>
                                 <exclude reference="p7u-Xw-zfR"/>
+                                <exclude reference="34w-Up-x8c"/>
+                                <exclude reference="44u-XR-eXW"/>
+                                <exclude reference="HdQ-dZ-Hta"/>
+                                <exclude reference="E4S-pG-oby"/>
+                                <exclude reference="WT3-j4-hJG"/>
+                                <exclude reference="f8O-oJ-XvU"/>
+                                <exclude reference="N8P-57-Tl6"/>
+                                <exclude reference="KPl-cT-Zq1"/>
+                                <exclude reference="jAC-ue-aUT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -258,6 +258,21 @@ by Connor Neville</string>
                                 <include reference="eFw-wX-wCe"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Q6i-2m-SdX"/>
+                                <include reference="vdb-5W-Ccu"/>
+                                <include reference="GeN-HK-5rt"/>
+                                <include reference="KVk-6P-q91"/>
+                                <include reference="Xag-sE-tmD"/>
+                                <exclude reference="fRP-g2-p4F"/>
+                                <include reference="fhb-67-fDa"/>
+                                <include reference="vbw-nl-2Nn"/>
+                                <include reference="xL3-pz-GnG"/>
+                                <include reference="WiE-hF-B73"/>
+                                <include reference="gaV-5X-WZb"/>
+                                <include reference="p7u-Xw-zfR"/>
+                                <include reference="34w-Up-x8c"/>
+                                <include reference="44u-XR-eXW"/>
+                                <include reference="HdQ-dZ-Hta"/>
                                 <include reference="E4S-pG-oby"/>
                                 <exclude reference="y1i-0q-k0t"/>
                                 <include reference="N8P-57-Tl6"/>
@@ -266,21 +281,6 @@ by Connor Neville</string>
                                 <exclude reference="e2x-Xm-4v8"/>
                                 <include reference="jAC-ue-aUT"/>
                                 <exclude reference="sYb-zd-OQB"/>
-                                <include reference="GeN-HK-5rt"/>
-                                <include reference="KVk-6P-q91"/>
-                                <include reference="Xag-sE-tmD"/>
-                                <exclude reference="fRP-g2-p4F"/>
-                                <include reference="fhb-67-fDa"/>
-                                <include reference="vbw-nl-2Nn"/>
-                                <include reference="xL3-pz-GnG"/>
-                                <include reference="34w-Up-x8c"/>
-                                <include reference="44u-XR-eXW"/>
-                                <include reference="HdQ-dZ-Hta"/>
-                                <include reference="Q6i-2m-SdX"/>
-                                <include reference="vdb-5W-Ccu"/>
-                                <include reference="WiE-hF-B73"/>
-                                <include reference="gaV-5X-WZb"/>
-                                <include reference="p7u-Xw-zfR"/>
                             </mask>
                         </variation>
                     </view>
@@ -309,9 +309,10 @@ by Connor Neville</string>
                         <viewControllerLayoutGuide type="bottom" id="hbm-v5-wxd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1sk-b2-KH1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RECENT GAMES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbF-NX-0ny">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECENT GAMES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbF-NX-0ny">
                                 <rect key="frame" x="16" y="20" width="130" height="48"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -354,12 +355,20 @@ by Connor Neville</string>
                                     <outlet property="delegate" destination="x2R-i3-nix" id="Kmj-LU-CMd"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Games Played" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-UX-orc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iml-lr-Q2a" firstAttribute="trailing" secondItem="1sk-b2-KH1" secondAttribute="trailingMargin" id="40C-Il-8AW"/>
                             <constraint firstItem="FbF-NX-0ny" firstAttribute="leading" secondItem="1sk-b2-KH1" secondAttribute="leadingMargin" id="BrH-vS-5rG"/>
-                            <constraint firstItem="g4G-Hi-ojZ" firstAttribute="top" secondItem="XRZ-qH-dES" secondAttribute="bottom" constant="16" id="CJn-le-ot5"/>
+                            <constraint firstItem="g4G-Hi-ojZ" firstAttribute="top" secondItem="XRZ-qH-dES" secondAttribute="bottom" constant="16" id="CJn-le-ot5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
                             <constraint firstItem="hbm-v5-wxd" firstAttribute="top" secondItem="g4G-Hi-ojZ" secondAttribute="bottom" constant="116" id="K0L-Ar-s08">
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
@@ -375,6 +384,12 @@ by Connor Neville</string>
                             <constraint firstItem="g4G-Hi-ojZ" firstAttribute="leading" secondItem="1sk-b2-KH1" secondAttribute="leadingMargin" constant="224" id="qdn-TN-TPK">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="u8y-UX-orc" firstAttribute="top" secondItem="XRZ-qH-dES" secondAttribute="bottom" constant="-3" id="vzK-5A-gnA">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="u8y-UX-orc" secondAttribute="centerX" constant="106.5" id="zFW-Qd-Ewn">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -382,18 +397,21 @@ by Connor Neville</string>
                                 <exclude reference="iml-lr-Q2a"/>
                                 <exclude reference="XRZ-qH-dES"/>
                                 <exclude reference="g4G-Hi-ojZ"/>
+                                <exclude reference="u8y-UX-orc"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BrH-vS-5rG"/>
-                                <exclude reference="Nxa-d6-6mx"/>
                                 <exclude reference="QcV-m9-qWu"/>
                                 <exclude reference="UuR-n0-KAu"/>
+                                <exclude reference="K0L-Ar-s08"/>
+                                <exclude reference="vzK-5A-gnA"/>
+                                <exclude reference="zFW-Qd-Ewn"/>
+                                <exclude reference="40C-Il-8AW"/>
+                                <exclude reference="otj-c7-RXQ"/>
+                                <exclude reference="BrH-vS-5rG"/>
+                                <exclude reference="Nxa-d6-6mx"/>
                                 <exclude reference="CJn-le-ot5"/>
                                 <exclude reference="kVx-KV-DIx"/>
                                 <exclude reference="qdn-TN-TPK"/>
-                                <exclude reference="40C-Il-8AW"/>
-                                <exclude reference="otj-c7-RXQ"/>
-                                <exclude reference="K0L-Ar-s08"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -402,23 +420,27 @@ by Connor Neville</string>
                                 <include reference="iml-lr-Q2a"/>
                                 <include reference="XRZ-qH-dES"/>
                                 <include reference="g4G-Hi-ojZ"/>
+                                <include reference="u8y-UX-orc"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BrH-vS-5rG"/>
-                                <include reference="Nxa-d6-6mx"/>
                                 <include reference="QcV-m9-qWu"/>
                                 <include reference="UuR-n0-KAu"/>
+                                <include reference="K0L-Ar-s08"/>
+                                <include reference="vzK-5A-gnA"/>
+                                <include reference="zFW-Qd-Ewn"/>
+                                <include reference="40C-Il-8AW"/>
+                                <include reference="otj-c7-RXQ"/>
+                                <include reference="BrH-vS-5rG"/>
+                                <include reference="Nxa-d6-6mx"/>
                                 <include reference="CJn-le-ot5"/>
                                 <include reference="kVx-KV-DIx"/>
                                 <include reference="qdn-TN-TPK"/>
-                                <include reference="40C-Il-8AW"/>
-                                <include reference="otj-c7-RXQ"/>
-                                <include reference="K0L-Ar-s08"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="g4G-Hi-ojZ" id="b0u-gV-y65"/>
+                        <outlet property="totalGamesPlayedLabel" destination="u8y-UX-orc" id="rtj-48-bK6"/>
                         <segue destination="kpF-Iy-alW" kind="show" identifier="RecentGamesToSetStatsSegue" id="qWa-fA-ff1"/>
                     </connections>
                 </viewController>

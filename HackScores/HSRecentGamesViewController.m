@@ -10,6 +10,7 @@
 #import "HSStatsViewController.h"
 #import "HSSetStatsViewController.h"
 #import "HSHackSet.h"
+#import "AppDelegate.h"
 
 @interface HSRecentGamesViewController ()
 
@@ -17,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property HSHackSet* selectedData;
+@property (weak, nonatomic) IBOutlet UILabel *totalGamesPlayedLabel;
 
 @end
 
@@ -30,7 +32,10 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.opaque = NO;
     self.tableView.backgroundView = nil;
-    // Do any additional setup after loading the view.
+    //Label for total games played
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    unsigned long totalGamesPlayed = [[delegate getHackSetData] count];
+    [self.totalGamesPlayedLabel setText:[NSString stringWithFormat:@"%lu total sets played", totalGamesPlayed]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +53,8 @@
 //Number of rows up to 10
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return MIN(10, [self.hackData count]);
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    return MIN(10, [[delegate getHackSetData] count]);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,7 +67,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    HSHackSet* currentData = self.hackData[indexPath.row];
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    long index = MAX(0, [[delegate getHackSetData] count] - 1 - indexPath.row);
+    [delegate setDataSortMode: SortByDate];
+    [delegate sortHackSetData];
+    HSHackSet* currentData = [[delegate getHackSetData] objectAtIndex: index];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -155,7 +165,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self setSelectedData: self.hackData[indexPath.row]];
+    AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    long index = MAX(0, [[delegate getHackSetData] count] - 1 - indexPath.row);
+    [self setSelectedData: [[delegate getHackSetData] objectAtIndex:index]];
     [self performSegueWithIdentifier:@"RecentGamesToSetStatsSegue" sender:self];
 }
 

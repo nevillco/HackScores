@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D7F0CAC1A61AA1F0038837F /* HSSetStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */; };
 		2D7F0CAF1A6345F00038837F /* HSRecentGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F0CAE1A6345F00038837F /* HSRecentGamesViewController.m */; };
+		2DAB374F1A754B9600A29C07 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAB374E1A754B9600A29C07 /* QuartzCore.framework */; };
 		2DACD0881A4B5D0E00313F41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0871A4B5D0E00313F41 /* main.m */; };
 		2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */; };
 		2DACD08E1A4B5D0E00313F41 /* HSStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08D1A4B5D0E00313F41 /* HSStatsViewController.m */; };
@@ -25,7 +26,6 @@
 		2DACD0CB1A4E3FA700313F41 /* HSHackSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0CA1A4E3FA700313F41 /* HSHackSetView.m */; };
 		2DACD0CE1A4F601500313F41 /* HSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0CD1A4F601500313F41 /* HSAboutViewController.m */; };
 		2DACD0D11A4FB5FB00313F41 /* HSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */; };
-		2DB3194C1A52393400BE8014 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB3194B1A52393400BE8014 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,7 @@
 		2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetStatsViewController.m; sourceTree = "<group>"; };
 		2D7F0CAD1A6345F00038837F /* HSRecentGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSRecentGamesViewController.h; sourceTree = "<group>"; };
 		2D7F0CAE1A6345F00038837F /* HSRecentGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSRecentGamesViewController.m; sourceTree = "<group>"; };
+		2DAB374E1A754B9600A29C07 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2DACD0821A4B5D0E00313F41 /* HackScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DACD0861A4B5D0E00313F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACD0871A4B5D0E00313F41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		2DACD0CD1A4F601500313F41 /* HSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAboutViewController.m; sourceTree = "<group>"; };
 		2DACD0CF1A4FB5FB00313F41 /* HSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSettingsViewController.h; sourceTree = "<group>"; };
 		2DACD0D01A4FB5FB00313F41 /* HSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSettingsViewController.m; sourceTree = "<group>"; };
-		2DB3194B1A52393400BE8014 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB3194C1A52393400BE8014 /* CoreData.framework in Frameworks */,
+				2DAB374F1A754B9600A29C07 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 		2DACD0791A4B5D0E00313F41 = {
 			isa = PBXGroup;
 			children = (
-				2DB3194B1A52393400BE8014 /* CoreData.framework */,
+				2DAB374E1A754B9600A29C07 /* QuartzCore.framework */,
 				2DACD0841A4B5D0E00313F41 /* HackScores */,
 				2DACD0A11A4B5D0E00313F41 /* HackScoresTests */,
 				2DACD0831A4B5D0E00313F41 /* Products */,
@@ -420,6 +420,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HackScores/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HackScores",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -434,6 +440,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HackScores/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HackScores",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;

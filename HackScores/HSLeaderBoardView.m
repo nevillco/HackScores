@@ -81,8 +81,9 @@
     int lastExistingIndex = (int)[self.hackSetViews count] - 1;
     for(int i = 0; i < count; i++) {
         HSHackSetView* currentView = [[HSHackSetView alloc] init];
-        //Add to view
+        //Add to view & data
         [self addSubview:currentView];
+        [self.hackSetViews addObject: currentView];
         //Leading & trailing
         currentView.translatesAutoresizingMaskIntoConstraints = FALSE;
         [self addConstraint:[NSLayoutConstraint constraintWithItem:currentView
@@ -128,15 +129,14 @@
                                                               constant:10]];
         }
         //Get data from delegate
-        int dataIndex = lastExistingIndex + 1;
+        lastExistingIndex++;
         AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [delegate setDataSortMode: self.sortMode];
         [delegate sortHackSetData];
-        
-        [currentView addHackContent:[[delegate getHackSetData] objectAtIndex: dataIndex]];
-        
-        [self.hackSetViews addObject: currentView];
-        lastExistingIndex += 1;
+        //Populate if there is a hack to do so
+        if([[delegate getHackSetData] count] > lastExistingIndex) {
+            [currentView addHackContent:[[delegate getHackSetData] objectAtIndex: lastExistingIndex]];
+        }
     }
     [self setNeedsDisplay];
 }

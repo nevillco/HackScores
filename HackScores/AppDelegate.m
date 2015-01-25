@@ -28,8 +28,18 @@
     [self initializeTextFilesIfNeeded];
     [self setHackSetData: [self readHackSetData]];
     [self readSettings];
+    NSSetUncaughtExceptionHandler(&exceptionHandler);
     
     return YES;
+}
+
+void exceptionHandler(NSException *exception)
+{
+    NSLog(@"%@",[exception name]);
+    NSLog(@"%@",[exception reason]);
+    NSLog(@"%@",[exception userInfo]);
+    NSLog(@"%@",[exception callStackSymbols]);
+    NSLog(@"%@",[exception callStackReturnAddresses]);
 }
 
 - (void) initializeTextFilesIfNeeded {

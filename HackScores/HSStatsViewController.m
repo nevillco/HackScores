@@ -196,11 +196,6 @@
         HSHackSetView* senderView = sender;
         [destination setHackData:[senderView hackData]];
     }
-    else if([[segue identifier] isEqualToString:@"RecentGamesSegue"]) {
-        HSRecentGamesViewController *destination = [segue destinationViewController];
-        AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        [destination setHackData:[delegate getHackSetData]];
-    }
 }
 
 //Perform segue, sending HSHackSetView as sender

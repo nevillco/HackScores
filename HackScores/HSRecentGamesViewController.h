@@ -10,6 +10,4 @@
 
 @interface HSRecentGamesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property NSMutableArray* hackData;
-
 @end

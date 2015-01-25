@@ -34,7 +34,8 @@ typedef NS_ENUM(NSUInteger, SortMode) {
     SortByBestLine,
     SortByBestHack,
     SortByBestRound,
-    SortBySetScore
+    SortBySetScore,
+    SortByDate
 };
 
 - (NSComparisonResult)compare:(HSHackSet*)object;
