@@ -327,8 +327,6 @@
 
 //Set complete - save & display data
 - (void) setComplete {
-    //Make wasRecentlyPlayed: changes appearance in stats
-    self.hackSet.wasRecentlyPlayed = true;
     //Write completed HSHackSet to file
     [self.hackSet writeToFile];
     //Add to delegate data

@@ -24,6 +24,7 @@
 - (void) clearHackData;
 - (void) initializeTextFilesIfNeeded;
 - (NSURL *)applicationDocumentsDirectory;
+- (NSMutableArray*)hackSetsWithPlayer:(NSString*)playerName;
 
 + (NSString*) hackSetDataPath;
 

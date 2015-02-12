@@ -19,6 +19,8 @@
 - (void) displayMessage: (NSString*) newText revertAfter:(BOOL) revertAfter withColor: (UIColor*) newColor;
 - (void) displayMessage: (NSString*) newText revertAfter:(BOOL) revertAfter;
 
+- (void) setTextToInt:(int)textAsInt;
+
 - (BOOL) isInt;
 - (BOOL) incrementTextAndRevertAfter: (BOOL) revertAfter;
 - (BOOL) incrementTextAndRevertAfter: (BOOL) revertAfter withBound: (int) bound;

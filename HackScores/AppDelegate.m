@@ -247,6 +247,22 @@ void exceptionHandler(NSException *exception)
     return [[newLeft arrayByAddingObjectsFromArray:newRight] mutableCopy];
 }
 
+//Gets all HSHackSet objects whose players contain a given playerName
+//Case insensitive comparison
+- (NSMutableArray*)hackSetsWithPlayer:(NSString*)playerName {
+    NSMutableArray* hackSets = [[NSMutableArray alloc] init];
+    for(HSHackSet* hackSet in [self hackSetData]) {
+        NSMutableArray* names = [hackSet playerNames];
+        for(NSString* name in names) {
+            if([name caseInsensitiveCompare:playerName] == NSOrderedSame) {
+                [hackSets addObject:hackSet];
+                break;
+            }
+        }
+    }
+    return hackSets;
+}
+
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {

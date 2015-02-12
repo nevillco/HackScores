@@ -10,6 +10,7 @@
 #import "HSStatsViewController.h"
 #import "HSSetStatsViewController.h"
 #import "HSRecentGamesViewController.h"
+#import "HSPlayerStatsViewController.h"
 #import "HSLeaderBoardView.h"
 #import "HSHackSetView.h"
 
@@ -21,11 +22,14 @@
 @property (weak, nonatomic) IBOutlet HSLeaderBoardView *bestRoundsLeaderBoard;
 @property (weak, nonatomic) IBOutlet HSLeaderBoardView *bestSetsLeaderBoard;
 
+@property UIAlertView* playerStatsAlert;
+
 //Button action to play new game (will send user to HSAddPlayersViewController)
 - (IBAction)playNewButtonPressed:(id)sender;
 - (IBAction)aboutButtonPressed:(id)sender;
 - (IBAction)viewSetStatsTouched:(id)sender;
 - (IBAction)recentGamesButtonPressed:(id)sender;
+- (IBAction)playerStatsButtonPressed:(id)sender;
 
 @end
 
@@ -188,13 +192,32 @@
     [self performSegueWithIdentifier:@"AboutSegue" sender:self];
 }
 
-//Prepare for SetStatsSegue by passing appropriate
+//Prepare for SetStatsSegue and PlayerStatsSegue by passing appropriate
 //game stats
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"SetStatsSegue"]) {
         HSSetStatsViewController *destination = [segue destinationViewController];
         HSHackSetView* senderView = sender;
         [destination setHackData:[senderView hackData]];
+    }
+    else if([[segue identifier] isEqualToString:@"PlayerStatsSegue"]) {
+        HSPlayerStatsViewController *destination = [segue destinationViewController];
+        NSString* playerName = sender;
+        AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [delegate setDataSortMode: SortByDate];
+        [delegate sortHackSetData];
+        NSMutableArray* hackSetWithPlayer = [delegate hackSetsWithPlayer:playerName];
+        [destination setHackData:hackSetWithPlayer];
+        [destination setPlayerName:[playerName uppercaseString]];
+    }
+}
+
+//UIAlertView action: return if user accepts
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == [alertView firstOtherButtonIndex]) { //Go button pressed
+        NSString* playerName = [alertView textFieldAtIndex:0].text;
+        //Pass playerName via sender (kind of a hack)
+        [self performSegueWithIdentifier:@"PlayerStatsSegue" sender:playerName];
     }
 }
 
@@ -205,5 +228,26 @@
 
 - (IBAction)recentGamesButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"RecentGamesSegue" sender:self];
+}
+
+- (IBAction)playerStatsButtonPressed:(id)sender {
+    //AlertView asking for name to view
+    //Then pass HSHackSet to new VC
+    self.playerStatsAlert = [[UIAlertView alloc] initWithTitle:@"Player Stats"
+                                                    message:@"Enter the name of a player to view stats."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Go"
+                                          otherButtonTitles:@"Cancel", nil];
+    self.playerStatsAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [self.playerStatsAlert setDelegate:self];
+    [self.playerStatsAlert show];
+}
+
+//UIAlertView delegate method for return button
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    //On return button press, act as if Go button was pressed
+    [self.playerStatsAlert dismissWithClickedButtonIndex:
+     self.playerStatsAlert.firstOtherButtonIndex animated:YES];
+    return YES;
 }
 @end

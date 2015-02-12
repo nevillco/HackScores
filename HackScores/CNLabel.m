@@ -95,6 +95,12 @@ static const int DEFAULT_ANIM_DELAY = 3;
                                        selector:@selector(resetText:) userInfo:nil repeats:NO];
 }
 
+//Wrapper function to quickly set label
+//to an int value
+- (void)setTextToInt: (int)textAsInt {
+    [super setText:[NSString stringWithFormat:@"%d", textAsInt]];
+}
+
 //Reset text called after a temporary message is displayed
 //in order to redisplay the persistent text (not public)
 - (void) resetText: (NSTimer*) timer

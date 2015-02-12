@@ -11,7 +11,6 @@
 @property NSDate* dateOfGame;
 @property NSMutableArray* attempts;
 @property NSMutableArray* playerNames;
-@property bool wasRecentlyPlayed;
 
 - (id) initWithPlayerNames: (NSMutableArray*) playerNames;
 - (id) initWithAttempts: (NSMutableArray*) attempts;

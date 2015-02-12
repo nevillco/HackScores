@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HSStatsViewController : UIViewController
+@interface HSStatsViewController : UIViewController <UIAlertViewDelegate>
 
 - (void) populateAllLeaderboards;
 

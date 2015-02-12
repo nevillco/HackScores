@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D6AF3F71A8BE32D009C03BB /* HSPlayerStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AF3F61A8BE32D009C03BB /* HSPlayerStatsViewController.m */; };
 		2D7F0CAC1A61AA1F0038837F /* HSSetStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */; };
 		2D7F0CAF1A6345F00038837F /* HSRecentGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F0CAE1A6345F00038837F /* HSRecentGamesViewController.m */; };
-		2DAB374F1A754B9600A29C07 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAB374E1A754B9600A29C07 /* QuartzCore.framework */; };
 		2DACD0881A4B5D0E00313F41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD0871A4B5D0E00313F41 /* main.m */; };
 		2DACD08B1A4B5D0E00313F41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08A1A4B5D0E00313F41 /* AppDelegate.m */; };
 		2DACD08E1A4B5D0E00313F41 /* HSStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACD08D1A4B5D0E00313F41 /* HSStatsViewController.m */; };
@@ -39,11 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D6AF3F51A8BE32D009C03BB /* HSPlayerStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPlayerStatsViewController.h; sourceTree = "<group>"; };
+		2D6AF3F61A8BE32D009C03BB /* HSPlayerStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPlayerStatsViewController.m; sourceTree = "<group>"; };
 		2D7F0CAA1A61AA1F0038837F /* HSSetStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetStatsViewController.h; sourceTree = "<group>"; };
 		2D7F0CAB1A61AA1F0038837F /* HSSetStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetStatsViewController.m; sourceTree = "<group>"; };
 		2D7F0CAD1A6345F00038837F /* HSRecentGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSRecentGamesViewController.h; sourceTree = "<group>"; };
 		2D7F0CAE1A6345F00038837F /* HSRecentGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSRecentGamesViewController.m; sourceTree = "<group>"; };
-		2DAB374E1A754B9600A29C07 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2DACD0821A4B5D0E00313F41 /* HackScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DACD0861A4B5D0E00313F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACD0871A4B5D0E00313F41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DAB374F1A754B9600A29C07 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,6 @@
 		2DACD0791A4B5D0E00313F41 = {
 			isa = PBXGroup;
 			children = (
-				2DAB374E1A754B9600A29C07 /* QuartzCore.framework */,
 				2DACD0841A4B5D0E00313F41 /* HackScores */,
 				2DACD0A11A4B5D0E00313F41 /* HackScoresTests */,
 				2DACD0831A4B5D0E00313F41 /* Products */,
@@ -139,6 +138,8 @@
 				2DACD0C41A4CA2EF00313F41 /* HSResultsViewController.m */,
 				2DACD0AE1A4B600700313F41 /* HSLeaderBoardView.h */,
 				2DACD0AF1A4B600700313F41 /* HSLeaderBoardView.m */,
+				2D6AF3F51A8BE32D009C03BB /* HSPlayerStatsViewController.h */,
+				2D6AF3F61A8BE32D009C03BB /* HSPlayerStatsViewController.m */,
 				2DACD0C91A4E3FA700313F41 /* HSHackSetView.h */,
 				2DACD0CA1A4E3FA700313F41 /* HSHackSetView.m */,
 				2DACD0B11A4B98E400313F41 /* HSHackSet.m */,
@@ -293,6 +294,7 @@
 				2DACD0C21A4C94E700313F41 /* CNLabel.m in Sources */,
 				2DACD0CB1A4E3FA700313F41 /* HSHackSetView.m in Sources */,
 				2D7F0CAC1A61AA1F0038837F /* HSSetStatsViewController.m in Sources */,
+				2D6AF3F71A8BE32D009C03BB /* HSPlayerStatsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

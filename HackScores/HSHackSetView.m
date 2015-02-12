@@ -57,9 +57,6 @@
 //Add to view, then add auto layout constraints
 - (void) addHackContent: (HSHackSet*) hackSet {
     [self setHackData: hackSet];
-    if([self.hackData wasRecentlyPlayed]) {
-        [self setBackgroundColor:[UIColor darkGrayColor]];
-    }
     
     self.roundScore = [self generateRoundScoresLabel:hackSet];
     [self addSubview: self.roundScore];
@@ -115,6 +112,8 @@
                           [roundScores[1] intValue],
                           [roundScores[2] intValue]]];
     [roundScore setFont:[UIFont fontWithName:@"DIN Condensed" size:52.0f]];
+    [roundScore setMinimumScaleFactor:0.4f];
+    [roundScore setAdjustsFontSizeToFitWidth:TRUE];
     [roundScore setTextAlignment:NSTextAlignmentCenter];
     [roundScore setTextColor: [UIColor whiteColor]];
     return roundScore;
